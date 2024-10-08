@@ -8,7 +8,6 @@ public class Ejercicio1 {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
         
-        // Randomly set the correct door (1 or 2)
         int puertaCorrecta = random.nextInt(2) + 1;
 
         System.out.println("Elige una puerta (1 o 2): ");
