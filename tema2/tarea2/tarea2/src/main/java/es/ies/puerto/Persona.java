@@ -1,19 +1,35 @@
 package es.ies.puerto;
 
 public class Persona {
-    
-    private String nombre;
-    private int edad;
-    private String dni;
 
+    String nombre;
+    int edad;
+
+    /**
+     * Constructor por defecto
+     */
     public Persona() {
     }
+
+    /**
+     * Constructor del nombre de la persona
+     * @param nombre de la persona
+     */
+    public Persona(String nombre) {
+        this.nombre = nombre;
+    }
+
+    /**
+     * Constructor con todos los atributos
+     * @param nombre de la persona
+     * @param edad de la persona
+     */
     public Persona(String nombre, int edad) {
         this.nombre = nombre;
         this.edad = edad;
     }
-
-
+    
+    //Getters y Setters
     public String getNombre() {
         return this.nombre;
     }
@@ -29,20 +45,13 @@ public class Persona {
     public void setEdad(int edad) {
         this.edad = edad;
     }
-    public String getDni(){
-        return this.dni;
-    }
-    public void setDeni(String dni){
-        this.dni = dni;
-    }
-    public String toString(){
-        return "{" +
-            "nombre=" + getNombre() +
-            "edad=" + getEdad() +
-            "dni=" + getDni() +
-            "}";
-        
-        
+
+    /**
+     * Metodo que no forma parte de la tarea, solo es un ejemplo. 
+     * Metodo que muestra la informacion de la persona
+     */
+    public void mostrarInformacion() {
+        System.out.println("Nombre: " + nombre + ", Edad: " + edad);
     }
 
 }
