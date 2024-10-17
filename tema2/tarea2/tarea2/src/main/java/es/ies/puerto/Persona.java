@@ -47,7 +47,7 @@ public class Persona {
     }
 
     /**
-     * Metodo que no forma parte de la tarea, solo es un ejemplo. 
+     * Metodo que no forma parte de la tarea, solo es un ejemplo.
      * Metodo que muestra la informacion de la persona
      */
     public void mostrarInformacion() {
