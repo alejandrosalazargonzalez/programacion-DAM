@@ -14,7 +14,7 @@ public class Ejercicio1 {
         
         persona = new Persona("Maria", 25);
         persona.mostrarInformacion();
-        persona.setEdad(26);
+        persona.setEdad(26); //ejercicio2
         persona.mostrarInformacion();
     }
 

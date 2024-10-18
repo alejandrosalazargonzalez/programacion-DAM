@@ -69,7 +69,7 @@ public class Rectangulo {
 
     /**
      * metodo que calcula el area del rectangulo
-     * @return
+     * @return area del rectangulo 
     */
     public float area()
     {

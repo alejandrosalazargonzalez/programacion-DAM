@@ -62,8 +62,13 @@ public class Coche {
     public int getAnio() {
         return this.anio;
     }
-
+    /**
+     * Ejercicio 4
+     */
     public void setAnio(int anio) {
+        if (anio < 1886) {
+            anio = 1886;
+        }
         this.anio = anio;
     }
 

@@ -29,7 +29,7 @@ public class Persona {
         this.edad = edad;
     }
     
-    //Getters y Setters
+    //Getters y Setters 
     public String getNombre() {
         return this.nombre;
     }
