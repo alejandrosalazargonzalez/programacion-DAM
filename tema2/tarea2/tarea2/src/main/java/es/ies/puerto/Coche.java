@@ -1,5 +1,11 @@
 package es.ies.puerto;
 
+/**
+ * Clase coche
+ * 
+ * @author alejandrosalazargonzalez
+ * @version 1.2.0
+ */
 public class Coche {
     private String marca;
     private String modelo;

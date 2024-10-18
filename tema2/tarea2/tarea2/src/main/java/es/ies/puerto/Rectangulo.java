@@ -1,5 +1,11 @@
 package es.ies.puerto;
 
+/**
+ * Clase Rectangulo
+ * 
+ * @author alejandrosalazargonzalez
+ * @version 1.2.0
+ */
 public class Rectangulo {
     
     private float base;
@@ -68,11 +74,22 @@ public class Rectangulo {
     }
 
     /**
-     * metodo que calcula el area del rectangulo
+     * Ejercicio5
+     * Metodo que calcula el area del rectangulo
      * @return area del rectangulo 
     */
     public float area()
     {
         return base * altura;
+    }
+
+    /**
+     * Ejercicio6
+     * Metodo que retorna el perimetro del rectangulo
+     * @return perimetro del rectangulo
+     */
+    public float perimetro()
+    {
+        return 2 * ( getBase() + getAltura() );
     }
 }

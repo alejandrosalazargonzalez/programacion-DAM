@@ -1,5 +1,10 @@
 package es.ies.puerto;
 
+/**
+ * Clase persona
+ * @author alejandrosalazargonzalez
+ * @version 1.0.1
+ */
 public class Persona {
 
     String nombre;
