@@ -30,7 +30,7 @@ public class Empleado {
      * @param nombre del empleado
      */
     public Empleado(String nombre) {
-        this.nombre = nombre;
+        setNombre(nombre);
     }
 
     /**
@@ -39,8 +39,8 @@ public class Empleado {
      * @param puesto del empleado
      */
     public Empleado(String nombre, String puesto) {
-        this.nombre = nombre;
-        setPuesto(puesto);;
+        setNombre(nombre);
+        setPuesto(puesto);
     }
 
     /**
@@ -50,7 +50,7 @@ public class Empleado {
      * @param salario del empleado
      */
     public Empleado(String nombre, String puesto, float salario) {
-        this.nombre = nombre;
+        setNombre(nombre);
         setPuesto(puesto);
         setSalario(salario);
     }
@@ -61,7 +61,12 @@ public class Empleado {
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        if (!nombre.isEmpty() && nombre != null) {
+            this.nombre = nombre;
+        } else
+        {
+            nombreError();
+        }
     }
 
     public String getPuesto() {
@@ -70,7 +75,7 @@ public class Empleado {
 
     //ejercicio9
     public void setPuesto(String puesto) {
-        if (!puesto.equals(" "))
+        if (!puesto.isEmpty() && puesto != null)
         {
             this.puesto = puesto;
         }else
@@ -96,7 +101,15 @@ public class Empleado {
     }
 
     /**
-     * Metodo que retorna texto e error
+     * Metrodo que imprime un texto de error
+     */
+    public void nombreError()
+    {
+        System.out.println("El empleado necesita un nombre");
+    }
+
+    /**
+     * Metodo que imprime texto e error
      * Ejercicio 8
      */
     public void salarioError()
