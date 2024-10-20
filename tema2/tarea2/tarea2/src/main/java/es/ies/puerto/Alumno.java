@@ -2,7 +2,9 @@ package es.ies.puerto;
 
 /**
  * Ejercicio 13
- *  Crea una clase Alumno con los atributos nombre y nota. Implementa un método que determine si el alumno ha aprobado (nota >= 6).
+ *  Crea una clase Alumno con los atributos nombre y nota.
+ *  Implementa un método que determine si el alumno
+ *  ha aprobado (nota >= 6).
  * @author alejandrosalazargonzalez
  * @version 1.0.0
  */
@@ -32,7 +34,7 @@ public class Alumno {
      */
     public Alumno(String nombre, float nota) {
         this.nombre = nombre;
-        this.nota = nota;
+        setNota(nota);;
     }
 
     //Getters y Setters
@@ -49,9 +51,16 @@ public class Alumno {
     }
 
     public void setNota(float nota) {
-        this.nota = nota;
+        if( nota > 0.00f)
+        {
+            this.nota = nota;
+        } else
+        {
+            nota = 0;
+        }
     }
 
+    //metodo que comprueba si el alumno está aprobado
     public boolean aprobado()
     {
         if (nota < 4.9f) {
@@ -60,6 +69,16 @@ public class Alumno {
         {
             return true;
         }
+    }
+
+
+    @Override
+    public String toString() {
+        return "{" +
+            " nombre del Alumno='" + getNombre() + "'" +
+            ", nota='" + getNota() + "'" +
+            " Está aprovado=" + aprobado() +
+            "}";
     }
 
 }
