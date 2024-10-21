@@ -12,5 +12,7 @@ public class Ejercicio13 {
     public static void main(String[] args) {
         Alumno alumno = new Alumno ("Ana", 7f );
         System.out.println(alumno.toString());
+        Alumno alumno2 = new Alumno("Jose Miguel", 100);
+        System.out.println(alumno2);
     }
 }
