@@ -45,9 +45,5 @@ public class Persona {
                 ", Género='" + genero + '\'' +
                 '}';
     }
-
-    public static void main(String[] args) {
-        Persona persona = new Persona("Juan Pérez", 28, "Masculino");
-        System.out.println(persona.toString()); // Muestra: Persona{Nombre='Juan Pérez', Edad=28, Género='Masculino'}
-    }
+    
 }
