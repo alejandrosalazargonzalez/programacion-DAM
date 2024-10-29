@@ -64,10 +64,24 @@ public class Zoologico {
                 if (animalEliminar.equals(animales[i])) {
                     animales[i] = null;
                     numeroAnimales--;
+                    ordenar();
                     return true;
                 }
         }
         return false;
+    }
+
+    /**
+     * Metodo que ordena la lista de animales
+     */
+    public void ordenar()
+    {
+        for (int i = 0; i < animales.length - 1; i++) {
+            if (animales[i] == null) {
+                animales[i] = animales[i + 1];
+                animales[ i + 1] = null;
+            }
+        }
     }
 
     @Override
