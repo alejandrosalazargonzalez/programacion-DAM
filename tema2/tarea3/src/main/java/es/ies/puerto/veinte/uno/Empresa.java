@@ -53,11 +53,9 @@ public class Empresa {
                 return true;
             }
         }
-
         return false;
     }
-
-
+    
     /**
      * Muestra los detalles de la empresa
      */ 
