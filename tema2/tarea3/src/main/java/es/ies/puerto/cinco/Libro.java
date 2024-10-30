@@ -32,8 +32,8 @@ public class Libro {
 
     /**
      * Constructor con el titulo y el autor
-     * @param titulo
-     * @param autor
+     * @param titulo del libro
+     * @param autor del libro
      */
     public Libro(String titulo, String autor)
     {
@@ -43,8 +43,8 @@ public class Libro {
 
     /**
      * Constructor con titulo y paginas
-     * @param titulo
-     * @param paginas
+     * @param titulo del libro
+     * @param paginas del libro
      */
     public Libro(String titulo, int paginas)
     {
@@ -54,9 +54,9 @@ public class Libro {
     
     /**
      * Constructor completo
-     * @param titulo
-     * @param autor
-     * @param paginas
+     * @param titulo del libro
+     * @param autor del libro
+     * @param paginas del libro
      */
     public Libro(String titulo, String autor, int paginas) {
         this.titulo = titulo;
