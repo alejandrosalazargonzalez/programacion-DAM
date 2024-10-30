@@ -1,5 +1,14 @@
 package es.ies.puerto.nueve;
 
+/**
+ * Define una clase Empleado con atributos nombre,
+ *  puesto, y salario. Implementa un método
+ *  aumentarSalario(double porcentaje) y equals()
+ *  para comparar empleados por nombre y puesto.
+ * 
+ * @author alejandrosalazargonzalez
+ * @version 1.0.0
+ */
 public class Empleado {
     private String nombre; 
     private String puesto; 
@@ -21,8 +30,8 @@ public class Empleado {
         this.puesto = puesto;
         this.salario = salario;
     }
- 
 
+    // Getters y Setters
     public String getNombre() {
         return this.nombre;
     }
@@ -59,6 +68,9 @@ public class Empleado {
         }
     }
 
+    /**
+     * Metodo equals modificado
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;                 // Si son el mismo objeto, son iguales
@@ -79,6 +91,4 @@ public class Empleado {
                 ", Salario=" + salario +
                 '}';
     }
-
-  
 }

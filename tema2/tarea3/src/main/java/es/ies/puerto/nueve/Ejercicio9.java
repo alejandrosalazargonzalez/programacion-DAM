@@ -1,6 +1,15 @@
 package es.ies.puerto.nueve;
 
-public class Nueve {
+/**
+ * Define una clase Empleado con atributos nombre,
+ *  puesto, y salario. Implementa un método
+ *  aumentarSalario(double porcentaje) y equals()
+ *  para comparar empleados por nombre y puesto.
+ * 
+ * @author alejandrosalazargonzalez
+ * @version 1.0.0
+ */
+public class Ejercicio9 {
       public static void main(String[] args) {
         Empleado empleado1 = new Empleado("Carlos Sánchez", "Desarrollador", 50000);
         Empleado empleado2 = new Empleado("Carlos Sánchez", "Desarrollador", 55000);

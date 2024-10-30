@@ -1,6 +1,15 @@
 package es.ies.puerto.veinte.cuatro;
 import java.util.Objects;
 
+/**
+ * Crea una clase Zoologico que almacene una lista (array)
+ *  (array) de animales (clase Animal) con atributos nombre
+ *  y especie. Implementa métodos para agregar, eliminar y
+ *  listar animales. Usa toString() para describir el zoológico.
+ * 
+ * @author alejandrosalazargonzalez
+ * @version 1.0.0
+ */
 public class Animal {
     private String nombre;
     private String espacie;
