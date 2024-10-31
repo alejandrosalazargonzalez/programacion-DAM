@@ -1,4 +1,5 @@
 package es.ies.puerto.cinco;
+import java.util.Objects;
 
 /**
  * Define una clase Libro con atributos titulo,
@@ -7,8 +8,14 @@ package es.ies.puerto.cinco;
  *  de estos atributos. Implementa toString()
  *  para devolver una descripción del libro.
  * 
+ * Ejercicio17
+ * Crea una clase Libro con atributos titulo,
+ *  autor, y paginas. Sobrescribe equals()
+ *  para comparar libros por su número de páginas
+ *  y toString() para mostrar los detalles del libro.
+ * 
  * @author alejandrosalazargonzalez
- * @version 1.0.0
+ * @version 1.1.0
  */
 public class Libro {
     private String titulo;
@@ -89,6 +96,26 @@ public class Libro {
         this.paginas = paginas;
     }
 
+    /**
+     * Ejercicio 17
+     * Metodo equals modificado
+     */
+    @Override
+    public boolean equals(Object o) {
+        if (o == this)
+            return true;
+        if (!(o instanceof Libro)) {
+            return false;
+        }
+        Libro libro = (Libro) o;
+        return paginas == libro.paginas;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(titulo, autor, paginas);
+    }
+    
     /**
      * Metodo toString que muestra la descripcion del libro
      */
