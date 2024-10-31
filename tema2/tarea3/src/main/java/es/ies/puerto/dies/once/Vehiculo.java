@@ -1,4 +1,5 @@
 package es.ies.puerto.dies.once;
+import java.util.Objects;
 
 /**
  * Define una clase base Vehiculo con atributos
@@ -45,6 +46,23 @@ public class Vehiculo {
         this.modelo = modelo;
     }
 
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == this)
+            return true;
+        if (!(o instanceof Vehiculo)) {
+            return false;
+        }
+        Vehiculo vehiculo = (Vehiculo) o;
+        return Objects.equals(marca, vehiculo.marca) && Objects.equals(modelo, vehiculo.modelo);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(marca, modelo);
+    }
+    
 
     @Override
     public String toString() {

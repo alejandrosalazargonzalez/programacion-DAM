@@ -1,6 +1,16 @@
 package es.ies.puerto.dos;
 import java.util.Objects;
 
+/**
+ * Crea una clase Producto con los atributos
+ *  id, nombre y precio, y cantidad. Implementa
+ *  el método equals() para comparar dos productos
+ *  según su nombre y precio, y también toString()
+ *  para mostrar su información
+ * 
+ * @author alejandrosalazargonzalez
+ * @version 1.0.0
+ */
 public class Productos {
     private String id;
     private String nombre;

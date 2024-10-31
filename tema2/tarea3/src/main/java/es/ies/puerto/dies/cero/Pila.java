@@ -77,8 +77,10 @@ public class Pila {
     @Override
     public String toString() {
         String contenido = "{ ";
-        for (String string : datos) {
-            contenido += "(" + string + ");";
+        for (String dato : datos) {
+            if ( dato != null) {
+                contenido += " " + dato + ";";
+            }
         }
         contenido += "}";
         return contenido;
