@@ -1,6 +1,6 @@
 package es.ies.puerto.veinte.cinco;
 
-import es.ies.puerto.dies.once.Vehiculo;
+import es.ies.puerto.diez.once.Vehiculo;
 
 /**
  * Crea una clase Concesionaria con una lista (array)
