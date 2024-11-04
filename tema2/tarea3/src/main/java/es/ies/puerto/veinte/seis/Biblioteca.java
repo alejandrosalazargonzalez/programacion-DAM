@@ -1,7 +1,15 @@
 package es.ies.puerto.veinte.seis;
 
 import es.ies.puerto.cinco.Libro;
-
+/**
+ * Crea una clase Biblioteca que almacene una lista (array)
+ *  de libros (clase Libro). Implementa métodos para agregar
+ *  libros, eliminar libros y listar todos los libros. Usa 
+ * toString() para describir la biblioteca.
+ * 
+ * @author alejandrosalazargonzalez
+ * @version 1.0.0
+ */
 public class Biblioteca {
     
         Libro[] libros;
@@ -47,7 +55,7 @@ public class Biblioteca {
         boolean buscar = true;
         while (buscar)
         {
-            if (libros[i] == null ) 
+            if (libros[i] == null )
             {
                 libros[i] = libro;
                 buscar = false;
@@ -57,15 +65,15 @@ public class Biblioteca {
     }
 
     /**
-     * Metodo que elimina el ultimo valor añadido a la pila
+     * Metodo que elimina un libro de la Biblioteca
      */
-    public void eliminarLibros()
+    public void eliminarLibros(Libro libro)
     {
         int i = libros.length - 1;
         boolean buscar = true;
         while (buscar)
         {
-            if ( libros[i] != null )
+            if ( libros[i].equals(libro) )
             {
                 libros[i] = null;
                 buscar = false;
@@ -73,7 +81,7 @@ public class Biblioteca {
             i--;
         }
     }
-
+    
     @Override
     public String toString() {
         String salida = "{ ";

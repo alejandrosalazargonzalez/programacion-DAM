@@ -121,9 +121,9 @@ public class Libro {
      */
     @Override
     public String toString() {
-        return "El libro"  + getTitulo() +
-            " escrito por" + getAutor() +
-            " tiene" + getPaginas() + " páginas";
+        return "El libro '"  + getTitulo() +
+            "' escrito por " + getAutor() +
+            " tiene " + getPaginas() + " páginas ";
     }
 
 }
