@@ -1,5 +1,7 @@
 package es.ies.puerto.treinta.cero;
 
+import es.ies.puerto.veinte.cuatro.Animal;
+
 /**
  * Crea una clase Playlist que almacene una lista(array) de
  *  canciones (clase Cancion). Implementa métodos para
@@ -84,10 +86,13 @@ public class Playlist {
 
     @Override
     public String toString() {
-        return "{" +
-            " canciones='" + getCanciones() + "'" +
-            ", tamanioLista='" + getTamanioLista() + "'" +
-            "}";
+        String mensaje = "canciones: ";
+        for (Cancion cancion : canciones) {
+            if (cancion != null) {
+                mensaje += cancion;
+            }
+        }
+        return mensaje;
     }
 
 }

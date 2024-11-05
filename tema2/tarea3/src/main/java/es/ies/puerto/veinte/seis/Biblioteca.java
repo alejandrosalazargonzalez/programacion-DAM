@@ -12,7 +12,7 @@ import es.ies.puerto.cinco.Libro;
  */
 public class Biblioteca {
     
-        Libro[] libros;
+    Libro[] libros;
     private int numLibros;
     /**
      * Constructor por defecto
