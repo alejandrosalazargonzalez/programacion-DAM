@@ -1,4 +1,5 @@
 package es.ies.puerto.seis;
+import java.util.Objects;
 
 /**
  * Crea una clase Estudiante con atributos
@@ -57,6 +58,24 @@ public class Estudiante {
     public void setCalificacion(float calificacion) {
         this.calificacion = calificacion;
     }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == this)
+            return true;
+        if (!(o instanceof Estudiante)) {
+            return false;
+        }
+        Estudiante estudiante = (Estudiante) o;
+        return Objects.equals(nombre, estudiante.nombre);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nombre, matricula, calificacion);
+    }
+    
 
     /**
      * Metodo toString que muestra la informacion de la clase

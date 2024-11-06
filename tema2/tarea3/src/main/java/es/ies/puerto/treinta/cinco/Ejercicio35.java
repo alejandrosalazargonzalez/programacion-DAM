@@ -12,5 +12,6 @@ package es.ies.puerto.treinta.cinco;
 public class Ejercicio35 {
     public static void main(String[] args) {
         Bebida bebida = new Bebida("Colaloca", 10, 1);
+        System.out.println(bebida);
     }
 }

@@ -48,10 +48,10 @@ public class Playlist {
     }
 
         /**
-     * Metodo que agrega un libro a la Biblioteca
-     * @param libro
+     * Metodo que agrega un cancion a la lista
+     * @param cancion
      */
-    public void agregarLibro(Cancion cancion)
+    public void agregarCancion(Cancion cancion)
     {
         int i = 0 ;
         boolean buscar = true;
@@ -69,7 +69,7 @@ public class Playlist {
     /**
      * Metodo que elimina una cancion de la lista
      */
-    public void eliminarLibros(Cancion cancion)
+    public void eliminarCancion(Cancion cancion)
     {
         int i = canciones.length - 1;
         boolean buscar = true;
