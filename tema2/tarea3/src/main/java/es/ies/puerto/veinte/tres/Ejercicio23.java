@@ -1,6 +1,6 @@
 package es.ies.puerto.veinte.tres;
 
-import es.ies.puerto.dos.Productos;
+import es.ies.puerto.dos.Producto;
 
 /**
  * Crea una clase Pedido que tenga una lista (array)
@@ -13,16 +13,16 @@ import es.ies.puerto.dos.Productos;
  */
 public class Ejercicio23 {
 
-    static Productos[] productos;
+    static Producto[] productos;
     public static void main(String[] args) {
-        productos = new Productos[2];
+        productos = new Producto[2];
         for (int i = 0; i < productos.length; i++)
         {
             int valor = 1 + i;
-            Productos producto = new Productos("id" + valor, "nombre" + valor,10f * valor, 1 * valor);
+            Producto producto = new Producto("id" + valor, "nombre" + valor,10f * valor, 1 * valor);
             productos[i] = producto;
         }
-        for (Productos producto : productos) {
+        for (Producto producto : productos) {
             System.out.println(producto);
         }
     }

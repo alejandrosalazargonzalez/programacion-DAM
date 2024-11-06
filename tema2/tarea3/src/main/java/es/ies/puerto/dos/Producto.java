@@ -11,7 +11,7 @@ import java.util.Objects;
  * @author alejandrosalazargonzalez
  * @version 1.0.0
  */
-public class Productos {
+public class Producto {
     private String id;
     private String nombre;
     private float precio;
@@ -20,7 +20,7 @@ public class Productos {
     /**
      * Constructor por defecto
      */
-    public Productos() {
+    public Producto() {
     }
 
     /**
@@ -30,7 +30,7 @@ public class Productos {
      * @param precio del producto
      * @param cantidad del producto
      */
-    public Productos(String id, String nombre, float precio, int cantidad) {
+    public Producto(String id, String nombre, float precio, int cantidad) {
         this.id = id;
         this.nombre = nombre;
         this.precio = precio;
@@ -75,11 +75,11 @@ public class Productos {
     public boolean equals(Object o) {
         if (o == this)
             return true;
-        if (!(o instanceof Productos)) {
+        if (!(o instanceof Producto)) {
             return false;
         }
-        Productos productos = (Productos) o;
-        return this.id.equals(productos.id);
+        Producto producto = (Producto) o;
+        return this.id.equals(producto.id);
     }
 
     @Override
