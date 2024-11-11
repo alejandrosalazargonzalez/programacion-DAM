@@ -58,7 +58,11 @@ public class Mago {
     public void setMana(int mana) {
         this.mana = mana;
     }
-
+    /**
+     * Metodo que resta valor de mana gastado al lanzar un hechizo
+     * @param valor
+     * @return
+     */
     public boolean lanzarHechizo(int valor)
     {
         if ((mana - valor) < 0)
