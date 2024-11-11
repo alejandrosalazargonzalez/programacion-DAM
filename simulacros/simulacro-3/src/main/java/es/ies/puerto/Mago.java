@@ -73,6 +73,24 @@ public class Mago {
         return true;
     }
 
+    /**
+     * Metodo que calcula el daño de un hechizo
+     * @return int daño del hechizo
+     */
+    public int calcularDanio()
+    {
+        return nivel * 10;
+    }
+
+    /**
+     * Metodo que aumenta la cantidad de mana del mago
+     * @param cantidad de maná a recargar
+     */
+    public void recargar(int cantidad)
+    {
+        mana += cantidad;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == this)
