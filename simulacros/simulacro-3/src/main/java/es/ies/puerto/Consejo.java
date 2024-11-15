@@ -1,4 +1,5 @@
 package es.ies.puerto;
+import java.util.Objects;
 
 /**
  * El Consejo de Magos de la Antigua Orden te ha
@@ -34,6 +35,53 @@ public class Consejo {
         this.magos = new Mago[numeroMagos];
     }
 
+
+    public Consejo(Mago[] magos, int totalMagos) {
+        this.magos = magos;
+        this.totalMagos = totalMagos;
+    }
+
+    public Mago[] getMagos() {
+        return this.magos;
+    }
+
+    public void setMagos(Mago[] magos) {
+        this.magos = magos;
+    }
+
+    public int getTotalMagos() {
+        return this.totalMagos;
+    }
+
+    public void setTotalMagos(int totalMagos) {
+        this.totalMagos = totalMagos;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == this)
+            return true;
+        if (!(o instanceof Consejo)) {
+            return false;
+        }
+        Consejo consejo = (Consejo) o;
+        return Objects.equals(magos, consejo.magos) && totalMagos == consejo.totalMagos;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(magos, totalMagos);
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+            " magos='" + getMagos() + "'" +
+            ", totalMagos='" + getTotalMagos() + "'" +
+            "}";
+    }
+    
+
     /**
      * Metodo que agrega un mago en la posiciob que indica totalMagos
      * @param mago
@@ -65,4 +113,6 @@ public class Consejo {
         totalMagos--;
         return true;
     }
+
+
 }
