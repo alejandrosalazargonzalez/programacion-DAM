@@ -114,5 +114,35 @@ public class Consejo {
         return true;
     }
 
+    /**
+     * Retorna al mago con mayor mana
+     * @return Mago
+     */
+    public Mago mayorCantidadHechizos()
+    {
+        Mago poderoso = magos[1];
+        for (int i = 1; i < magos.length; i++) {
+            if (poderoso.getMana() < magos[i].getMana())
+            {
+                poderoso = magos[i];
+            }
+        }
+        return poderoso;
+    }
 
+    /**
+     * Metodo que devuelve al mago con mayor nivel
+     * @return Mago
+     */
+    public Mago mayorPoderMagico()
+    {
+        Mago poderoso = magos[1];
+        for (int i = 1; i < magos.length; i++) {
+            if (poderoso.getNivel() < magos[i].getNivel())
+            {
+                poderoso = magos[i];
+            }
+        }
+        return poderoso;
+    }
 }
