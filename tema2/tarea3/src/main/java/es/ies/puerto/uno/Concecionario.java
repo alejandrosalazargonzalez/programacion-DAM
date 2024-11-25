@@ -6,7 +6,7 @@ import java.util.List;
 import es.ies.puerto.diez.once.Vehiculo;
 
 /**
- * para herecians
+ * para herecias
  */
 public class Concecionario {
     private String nombre;
@@ -72,6 +72,42 @@ public class Concecionario {
         }
         vehiculos.remove(vehiculo);
         return true;
+    }
+
+    /**
+     * obtener un vehiculo 
+     * @param vehiculo
+     * @return
+     */
+    public Vehiculo obtener(Vehiculo vehiculo)
+    {
+        if (vehiculo == null)
+        {
+            return null;
+        }
+        int posicion = vehiculos.indexOf(vehiculo);
+        return vehiculos.get(posicion);
+    }
+
+    /**
+     * obtiene un vehiculo por su matricula
+     * @param matricula
+     * @return
+     */
+    public Vehiculo obtener(String matricula)
+    {
+    /**
+     *     for (Vehiculo vehiculo : vehiculos) {
+     *      if (vehiculo.getMatricula().equals(matricula))
+     *      {   
+     *          return vehiculo;
+     *      }
+     *  }
+     *  return null;
+    */
+
+        Vehiculo vehiculoBuscar = new Vehiculo(matricula);
+        return obtener(vehiculoBuscar);
     }
 
     /**

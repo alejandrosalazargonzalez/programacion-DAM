@@ -21,9 +21,10 @@ public class Ejercico11 {
  */
     static Concecionario renault;
     public static void main(String[] args) {
-        renault = new Concecionario("Renault");
-        Vehiculo dacia = new Vehiculo("renault","logan", "una");
-        Vehiculo dacia2 = new Vehiculo("renault","logan", "otra");
+        String marca = "Renault";
+        renault = new Concecionario(marca);
+        Vehiculo dacia = new Vehiculo( marca,"logan", "una");
+        Vehiculo dacia2 = new Vehiculo( marca, "logan", "otra");
 
         renault.agregar(dacia);
         renault.agregar(dacia2);
@@ -32,7 +33,7 @@ public class Ejercico11 {
         renault.eliminar(dacia);
         System.out.println("Soy un concecionario despues de eliminar: " + renault);
 
-        Vehiculo dacia3 = new Vehiculo("renault","clio", "otra");
+        Vehiculo dacia3 = new Vehiculo( marca,"clio", "otra");
         renault.actualizar(dacia3);
         System.out.println("Otra vez concecionario pero actualizado:" + renault);
 

@@ -30,6 +30,15 @@ public class Vehiculo {
         this.modelo = modelo;
     }
 
+    /**
+     * Constructor solo con la matricula
+     * @param matricula
+     */
+    public Vehiculo(String matricula)
+    {
+        this.matricula = matricula;
+    }
+
     public Vehiculo(String marca, String modelo, String matricula) {
         this.marca = marca;
         this.modelo = modelo;
@@ -51,6 +60,14 @@ public class Vehiculo {
 
     public void setModelo(String modelo) {
         this.modelo = modelo;
+    }
+
+    public String getMatricula() {
+        return this.matricula;
+    }
+
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
     }
 
     @Override
