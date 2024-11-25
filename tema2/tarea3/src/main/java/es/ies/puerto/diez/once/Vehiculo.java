@@ -12,6 +12,7 @@ import java.util.Objects;
 public class Vehiculo {
     private String marca;
     private String modelo;
+    private String matricula;
 
     /**
      * Constructor vacio
@@ -27,6 +28,12 @@ public class Vehiculo {
     public Vehiculo(String marca, String modelo) {
         this.marca = marca;
         this.modelo = modelo;
+    }
+
+    public Vehiculo(String marca, String modelo, String matricula) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.matricula = matricula;
     }
 
     //Getters y setters
@@ -46,7 +53,6 @@ public class Vehiculo {
         this.modelo = modelo;
     }
 
-
     @Override
     public boolean equals(Object o) {
         if (o == this)
@@ -55,7 +61,7 @@ public class Vehiculo {
             return false;
         }
         Vehiculo vehiculo = (Vehiculo) o;
-        return Objects.equals(marca, vehiculo.marca) && Objects.equals(modelo, vehiculo.modelo);
+        return Objects.equals(matricula, vehiculo.matricula);
     }
 
     @Override
@@ -69,6 +75,7 @@ public class Vehiculo {
         return "{" +
             " marca='" + getMarca() + "'" +
             ", modelo='" + getModelo() + "'" +
+            ", matricula='" + matricula + "'" +
             "}";
     }
 
