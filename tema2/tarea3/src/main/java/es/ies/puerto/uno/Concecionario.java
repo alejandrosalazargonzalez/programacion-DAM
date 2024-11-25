@@ -38,11 +38,17 @@ public class Concecionario {
      */
     public boolean agregar(Vehiculo vehiculo)
     {
-        if (vehiculo == null)
+/**
+ *      if (vehiculo == null)
         {
             return false;
         }
         if (vehiculos.contains(vehiculo))
+        {
+            return false;
+        } 
+        */
+        if (obtener(vehiculo) != null)
         {
             return false;
         }
