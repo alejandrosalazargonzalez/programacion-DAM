@@ -2,6 +2,12 @@ package es.ies.puerto;
 import java.util.ArrayList;
 
 /**
+ * Métodos a utilizar: add
+ *
+ *   Crea una clase Persona con atributos nombre, edad y dni.
+ *   Crea una List<Persona> y añade cinco objetos Persona al ArrayList utilizando el método add.
+ *   Usa un bucle para imprimir la información de todas las personas.
+ *   Utiliza el if para encontrar a una persona especifica por su dni
  *  @author: alejandrosalazargonzalez
  *  @version: 1.0.0
  */

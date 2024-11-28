@@ -4,6 +4,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
+ * Métodos a utilizar: remove
+ *
+ *   Usa el método remove para eliminar un elemento del ArrayList basado en su índice.
+ *   Imprime la lista tras la eliminación.
+ *
  *  @author: alejandrosalazargonzalez
  *  @version: 1.0.0
  */

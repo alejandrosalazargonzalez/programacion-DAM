@@ -4,6 +4,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
+ * Métodos a utilizar: hashCode
+ *
+ *   Usa el método hashCode para obtener un código hash del ArrayList.
+ *   Imprime el código hash obtenido.
+ *
  *  @author: alejandrosalazargonzalez
  *  @version: 1.0.0
  */

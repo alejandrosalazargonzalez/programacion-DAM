@@ -5,6 +5,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
+ * Métodos a utilizar: equals
+ *
+ *   Crea dos ArrayList<String> con elementos iguales.
+ *   Usa el método equals para verificar si ambas listas son iguales.
+ *   Imprime el resultado de la comparación.
+ *
  *  @author: alejandrosalazargonzalez
  *  @version: 1.0.0
  */

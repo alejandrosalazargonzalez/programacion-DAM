@@ -4,6 +4,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
+ * Métodos a utilizar: clear
+ *
+ *   Vacía completamente el contenido del ArrayList utilizando el método clear.
+ *   Verifica si está vacío con el método isEmpty e imprime un mensaje.
+ *
  *  @author: alejandrosalazargonzalez
  *  @version: 1.0.0
  */
