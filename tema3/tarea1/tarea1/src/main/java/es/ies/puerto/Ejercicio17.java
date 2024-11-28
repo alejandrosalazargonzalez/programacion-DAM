@@ -17,7 +17,6 @@ import java.util.Collections;
 public class Ejercicio17 {
     public static void main(String[] args) {
         ArrayList<String> nombres = new ArrayList<>(Arrays.asList("Francisco", "Nicolas", "Alexander", "Santiago","Giancarlo"));
-        String remplazo = "Sin Nombre";
         Collections.replaceAll(nombres, "Francisco", "Paco Pill");
 
         System.out.println(nombres);
