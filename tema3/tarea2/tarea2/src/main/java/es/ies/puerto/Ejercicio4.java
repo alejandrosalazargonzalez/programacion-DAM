@@ -2,6 +2,7 @@ package es.ies.puerto;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -9,27 +10,30 @@ import java.util.List;
  *  @version: 1.0.0
  */
 public class Ejercicio4 {
-    static List<String> diasDeLaSemana = new ArrayList<>(Arrays.asList("Lunes", "Martes", "Miércoles", "Jueves"));
-    static List<String> diasDeLaSemana2 = new ArrayList<>(Arrays.asList( "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"));
+    static List<Integer> numeros1 = new ArrayList<>(Arrays.asList(1,2,3,4,5,6));
+    static List<Integer> numeros2 = new ArrayList<>(Arrays.asList( 5,6,7,8,9,10));
     public static void main(String[] args) {
 
-        System.out.println(diasDeLaSemana);
-        System.out.println(diasDeLaSemana2);
-        diasDeLaSemana.retainAll(diasDeLaSemana2);
-        System.out.println(diasDeLaSemana);
-        diasDeLaSemana.removeAll(diasDeLaSemana);
-        System.out.println(diasDeLaSemana);
-        List<String> listaNueva = crearlista(diasDeLaSemana2, diasDeLaSemana);
-        System.out.println(listaNueva);
+        List<Integer> lista = new ArrayList<>();
+        lista = crearlista(numeros1, numeros2);
+        System.out.println(lista);
     }
 
-    static List<String> crearlista(List<String> lista1,List<String> lista2)
+    /**
+     * Metodo que crea una lista nueva juntando otras dos, pero no repite elementos
+     * @param lista1
+     * @param lista2
+     * @return
+     */
+    static List<Integer> crearlista(List<Integer> lista1,List<Integer> lista2)
     {
-        List<String> lista3 = lista1;
-        lista3.addAll(lista1);
-        lista3.addAll(lista2);
-        lista1.retainAll(lista2);
-        lista3.removeAll(lista1);
-        return lista1;
+        List<Integer> lista3 = lista1;
+        List<Integer> lista4 = lista2;
+        List<Integer> lista5 = new ArrayList<>();
+        lista5.addAll(lista3);
+        lista4.removeAll(lista3);
+        lista5.addAll(lista4);
+        Collections.sort(lista5);
+        return lista5;
     }
 }

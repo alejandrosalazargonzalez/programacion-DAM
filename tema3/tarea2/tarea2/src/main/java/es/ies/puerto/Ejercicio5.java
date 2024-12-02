@@ -9,9 +9,11 @@ import java.util.List;
  */
 public class Ejercicio5 {
     public static void main(String[] args) {
-        List<Integer> lista;
-        lista = generarLista(10);
+        List<Integer> lista = new ArrayList<>();
+        System.out.println(tamanio(lista));
+        lista = generarLista(20);
         System.out.println( lista);
+        System.out.println(tamanio(lista));
         lista = removeDiv3(lista);
         System.out.println(lista);
         System.out.println(tamanio(lista));
