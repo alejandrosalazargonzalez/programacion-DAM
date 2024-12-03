@@ -20,6 +20,10 @@ public class Ejercicio15 {
         productos.add(creaLista());
         System.out.println(productos);
         addProducto(productos.get(ropa),"pantalon");
+        addProducto(productos.get(electronica), "ordenador");
+        addProducto(productos.get(libro),"camisa");
+        System.out.println(productos);
+        moverProducto(productos.get(libro), productos.get(ropa), "camisa");
         System.out.println(productos);
     }
 
