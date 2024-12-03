@@ -14,7 +14,7 @@ public class Ejercicio4 {
     static List<Integer> numeros2 = new ArrayList<>(Arrays.asList( 5,6,7,8,9,10));
     public static void main(String[] args) {
 
-        List<Integer> lista = new ArrayList<>();
+        List<Integer> lista;
         lista = crearlista(numeros1, numeros2);
         System.out.println(lista);
     }
