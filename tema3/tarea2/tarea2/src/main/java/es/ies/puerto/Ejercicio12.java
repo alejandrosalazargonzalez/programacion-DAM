@@ -26,7 +26,7 @@ public class Ejercicio12 {
      * @param lista
      * @param inicio
      * @param fin
-     * @return
+     * @return sublista
      */
     static List<String> crearSublista(List<String> lista, String inicio, String fin)
     {
