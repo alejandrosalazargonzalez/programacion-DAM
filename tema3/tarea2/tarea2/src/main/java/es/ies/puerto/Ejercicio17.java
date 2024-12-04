@@ -12,7 +12,7 @@ public class Ejercicio17 {
     static List <String> nombres = new ArrayList<>(Arrays.asList("uno","dos","tres"));
     static List <String> nombres2 = new ArrayList<>(Arrays.asList("uno"));
 
-    public static void main(String[] args) {    
+    public static void main(String[] args) {
         nombres.removeAll(nombres2);
         System.out.println(nombres);
     }
