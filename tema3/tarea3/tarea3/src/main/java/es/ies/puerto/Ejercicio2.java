@@ -1,9 +1,14 @@
+
 package es.ies.puerto;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ *  @author: alejandrosalazargonzalez
+ *  @version: 1.0.0
+ */
 public class Ejercicio2 {
     static List<String> lista = new ArrayList<>(Arrays.asList("Hola","Mundo","Bonito"));
     public static void main(String[] args) {
