@@ -1,0 +1,154 @@
+{
+    // Use IntelliSense para saber los atributos posibles.
+    // Mantenga el puntero para ver las descripciones de los existentes atributos.
+    // Para más información, visite: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio1",
+            "request": "launch",
+            "mainClass": "es.ies.puerto.Ejercicio1",
+            "projectName": "tarea1"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio10",
+            "request": "launch",
+            "mainClass": "es.ies.puerto.Ejercicio10",
+            "projectName": "tarea1"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio11",
+            "request": "launch",
+            "mainClass": "es.ies.puerto.Ejercicio11",
+            "projectName": "tarea1"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio12",
+            "request": "launch",
+            "mainClass": "es.ies.puerto.Ejercicio12",
+            "projectName": "tarea1"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio13",
+            "request": "launch",
+            "mainClass": "es.ies.puerto.Ejercicio13",
+            "projectName": "tarea1"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio14",
+            "request": "launch",
+            "mainClass": "es.ies.puerto.Ejercicio14",
+            "projectName": "tarea1"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio15",
+            "request": "launch",
+            "mainClass": "es.ies.puerto.Ejercicio15",
+            "projectName": "tarea1"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio16",
+            "request": "launch",
+            "mainClass": "es.ies.puerto.Ejercicio16",
+            "projectName": "tarea1"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio17",
+            "request": "launch",
+            "mainClass": "es.ies.puerto.Ejercicio17",
+            "projectName": "tarea1"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio18",
+            "request": "launch",
+            "mainClass": "es.ies.puerto.Ejercicio18",
+            "projectName": "tarea1"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio19",
+            "request": "launch",
+            "mainClass": "es.ies.puerto.Ejercicio19",
+            "projectName": "tarea1"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio2",
+            "request": "launch",
+            "mainClass": "es.ies.puerto.Ejercicio2",
+            "projectName": "tarea1"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio20",
+            "request": "launch",
+            "mainClass": "es.ies.puerto.Ejercicio20",
+            "projectName": "tarea1"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio3",
+            "request": "launch",
+            "mainClass": "es.ies.puerto.Ejercicio3",
+            "projectName": "tarea1"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio4",
+            "request": "launch",
+            "mainClass": "es.ies.puerto.Ejercicio4",
+            "projectName": "tarea1"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio5",
+            "request": "launch",
+            "mainClass": "es.ies.puerto.Ejercicio5",
+            "projectName": "tarea1"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio6",
+            "request": "launch",
+            "mainClass": "es.ies.puerto.Ejercicio6",
+            "projectName": "tarea1"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio7",
+            "request": "launch",
+            "mainClass": "es.ies.puerto.Ejercicio7",
+            "projectName": "tarea1"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio8",
+            "request": "launch",
+            "mainClass": "es.ies.puerto.Ejercicio8",
+            "projectName": "tarea1"
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio9",
+            "request": "launch",
+            "mainClass": "es.ies.puerto.Ejercicio9",
+            "projectName": "tarea1"
+        }
+    ]
+}
