@@ -14,7 +14,7 @@ import java.util.Vector;
 public class Ejercicio9 {
     static Scanner scanner = new Scanner(System.in);
     static List<Integer> enteros = new ArrayList<>();
-    static Vector<Integer> vector = new Vector<>(enteros);    
+    static Vector<Integer> vector = new Vector<>(enteros);
     public static void main(String[] args) {
         System.out.println("Introduce numeros");
         crearVectorDinamico(vector);
