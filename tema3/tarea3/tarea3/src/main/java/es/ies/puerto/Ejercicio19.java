@@ -25,6 +25,7 @@ public class Ejercicio19 {
      * @param sublista
      * @return
      */
+    /*
     static boolean esSublista(List<Integer> lista, List<Integer> sublista)
     {
         if (lista == null || sublista == null || lista.isEmpty() || sublista.isEmpty())
@@ -32,5 +33,27 @@ public class Ejercicio19 {
             return false;
         }
         return lista.containsAll(sublista);
+    }
+    */                               
+    public static boolean esSublista(List<Integer> lista, List<Integer> sublista)
+    {       
+        if(lista == null || lista.isEmpty())
+        {
+            return false;
+        }
+
+        if(sublista == null || sublista.isEmpty())
+        {
+            return false;
+        }
+
+        for (int i = 0; i < lista.size() - sublista.size() + 1; i++)
+        {
+            if (lista.subList(i, i + sublista.size()).equals(sublista))
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }
