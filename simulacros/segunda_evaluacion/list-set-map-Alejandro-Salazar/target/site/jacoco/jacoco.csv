@@ -1,0 +1,14 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+list-set-map,es.ies.puerto.list,AnimalList,13,106,10,16,6,24,10,9,0,6
+list-set-map,es.ies.puerto.list,PersonaList,0,78,0,6,0,20,0,9,0,6
+list-set-map,es.ies.puerto,Articulo,50,27,4,2,17,8,12,3,9,3
+list-set-map,es.ies.puerto,Producto,30,44,2,2,6,16,4,6,2,6
+list-set-map,es.ies.puerto,Item,30,44,2,2,6,16,4,6,2,6
+list-set-map,es.ies.puerto,Persona,38,39,2,4,13,12,11,4,9,3
+list-set-map,es.ies.puerto,Animal,19,58,1,5,9,16,6,9,5,7
+list-set-map,es.ies.puerto,Objeto,24,36,2,2,6,13,4,5,2,5
+list-set-map,es.ies.puerto,Libro,50,27,4,2,17,8,12,3,9,3
+list-set-map,es.ies.puerto.map,ArticuloMap,0,15,0,0,0,7,0,6,0,6
+list-set-map,es.ies.puerto.map,ArticuloMapOrdenado,0,15,0,0,0,7,0,6,0,6
+list-set-map,es.ies.puerto.set,AnimalSet,0,15,0,0,0,7,0,6,0,6
+list-set-map,es.ies.puerto.set,LibroSet,0,15,0,0,0,7,0,6,0,6

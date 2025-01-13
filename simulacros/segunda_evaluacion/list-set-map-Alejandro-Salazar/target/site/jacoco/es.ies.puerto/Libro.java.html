@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Libro.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">list-set-map</a> &gt; <a href="index.source.html" class="el_package">es.ies.puerto</a> &gt; <span class="el_source">Libro.java</span></div><h1>Libro.java</h1><pre class="source lang-java linenums">package es.ies.puerto;
+
+public class Libro {
+    private String titulo;
+    private String autor;
+    private String isbn; 
+
+    /**
+     * Constructor por defecto
+     */
+<span class="nc" id="L11">    public Libro() {</span>
+<span class="nc" id="L12">    }</span>
+
+    /**
+     * Constructor con todos los atributos
+     * @param titulo del libro
+     * @param autor del libro
+     * @param isbn del libro
+     */
+<span class="fc" id="L20">    public Libro(String titulo, String autor, String isbn) {</span>
+<span class="fc" id="L21">        this.titulo = titulo;</span>
+<span class="fc" id="L22">        this.autor = autor;</span>
+<span class="fc" id="L23">        this.isbn = isbn;</span>
+<span class="fc" id="L24">    }</span>
+
+    /**
+     * Constructor con solo el ISBN
+     * @param isbn del libro
+     */
+<span class="nc" id="L30">    public Libro(String isbn) {</span>
+<span class="nc" id="L31">        this.isbn = isbn;</span>
+<span class="nc" id="L32">    }</span>
+
+    // Getters y Setters
+    public String getTitulo() {
+<span class="nc" id="L36">        return titulo;</span>
+    }
+
+    public void setTitulo(String titulo) {
+<span class="nc" id="L40">        this.titulo = titulo;</span>
+<span class="nc" id="L41">    }</span>
+
+    public String getAutor() {
+<span class="nc" id="L44">        return autor;</span>
+    }
+
+    public void setAutor(String autor) {
+<span class="nc" id="L48">        this.autor = autor;</span>
+<span class="nc" id="L49">    }</span>
+
+    public String getIsbn() {
+<span class="nc" id="L52">        return isbn;</span>
+    }
+
+    public void setIsbn(String isbn) {
+<span class="nc" id="L56">        this.isbn = isbn;</span>
+<span class="nc" id="L57">    }</span>
+
+    @Override
+    public String toString() {
+<span class="fc" id="L61">        return &quot;Libro [titulo=&quot; + titulo + &quot;, autor=&quot; + autor + &quot;, isbn=&quot; + isbn + &quot;]&quot;;</span>
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+<span class="pc bpc" id="L66" title="1 of 2 branches missed.">        if (this == obj) return true;</span>
+<span class="pc bpc" id="L67" title="3 of 4 branches missed.">        if (obj == null || getClass() != obj.getClass()) return false;</span>
+<span class="nc" id="L68">        Libro libro = (Libro) obj;</span>
+<span class="nc" id="L69">        return isbn.equals(libro.isbn);</span>
+    }
+
+    @Override
+    public int hashCode() {
+<span class="nc" id="L74">        return isbn.hashCode();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

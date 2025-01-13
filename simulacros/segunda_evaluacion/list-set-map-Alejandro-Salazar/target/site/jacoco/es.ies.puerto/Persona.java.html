@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Persona.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">list-set-map</a> &gt; <a href="index.source.html" class="el_package">es.ies.puerto</a> &gt; <span class="el_source">Persona.java</span></div><h1>Persona.java</h1><pre class="source lang-java linenums">package es.ies.puerto;
+
+/**
+ * Clase persona
+ */
+public class Persona {
+    private String nombre;
+    private int edad;
+    private String dni; 
+
+    /**
+     * Constructor por defecto
+     */
+<span class="nc" id="L14">    public Persona() {</span>
+<span class="nc" id="L15">    }</span>
+
+    /**
+     * Constructor con todos los atributos
+     * @param nombre de la persona
+     * @param edad de la persona
+     * @param dni de la persona
+     */
+<span class="fc" id="L23">    public Persona(String nombre, int edad, String dni) {</span>
+<span class="fc" id="L24">        this.nombre = nombre;</span>
+<span class="fc" id="L25">        this.edad = edad;</span>
+<span class="fc" id="L26">        this.dni = dni;</span>
+<span class="fc" id="L27">    }</span>
+
+    /**
+     * Constructor con solo el DNI
+     * @param dni de la persona
+     */
+<span class="fc" id="L33">    public Persona(String dni) {</span>
+<span class="fc" id="L34">        this.dni = dni;</span>
+<span class="fc" id="L35">    }</span>
+
+    // Getters y Setters
+    public String getNombre() {
+<span class="nc" id="L39">        return nombre;</span>
+    }
+
+    public void setNombre(String nombre) {
+<span class="nc" id="L43">        this.nombre = nombre;</span>
+<span class="nc" id="L44">    }</span>
+
+    public int getEdad() {
+<span class="nc" id="L47">        return edad;</span>
+    }
+
+    public void setEdad(int edad) {
+<span class="nc" id="L51">        this.edad = edad;</span>
+<span class="nc" id="L52">    }</span>
+
+    public String getDni() {
+<span class="nc" id="L55">        return dni;</span>
+    }
+
+    public void setDni(String dni) {
+<span class="nc" id="L59">        this.dni = dni;</span>
+<span class="nc" id="L60">    }</span>
+
+    // toString
+    @Override
+    public String toString() {
+<span class="nc" id="L65">        return &quot;Persona [nombre=&quot; + nombre + &quot;, edad=&quot; + edad + &quot;, dni=&quot; + dni + &quot;]&quot;;</span>
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+<span class="fc bfc" id="L70" title="All 2 branches covered.">        if (this == obj) return true;</span>
+<span class="pc bpc" id="L71" title="2 of 4 branches missed.">        if (obj == null || getClass() != obj.getClass()) return false;</span>
+<span class="fc" id="L72">        Persona persona = (Persona) obj;</span>
+<span class="fc" id="L73">        return dni.equals(persona.dni);</span>
+    }
+
+    @Override
+    public int hashCode() {
+<span class="nc" id="L78">        return dni.hashCode();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>
