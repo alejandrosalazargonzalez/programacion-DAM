@@ -65,13 +65,14 @@ public class AnimalSet {
         if (identificador == null || identificador.isEmpty() || nuevoAnimal == null) {
             return false;
         }
-        Animal animalBuscado = new Animal(identificador);
+        /* Animal animalBuscado = new Animal(identificador);
         for (int i = 0; i < animales.size(); i++) {
             animales.
             if (animalBuscado.equals()) {
                 
             }
         }
+        */
         return false;
     }
 
