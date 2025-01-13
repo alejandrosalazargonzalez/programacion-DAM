@@ -4,34 +4,37 @@ import java.util.ArrayList;
 import java.util.List;
 
 import es.ies.puerto.Persona;
-
+/**
+ *  @author: alejandrosalazargonzalez
+ *  @version: 1.0.0
+ */
 public class PersonaList {
 
     private List&lt;Persona&gt; personas;
 
-<span class="fc" id="L12">    public PersonaList() {</span>
-<span class="fc" id="L13">        this.personas = new ArrayList&lt;&gt;();</span>
-<span class="fc" id="L14">    }</span>
+<span class="fc" id="L15">    public PersonaList() {</span>
+<span class="fc" id="L16">        this.personas = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L17">    }</span>
 
     public boolean agregar(Persona persona) {
-<span class="fc bfc" id="L17" title="All 2 branches covered.">        if (!personas.contains(persona)) {</span>
-<span class="fc" id="L18">            return personas.add(persona);</span>
+<span class="fc bfc" id="L20" title="All 2 branches covered.">        if (!personas.contains(persona)) {</span>
+<span class="fc" id="L21">            return personas.add(persona);</span>
         } else {
-<span class="fc" id="L20">            return false;</span>
+<span class="fc" id="L23">            return false;</span>
         }
     }
 
     public List&lt;Persona&gt; listar() {
-<span class="fc" id="L25">        return new ArrayList&lt;&gt;(personas);</span>
+<span class="fc" id="L28">        return new ArrayList&lt;&gt;(personas);</span>
     }
 
     public Persona buscar(String dni) {
-<span class="fc" id="L29">        Persona personaBuscar = new Persona(dni);</span>
-<span class="fc" id="L30">        int posicion = personas.indexOf(personaBuscar);</span>
-<span class="fc bfc" id="L31" title="All 2 branches covered.">        if (posicion &lt; 0) {</span>
-<span class="fc" id="L32">            return null;</span>
+<span class="fc" id="L32">        Persona personaBuscar = new Persona(dni);</span>
+<span class="fc" id="L33">        int posicion = personas.indexOf(personaBuscar);</span>
+<span class="fc bfc" id="L34" title="All 2 branches covered.">        if (posicion &lt; 0) {</span>
+<span class="fc" id="L35">            return null;</span>
         } else {
-<span class="fc" id="L34">            return personas.get(posicion);</span>
+<span class="fc" id="L37">            return personas.get(posicion);</span>
         }
         /**
         return personas.stream()
@@ -50,18 +53,18 @@ public class PersonaList {
             }
         }
         */
-<span class="fc" id="L53">        Persona personaBuscar = new Persona(dni);</span>
-<span class="fc" id="L54">        int posicion = personas.indexOf(personaBuscar);</span>
-<span class="fc bfc" id="L55" title="All 2 branches covered.">        if (posicion &lt; 0) {</span>
-<span class="fc" id="L56">            return false;</span>
+<span class="fc" id="L56">        Persona personaBuscar = new Persona(dni);</span>
+<span class="fc" id="L57">        int posicion = personas.indexOf(personaBuscar);</span>
+<span class="fc bfc" id="L58" title="All 2 branches covered.">        if (posicion &lt; 0) {</span>
+<span class="fc" id="L59">            return false;</span>
         }
-<span class="fc" id="L58">        personas.set(posicion, nuevaPersona);</span>
-<span class="fc" id="L59">        return true;</span>
+<span class="fc" id="L61">        personas.set(posicion, nuevaPersona);</span>
+<span class="fc" id="L62">        return true;</span>
     }
 
     public boolean eliminar(String dni) {
-<span class="fc" id="L63">        Persona personaEliminar = new Persona(dni);</span>
-<span class="fc" id="L64">        return personas.remove(personaEliminar);</span>
+<span class="fc" id="L66">        Persona personaEliminar = new Persona(dni);</span>
+<span class="fc" id="L67">        return personas.remove(personaEliminar);</span>
     }
     
 }

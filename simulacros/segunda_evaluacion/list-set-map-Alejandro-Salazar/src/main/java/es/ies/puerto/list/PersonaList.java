@@ -4,7 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import es.ies.puerto.Persona;
-
+/**
+ *  @author: alejandrosalazargonzalez
+ *  @version: 1.0.0
+ */
 public class PersonaList {
 
     private List<Persona> personas;

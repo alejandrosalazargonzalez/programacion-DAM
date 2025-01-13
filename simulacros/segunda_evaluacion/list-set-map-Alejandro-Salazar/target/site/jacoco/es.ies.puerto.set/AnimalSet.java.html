@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AnimalSet.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">list-set-map</a> &gt; <a href="index.source.html" class="el_package">es.ies.puerto.set</a> &gt; <span class="el_source">AnimalSet.java</span></div><h1>AnimalSet.java</h1><pre class="source lang-java linenums">package es.ies.puerto.set;
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AnimalSet.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">list-set-map</a> &gt; <a href="index.source.html" class="el_package">es.ies.puerto.set</a> &gt; <span class="el_source">AnimalSet.java</span></div><h1>AnimalSet.java</h1><pre class="source lang-java linenums">
+package es.ies.puerto.set;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -7,31 +8,96 @@ import java.util.Set;
 
 import es.ies.puerto.*;
 
+/**
+ *  @author: alejandrosalazargonzalez
+ *  @version: 1.0.0
+ */
 public class AnimalSet {
     private Set&lt;Animal&gt; animales;
 
-<span class="fc" id="L13">    public AnimalSet() {</span>
+    /**
+     * Constructor vacio
+     */
+<span class="fc" id="L21">    public AnimalSet() {</span>
+<span class="fc" id="L22">        this.animales = new HashSet&lt;&gt;();</span>
+<span class="fc" id="L23">    }</span>
 
-<span class="fc" id="L15">    }</span>
-
+    /**
+     * Agrega un animal
+     * @param animal
+     * @return
+     */
     public boolean agregar(Animal animal) {
-<span class="fc" id="L18">        return false;</span>
+<span class="pc bpc" id="L31" title="1 of 2 branches missed.">        if (animal == null) {</span>
+<span class="nc" id="L32">            return false;</span>
+        }
+<span class="fc" id="L34">        return animales.add(animal);</span>
     }
 
+    /**
+     * Lista los animales
+     * @return
+     */
     public Set&lt;Animal&gt; listarAnimales() {
-<span class="fc" id="L22">        return new HashSet();</span>
+<span class="fc" id="L42">        return new HashSet(animales);</span>
     }
 
+    /**
+     * busca a un animal por el identificador
+     * @param identificador
+     * @return
+     */
     public Animal buscar(String identificador) {
-<span class="fc" id="L26">        return null;     </span>
+<span class="pc bpc" id="L51" title="2 of 4 branches missed.">        if (identificador == null || identificador.isEmpty()) {</span>
+<span class="nc" id="L52">            return null;</span>
+        }
+<span class="fc" id="L54">        Animal animalBuscado = new Animal(identificador);</span>
+<span class="fc bfc" id="L55" title="All 2 branches covered.">        for (Animal animal : animales) {</span>
+<span class="pc bpc" id="L56" title="1 of 2 branches missed.">            if (animal.equals(animalBuscado)) {</span>
+<span class="fc" id="L57">                return animal;</span>
+            }
+<span class="nc" id="L59">        }</span>
+<span class="fc" id="L60">        return null;     </span>
+        
+        /** return animales.stream()
+         *          .filter(a -&gt; a.getIdentificador()
+         *          .equals(identificador))
+         *          .findFirst().orElse(null;)
+         */
     }
 
+    /**
+     * actualiza un animal
+     * @param identificador
+     * @param nuevoAnimal
+     * @return
+     */
     public boolean actualizar(String identificador, Animal nuevoAnimal) {
-<span class="fc" id="L30">        return false;</span>
+<span class="pc bpc" id="L76" title="3 of 6 branches missed.">        if (identificador == null || identificador.isEmpty() || nuevoAnimal == null) {</span>
+<span class="nc" id="L77">            return false;</span>
+        }
+<span class="fc" id="L79">        Animal animalBuscado = new Animal(identificador);</span>
+<span class="fc bfc" id="L80" title="All 2 branches covered.">        if(animales.contains(animalBuscado)){</span>
+<span class="fc" id="L81">            animales.remove(animalBuscado);</span>
+<span class="fc" id="L82">            return animales.add(nuevoAnimal);</span>
+        }
+<span class="fc" id="L84">        return false;</span>
     }
 
+    /**
+     * elimina un animal
+     * @param identificador
+     * @return
+     */
     public boolean eliminar(String identificador) {
-<span class="fc" id="L34">        return false;</span>
+<span class="pc bpc" id="L93" title="2 of 4 branches missed.">        if (identificador == null || identificador.isEmpty()) {</span>
+<span class="nc" id="L94">            return false;</span>
+        }
+<span class="fc" id="L96">        Animal animalEliminar = new Animal(identificador);</span>
+<span class="fc bfc" id="L97" title="All 2 branches covered.">        if (animales.contains(animalEliminar)) {</span>
+<span class="fc" id="L98">            return animales.remove(animalEliminar);</span>
+        }
+<span class="fc" id="L100">        return false;</span>
     }
 
 }

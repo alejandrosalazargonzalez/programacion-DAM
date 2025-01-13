@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="es.ies.puerto.PersonaListTest" time="0.024" tests="5" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="es.ies.puerto.PersonaListTest" time="0.107" tests="5" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="23"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
-    <property name="java.class.path" value="/home/dam/Escritorio/list-set-map-Alejandro-Salazar/target/test-classes:/home/dam/Escritorio/list-set-map-Alejandro-Salazar/target/classes:/home/dam/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.0/junit-jupiter-api-5.10.0.jar:/home/dam/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/dam/.m2/repository/org/junit/platform/junit-platform-commons/1.10.0/junit-platform-commons-1.10.0.jar:/home/dam/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/dam/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.0/junit-jupiter-engine-5.10.0.jar:/home/dam/.m2/repository/org/junit/platform/junit-platform-engine/1.10.0/junit-platform-engine-1.10.0.jar:/home/dam/.m2/repository/org/mockito/mockito-core/5.4.0/mockito-core-5.4.0.jar:/home/dam/.m2/repository/net/bytebuddy/byte-buddy/1.14.5/byte-buddy-1.14.5.jar:/home/dam/.m2/repository/net/bytebuddy/byte-buddy-agent/1.14.5/byte-buddy-agent-1.14.5.jar:/home/dam/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/home/dam/.m2/repository/org/mockito/mockito-junit-jupiter/5.4.0/mockito-junit-jupiter-5.4.0.jar:/home/dam/.m2/repository/org/simpleframework/simple-xml/2.7.1/simple-xml-2.7.1.jar:/home/dam/.m2/repository/stax/stax-api/1.0.1/stax-api-1.0.1.jar:/home/dam/.m2/repository/stax/stax/1.2.0/stax-1.2.0.jar:/home/dam/.m2/repository/xpp3/xpp3/1.1.3.3/xpp3-1.1.3.3.jar:/home/dam/.m2/repository/com/google/code/gson/gson/2.8.9/gson-2.8.9.jar:/home/dam/.m2/repository/org/xerial/sqlite-jdbc/3.45.2.0/sqlite-jdbc-3.45.2.0.jar:/home/dam/.m2/repository/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar:"/>
+    <property name="java.class.path" value="/home/bae2/Descargas/programacion-DAM/simulacros/segunda_evaluacion/list-set-map-Alejandro-Salazar/target/test-classes:/home/bae2/Descargas/programacion-DAM/simulacros/segunda_evaluacion/list-set-map-Alejandro-Salazar/target/classes:/home/bae2/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.0/junit-jupiter-api-5.10.0.jar:/home/bae2/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/bae2/.m2/repository/org/junit/platform/junit-platform-commons/1.10.0/junit-platform-commons-1.10.0.jar:/home/bae2/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/bae2/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.0/junit-jupiter-engine-5.10.0.jar:/home/bae2/.m2/repository/org/junit/platform/junit-platform-engine/1.10.0/junit-platform-engine-1.10.0.jar:/home/bae2/.m2/repository/org/mockito/mockito-core/5.4.0/mockito-core-5.4.0.jar:/home/bae2/.m2/repository/net/bytebuddy/byte-buddy/1.14.5/byte-buddy-1.14.5.jar:/home/bae2/.m2/repository/net/bytebuddy/byte-buddy-agent/1.14.5/byte-buddy-agent-1.14.5.jar:/home/bae2/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/home/bae2/.m2/repository/org/mockito/mockito-junit-jupiter/5.4.0/mockito-junit-jupiter-5.4.0.jar:/home/bae2/.m2/repository/org/simpleframework/simple-xml/2.7.1/simple-xml-2.7.1.jar:/home/bae2/.m2/repository/stax/stax-api/1.0.1/stax-api-1.0.1.jar:/home/bae2/.m2/repository/stax/stax/1.2.0/stax-1.2.0.jar:/home/bae2/.m2/repository/xpp3/xpp3/1.1.3.3/xpp3-1.1.3.3.jar:/home/bae2/.m2/repository/com/google/code/gson/gson/2.8.9/gson-2.8.9.jar:/home/bae2/.m2/repository/org/xerial/sqlite-jdbc/3.45.2.0/sqlite-jdbc-3.45.2.0.jar:/home/bae2/.m2/repository/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar:"/>
     <property name="java.vm.vendor" value="Eclipse Adoptium"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.vendor.url" value="https://adoptium.net/"/>
@@ -11,38 +11,38 @@
     <property name="java.vm.specification.version" value="23"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="ES"/>
-    <property name="sun.boot.library.path" value="/home/dam/.config/Code/User/globalStorage/pleiades.java-extension-pack-jdk/java/latest/lib"/>
-    <property name="sun.java.command" value="/home/dam/Escritorio/list-set-map-Alejandro-Salazar/target/surefire/surefirebooter-20250110200707654_3.jar /home/dam/Escritorio/list-set-map-Alejandro-Salazar/target/surefire 2025-01-10T20-07-07_574-jvmRun1 surefire-20250110200707654_1tmp surefire_0-20250110200707654_2tmp"/>
+    <property name="sun.boot.library.path" value="/home/bae2/.config/Code/User/globalStorage/pleiades.java-extension-pack-jdk/java/latest/lib"/>
+    <property name="sun.java.command" value="/home/bae2/Descargas/programacion-DAM/simulacros/segunda_evaluacion/list-set-map-Alejandro-Salazar/target/surefire/surefirebooter-20250113192455908_3.jar /home/bae2/Descargas/programacion-DAM/simulacros/segunda_evaluacion/list-set-map-Alejandro-Salazar/target/surefire 2025-01-13T19-24-55_693-jvmRun1 surefire-20250113192455908_1tmp surefire_0-20250113192455908_2tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="/home/dam/Escritorio/list-set-map-Alejandro-Salazar/target/test-classes:/home/dam/Escritorio/list-set-map-Alejandro-Salazar/target/classes:/home/dam/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.0/junit-jupiter-api-5.10.0.jar:/home/dam/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/dam/.m2/repository/org/junit/platform/junit-platform-commons/1.10.0/junit-platform-commons-1.10.0.jar:/home/dam/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/dam/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.0/junit-jupiter-engine-5.10.0.jar:/home/dam/.m2/repository/org/junit/platform/junit-platform-engine/1.10.0/junit-platform-engine-1.10.0.jar:/home/dam/.m2/repository/org/mockito/mockito-core/5.4.0/mockito-core-5.4.0.jar:/home/dam/.m2/repository/net/bytebuddy/byte-buddy/1.14.5/byte-buddy-1.14.5.jar:/home/dam/.m2/repository/net/bytebuddy/byte-buddy-agent/1.14.5/byte-buddy-agent-1.14.5.jar:/home/dam/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/home/dam/.m2/repository/org/mockito/mockito-junit-jupiter/5.4.0/mockito-junit-jupiter-5.4.0.jar:/home/dam/.m2/repository/org/simpleframework/simple-xml/2.7.1/simple-xml-2.7.1.jar:/home/dam/.m2/repository/stax/stax-api/1.0.1/stax-api-1.0.1.jar:/home/dam/.m2/repository/stax/stax/1.2.0/stax-1.2.0.jar:/home/dam/.m2/repository/xpp3/xpp3/1.1.3.3/xpp3-1.1.3.3.jar:/home/dam/.m2/repository/com/google/code/gson/gson/2.8.9/gson-2.8.9.jar:/home/dam/.m2/repository/org/xerial/sqlite-jdbc/3.45.2.0/sqlite-jdbc-3.45.2.0.jar:/home/dam/.m2/repository/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar:"/>
+    <property name="surefire.test.class.path" value="/home/bae2/Descargas/programacion-DAM/simulacros/segunda_evaluacion/list-set-map-Alejandro-Salazar/target/test-classes:/home/bae2/Descargas/programacion-DAM/simulacros/segunda_evaluacion/list-set-map-Alejandro-Salazar/target/classes:/home/bae2/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.0/junit-jupiter-api-5.10.0.jar:/home/bae2/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/bae2/.m2/repository/org/junit/platform/junit-platform-commons/1.10.0/junit-platform-commons-1.10.0.jar:/home/bae2/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/bae2/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.0/junit-jupiter-engine-5.10.0.jar:/home/bae2/.m2/repository/org/junit/platform/junit-platform-engine/1.10.0/junit-platform-engine-1.10.0.jar:/home/bae2/.m2/repository/org/mockito/mockito-core/5.4.0/mockito-core-5.4.0.jar:/home/bae2/.m2/repository/net/bytebuddy/byte-buddy/1.14.5/byte-buddy-1.14.5.jar:/home/bae2/.m2/repository/net/bytebuddy/byte-buddy-agent/1.14.5/byte-buddy-agent-1.14.5.jar:/home/bae2/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/home/bae2/.m2/repository/org/mockito/mockito-junit-jupiter/5.4.0/mockito-junit-jupiter-5.4.0.jar:/home/bae2/.m2/repository/org/simpleframework/simple-xml/2.7.1/simple-xml-2.7.1.jar:/home/bae2/.m2/repository/stax/stax-api/1.0.1/stax-api-1.0.1.jar:/home/bae2/.m2/repository/stax/stax/1.2.0/stax-1.2.0.jar:/home/bae2/.m2/repository/xpp3/xpp3/1.1.3.3/xpp3-1.1.3.3.jar:/home/bae2/.m2/repository/com/google/code/gson/gson/2.8.9/gson-2.8.9.jar:/home/bae2/.m2/repository/org/xerial/sqlite-jdbc/3.45.2.0/sqlite-jdbc-3.45.2.0.jar:/home/bae2/.m2/repository/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
-    <property name="user.home" value="/home/dam"/>
+    <property name="user.home" value="/home/bae2"/>
     <property name="user.language" value="es"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="java.version.date" value="2024-10-15"/>
-    <property name="java.home" value="/home/dam/.config/Code/User/globalStorage/pleiades.java-extension-pack-jdk/java/latest"/>
+    <property name="java.home" value="/home/bae2/.config/Code/User/globalStorage/pleiades.java-extension-pack-jdk/java/latest"/>
     <property name="file.separator" value="/"/>
-    <property name="basedir" value="/home/dam/Escritorio/list-set-map-Alejandro-Salazar"/>
-    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="basedir" value="/home/bae2/Descargas/programacion-DAM/simulacros/segunda_evaluacion/list-set-map-Alejandro-Salazar"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
     <property name="line.separator" value="&#10;"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
-    <property name="surefire.real.class.path" value="/home/dam/Escritorio/list-set-map-Alejandro-Salazar/target/surefire/surefirebooter-20250110200707654_3.jar"/>
+    <property name="surefire.real.class.path" value="/home/bae2/Descargas/programacion-DAM/simulacros/segunda_evaluacion/list-set-map-Alejandro-Salazar/target/surefire/surefirebooter-20250113192455908_3.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="23.0.1+11"/>
-    <property name="user.name" value="dam"/>
+    <property name="user.name" value="bae2"/>
     <property name="stdout.encoding" value="UTF-8"/>
     <property name="path.separator" value=":"/>
-    <property name="os.version" value="5.15.0-100-generic"/>
+    <property name="os.version" value="5.15.0-76-generic"/>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="file.encoding" value="UTF-8"/>
     <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
     <property name="java.vendor.version" value="Temurin-23.0.1+11"/>
-    <property name="localRepository" value="/home/dam/.m2/repository"/>
+    <property name="localRepository" value="/home/bae2/.m2/repository"/>
     <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
     <property name="java.io.tmpdir" value="/tmp"/>
     <property name="java.version" value="23.0.1"/>
-    <property name="user.dir" value="/home/dam/Escritorio/list-set-map-Alejandro-Salazar"/>
+    <property name="user.dir" value="/home/bae2/Descargas/programacion-DAM/simulacros/segunda_evaluacion/list-set-map-Alejandro-Salazar"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="native.encoding" value="UTF-8"/>
@@ -54,9 +54,9 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="67.0"/>
   </properties>
-  <testcase name="testEliminarPersona" classname="es.ies.puerto.PersonaListTest" time="0.01"/>
-  <testcase name="testActualizarPersona" classname="es.ies.puerto.PersonaListTest" time="0.003"/>
-  <testcase name="testBuscarPersona" classname="es.ies.puerto.PersonaListTest" time="0.001"/>
-  <testcase name="testAgregarPersona" classname="es.ies.puerto.PersonaListTest" time="0.001"/>
-  <testcase name="testListarPersonas" classname="es.ies.puerto.PersonaListTest" time="0.001"/>
+  <testcase name="testEliminarPersona" classname="es.ies.puerto.PersonaListTest" time="0.011"/>
+  <testcase name="testActualizarPersona" classname="es.ies.puerto.PersonaListTest" time="0.014"/>
+  <testcase name="testBuscarPersona" classname="es.ies.puerto.PersonaListTest" time="0.002"/>
+  <testcase name="testAgregarPersona" classname="es.ies.puerto.PersonaListTest" time="0.026"/>
+  <testcase name="testListarPersonas" classname="es.ies.puerto.PersonaListTest" time="0.005"/>
 </testsuite>

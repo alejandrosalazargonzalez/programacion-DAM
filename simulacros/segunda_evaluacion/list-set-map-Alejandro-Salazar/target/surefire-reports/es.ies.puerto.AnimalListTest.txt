@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: es.ies.puerto.AnimalListTest
 -------------------------------------------------------------------------------
-Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.031 s -- in es.ies.puerto.AnimalListTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.102 s -- in es.ies.puerto.AnimalListTest

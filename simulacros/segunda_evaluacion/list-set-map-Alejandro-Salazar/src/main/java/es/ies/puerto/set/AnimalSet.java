@@ -1,3 +1,4 @@
+
 package es.ies.puerto.set;
 
 import java.util.ArrayList;
@@ -7,6 +8,10 @@ import java.util.Set;
 
 import es.ies.puerto.*;
 
+/**
+ *  @author: alejandrosalazargonzalez
+ *  @version: 1.0.0
+ */
 public class AnimalSet {
     private Set<Animal> animales;
 
@@ -53,6 +58,12 @@ public class AnimalSet {
             }
         }
         return null;     
+        
+        /** return animales.stream()
+         *          .filter(a -> a.getIdentificador()
+         *          .equals(identificador))
+         *          .findFirst().orElse(null;)
+         */
     }
 
     /**
@@ -65,18 +76,27 @@ public class AnimalSet {
         if (identificador == null || identificador.isEmpty() || nuevoAnimal == null) {
             return false;
         }
-        /* Animal animalBuscado = new Animal(identificador);
-        for (int i = 0; i < animales.size(); i++) {
-            animales.
-            if (animalBuscado.equals()) {
-                
-            }
+        Animal animalBuscado = new Animal(identificador);
+        if(animales.contains(animalBuscado)){
+            animales.remove(animalBuscado);
+            return animales.add(nuevoAnimal);
         }
-        */
         return false;
     }
 
+    /**
+     * elimina un animal
+     * @param identificador
+     * @return
+     */
     public boolean eliminar(String identificador) {
+        if (identificador == null || identificador.isEmpty()) {
+            return false;
+        }
+        Animal animalEliminar = new Animal(identificador);
+        if (animales.contains(animalEliminar)) {
+            return animales.remove(animalEliminar);
+        }
         return false;
     }
 

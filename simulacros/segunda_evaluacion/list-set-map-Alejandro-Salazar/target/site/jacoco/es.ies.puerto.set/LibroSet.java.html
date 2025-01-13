@@ -4,32 +4,89 @@ import java.util.HashSet;
 import java.util.Set;
 
 import es.ies.puerto.Libro;
-
+/**
+ *  @author: alejandrosalazargonzalez
+ *  @version: 1.0.0
+ */
 public class LibroSet {
     Set&lt;Libro&gt; libros;
 
-<span class="fc" id="L11">    public LibroSet() {</span>
+    /**
+     * constructor vacio
+     */
+<span class="fc" id="L17">    public LibroSet() {</span>
+<span class="fc" id="L18">        this.libros = new HashSet&lt;&gt;();</span>
+<span class="fc" id="L19">    }</span>
 
-<span class="fc" id="L13">    }</span>
-
+    /**
+     * Agrega un libro a la lista
+     * @param libro
+     * @return true/false
+     */
     public boolean agregar(Libro libro) {
-<span class="fc" id="L16">        return false;</span>
+<span class="pc bpc" id="L27" title="1 of 2 branches missed.">        if (libro == null) {</span>
+<span class="nc" id="L28">            return false;</span>
+        }
+
+<span class="fc" id="L31">        return libros.add(libro);</span>
     }
 
+    /**
+     * Lista los libros
+     * @return hashset de los libros
+     */
     public Set&lt;Libro&gt; listar() {
-<span class="fc" id="L20">        return new HashSet();</span>
+<span class="fc" id="L39">        return new HashSet(libros);</span>
     }
 
+    /**
+     * busca libros por su isbn
+     * @param isbn
+     * @return null o libro
+     */
     public Libro buscar(String isbn) {
-<span class="fc" id="L24">        return null;     </span>
+<span class="pc bpc" id="L48" title="2 of 4 branches missed.">                if (isbn == null || isbn.isEmpty()) {</span>
+<span class="nc" id="L49">            return null;</span>
+        }
+<span class="fc" id="L51">        Libro libroBuscado = new Libro(isbn);</span>
+<span class="fc bfc" id="L52" title="All 2 branches covered.">        for (Libro libro : libros) {</span>
+<span class="pc bpc" id="L53" title="1 of 2 branches missed.">            if (libro.equals(libroBuscado)) {</span>
+<span class="fc" id="L54">                return libro;</span>
+            }
+<span class="nc" id="L56">        }</span>
+<span class="fc" id="L57">        return null;     </span>
     }
 
+    /**
+     * Actualiza un libro
+     * @param isbn
+     * @param libro
+     * @return true/fasle
+     */
     public boolean actualizar(String isbn, Libro libro) {
-<span class="fc" id="L28">        return false;</span>
+<span class="pc bpc" id="L67" title="3 of 6 branches missed.">        if (isbn == null || isbn.isEmpty() || libro == null) {</span>
+<span class="nc" id="L68">            return false;</span>
+        }
+<span class="fc" id="L70">        Libro libroBuscado = new Libro(isbn);</span>
+<span class="fc bfc" id="L71" title="All 2 branches covered.">        if (libros.contains(libroBuscado)) {</span>
+<span class="fc" id="L72">            libros.remove(libroBuscado);</span>
+<span class="fc" id="L73">            libros.add(libro);</span>
+<span class="fc" id="L74">            return true;</span>
+        }
+<span class="fc" id="L76">        return false;</span>
     }
 
+    /**
+     * elimina un libro
+     * @param isbn
+     * @return true/false
+     */
     public boolean eliminar(String isbn) {
-<span class="fc" id="L32">        return false;</span>
+<span class="pc bpc" id="L85" title="2 of 4 branches missed.">        if (isbn == null || isbn.isEmpty()) {</span>
+<span class="nc" id="L86">            return false;</span>
+        }
+<span class="fc" id="L88">        Libro libroEliminar = new Libro(isbn);</span>
+<span class="fc" id="L89">        return libros.remove(libroEliminar);</span>
     }
 
 }

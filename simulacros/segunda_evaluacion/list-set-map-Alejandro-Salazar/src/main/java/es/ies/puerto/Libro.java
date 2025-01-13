@@ -1,5 +1,8 @@
 package es.ies.puerto;
-
+/**
+ *  @author: alejandrosalazargonzalez
+ *  @version: 1.0.0
+ */
 public class Libro {
     private String titulo;
     private String autor;

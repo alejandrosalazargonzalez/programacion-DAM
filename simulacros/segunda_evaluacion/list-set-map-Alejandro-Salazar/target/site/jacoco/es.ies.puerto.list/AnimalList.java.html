@@ -4,16 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 import es.ies.puerto.*;
-
+/**
+ *  @author: alejandrosalazargonzalez
+ *  @version: 1.0.0
+ */
 public class AnimalList {
     private List&lt;Animal&gt; animales;
 
     /**
      * Constructor vacio
      */
-<span class="fc" id="L14">    public AnimalList() {</span>
-<span class="fc" id="L15">        this.animales = new ArrayList&lt;&gt;();</span>
-<span class="fc" id="L16">    }</span>
+<span class="fc" id="L17">    public AnimalList() {</span>
+<span class="fc" id="L18">        this.animales = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L19">    }</span>
 
     /**
      * Metodo para agregar un animal a la lista
@@ -21,13 +24,13 @@ public class AnimalList {
      * @return
      */
     public boolean agregar(Animal animal) {
-<span class="fc bfc" id="L24" title="All 2 branches covered.">        if (animales.contains(animal)) {</span>
-<span class="fc" id="L25">            return false;</span>
+<span class="fc bfc" id="L27" title="All 2 branches covered.">        if (animales.contains(animal)) {</span>
+<span class="fc" id="L28">            return false;</span>
         }
-<span class="pc bpc" id="L27" title="1 of 2 branches missed.">        if (animal == null) {</span>
-<span class="nc" id="L28">            return false;</span>
+<span class="pc bpc" id="L30" title="1 of 2 branches missed.">        if (animal == null) {</span>
+<span class="nc" id="L31">            return false;</span>
         }
-<span class="fc" id="L30">        return animales.add(animal);</span>
+<span class="fc" id="L33">        return animales.add(animal);</span>
     }
 
     /**
@@ -35,7 +38,7 @@ public class AnimalList {
      * @return
      */
     public List&lt;Animal&gt; listar() {
-<span class="fc" id="L38">        return new ArrayList&lt;&gt;(animales);</span>
+<span class="fc" id="L41">        return new ArrayList&lt;&gt;(animales);</span>
     }
 
     /**
@@ -44,21 +47,21 @@ public class AnimalList {
      * @return animal
      */
     public Animal buscar(String identificador) {
-<span class="pc bpc" id="L47" title="2 of 4 branches missed.">        if (identificador == null || identificador.isEmpty()) {</span>
-<span class="nc" id="L48">            return null;</span>
+<span class="pc bpc" id="L50" title="2 of 4 branches missed.">        if (identificador == null || identificador.isEmpty()) {</span>
+<span class="nc" id="L51">            return null;</span>
         }
 
-<span class="fc" id="L51">        Animal animalBuscado = new Animal(identificador);</span>
-<span class="fc bfc" id="L52" title="All 2 branches covered.">        if (!animales.contains(animalBuscado)) {</span>
-<span class="fc" id="L53">            return null;</span>
+<span class="fc" id="L54">        Animal animalBuscado = new Animal(identificador);</span>
+<span class="fc bfc" id="L55" title="All 2 branches covered.">        if (!animales.contains(animalBuscado)) {</span>
+<span class="fc" id="L56">            return null;</span>
         }
 
-<span class="pc bpc" id="L56" title="1 of 2 branches missed.">        for (Animal animal : animales) {</span>
-<span class="pc bpc" id="L57" title="1 of 2 branches missed.">            if (animal.equals(animalBuscado)){</span>
-<span class="fc" id="L58">                return animal;</span>
+<span class="pc bpc" id="L59" title="1 of 2 branches missed.">        for (Animal animal : animales) {</span>
+<span class="pc bpc" id="L60" title="1 of 2 branches missed.">            if (animal.equals(animalBuscado)){</span>
+<span class="fc" id="L61">                return animal;</span>
             }
-<span class="nc" id="L60">        }</span>
-<span class="nc" id="L61">        return null;     </span>
+<span class="nc" id="L63">        }</span>
+<span class="nc" id="L64">        return null;     </span>
     }
 
     /**
@@ -68,17 +71,16 @@ public class AnimalList {
      * @return
      */
     public boolean actualizar(String identificador, Animal nuevoAnimal) {
-<span class="pc bpc" id="L71" title="2 of 4 branches missed.">        if (identificador == null || identificador.isEmpty()) {</span>
-<span class="nc" id="L72">            return false;</span>
+<span class="pc bpc" id="L74" title="3 of 6 branches missed.">        if (identificador == null || identificador.isEmpty() || nuevoAnimal == null) {</span>
+<span class="nc" id="L75">            return false;</span>
         }
-<span class="fc" id="L74">        Animal animalBuscado = new Animal(identificador);</span>
-<span class="pc bfc" id="L75" title="All 2 branches covered.">        for (int i = 0; i &lt; animales.size(); i++) {</span>
-<span class="pc bpc" id="L76" title="1 of 2 branches missed.">            if (animalBuscado.equals(nuevoAnimal)) {</span>
-<span class="fc" id="L77">                animales.set(i, nuevoAnimal);</span>
-<span class="fc" id="L78">                return true;</span>
-            }
+<span class="fc" id="L77">        Animal animalBuscado = new Animal(identificador);</span>
+<span class="fc" id="L78">        int posicion = animales.indexOf(animalBuscado);</span>
+<span class="fc bfc" id="L79" title="All 2 branches covered.">        if (posicion &gt;= 0) {</span>
+<span class="fc" id="L80">            animales.set(posicion,nuevoAnimal);</span>
+<span class="fc" id="L81">            return true;</span>
         }
-<span class="fc" id="L81">        return false;</span>
+<span class="fc" id="L83">        return false;</span>
     }
 
     /**
@@ -87,10 +89,10 @@ public class AnimalList {
      * @return
      */
     public boolean eliminar(String identificador) {
-<span class="pc bpc" id="L90" title="2 of 4 branches missed.">        if (identificador == null || identificador.isEmpty()) {</span>
-<span class="nc" id="L91">            return false;</span>
+<span class="pc bpc" id="L92" title="2 of 4 branches missed.">        if (identificador == null || identificador.isEmpty()) {</span>
+<span class="nc" id="L93">            return false;</span>
         }
-<span class="fc" id="L93">        return animales.remove(new Animal(identificador));</span>
+<span class="fc" id="L95">        return animales.remove(new Animal(identificador));</span>
     }
 
 }

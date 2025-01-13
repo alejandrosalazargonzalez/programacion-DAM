@@ -1,7 +1,10 @@
 package es.ies.puerto;
 
 import java.util.Objects;
-
+/**
+ *  @author: alejandrosalazargonzalez
+ *  @version: 1.0.0
+ */
 public class Objeto {
     private String descripcion;
     private String id;

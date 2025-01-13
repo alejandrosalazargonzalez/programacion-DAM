@@ -4,7 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import es.ies.puerto.*;
-
+/**
+ *  @author: alejandrosalazargonzalez
+ *  @version: 1.0.0
+ */
 public class AnimalList {
     private List<Animal> animales;
 
@@ -68,13 +71,14 @@ public class AnimalList {
      * @return
      */
     public boolean actualizar(String identificador, Animal nuevoAnimal) {
-        if (identificador == null || identificador.isEmpty()) {
+        if (identificador == null || identificador.isEmpty() || nuevoAnimal == null) {
             return false;
         }
         Animal animalBuscado = new Animal(identificador);
         int posicion = animales.indexOf(animalBuscado);
-        if (posicion < 0) {
-            
+        if (posicion >= 0) {
+            animales.set(posicion,nuevoAnimal);
+            return true;
         }
         return false;
     }
