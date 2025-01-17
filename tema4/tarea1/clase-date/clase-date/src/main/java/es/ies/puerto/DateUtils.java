@@ -1,5 +1,6 @@
 package es.ies.puerto;
 
+import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.time.Instant;
 import java.time.LocalDate;
@@ -15,25 +16,65 @@ import java.util.Date;
 
 public class DateUtils {
 
-
+    /**
+     * Crea una nueva fecha
+     * @return Date()
+     */
     public static Date createDate() {
-        return null;
+        return new Date();
     }
 
+    /**
+     * Compara dos fechas
+     * @param date1 fecha 1
+     * @param date2 fecha 2
+     * @return true/false
+     */
     public static boolean compareDates(Date date1, Date date2) {
-        return false;
+        if (date1 == null || date2 == null) {
+            return false;
+        }
+        return date1.before(date2);
     }
 
+    /**
+     * Aniade dias a una fecha
+     * @param date fecha original
+     * @param days a sumar
+     * @return Date
+     */
     public static Date addDaysToDate(Date date, int days) {
-        return null;
+        if (date == null || days < 0) {
+            return date;
+        }
+        long fechaMilisegundos = date.getTime() + days*24L*60*60*1000; 
+        return new Date(fechaMilisegundos);
     }
 
+    /**
+     * cambia el formato de la fecha
+     * @param date a modificar formato
+     * @return String
+     */
     public static String formatDate(Date date) {
-        return null;
+        if (date == null) {
+            return null;
+        }
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyy-mm-dd");
+        return simpleDateFormat.format(date);
     }
 
+    /**
+     * calcula la diferencia entre dos fechas
+     * @param date1
+     * @param date2
+     * @return
+     */
     public static long calculateDateDifference(Date date1, Date date2) {
-        return 0l;
+        if (date1 == null || date2 == null) {
+            return 0l;
+        }
+        return date1.compareTo(date2);
     }
 
     public static LocalDate getCurrentLocalDate() {
@@ -110,6 +151,6 @@ public class DateUtils {
     }
 
     public static void main(String[] args) {
-        System.out.println("Vamos a probar los algoritmos");
+        System.out.println("Vamos a probar los algoritmos " + formatDate(new Date()));
     }
 }

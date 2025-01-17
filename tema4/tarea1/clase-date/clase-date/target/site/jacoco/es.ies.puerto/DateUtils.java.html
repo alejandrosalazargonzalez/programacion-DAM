@@ -15,102 +15,125 @@ import java.util.Date;
 
 <span class="nc" id="L16">public class DateUtils {</span>
 
-
+    /**
+     * Crea una nueva fecha
+     * @return Date()
+     */
     public static Date createDate() {
-<span class="fc" id="L20">        return null;</span>
+<span class="fc" id="L23">        return new Date();</span>
     }
 
+    /**
+     * Compara dos fechas
+     * @param date1
+     * @param date2
+     * @return true/false
+     */
     public static boolean compareDates(Date date1, Date date2) {
-<span class="fc" id="L24">        return false;</span>
+<span class="pc bpc" id="L33" title="2 of 4 branches missed.">        if (date1 == null || date2 == null) {</span>
+<span class="nc" id="L34">            return false;</span>
+        }
+<span class="fc" id="L36">        return date1.before(date2);</span>
     }
 
+    /**
+     * Aniade dias a una fecha
+     * @param date
+     * @param days
+     * @return
+     */
     public static Date addDaysToDate(Date date, int days) {
-<span class="fc" id="L28">        return null;</span>
+<span class="pc bpc" id="L46" title="2 of 4 branches missed.">        if (date == null || days &lt; 0) {</span>
+<span class="nc" id="L47">            return date;</span>
+        }
+<span class="fc" id="L49">        long fechaMilisegundos = date.getTime() + days*24L*60*60*1000; </span>
+<span class="fc" id="L50">        return new Date(fechaMilisegundos);</span>
     }
 
     public static String formatDate(Date date) {
-<span class="fc" id="L32">        return null;</span>
+        
+<span class="fc" id="L55">        return date.toString();</span>
     }
 
     public static long calculateDateDifference(Date date1, Date date2) {
-<span class="fc" id="L36">        return 0l;</span>
+<span class="fc" id="L59">        return 0l;</span>
     }
 
     public static LocalDate getCurrentLocalDate() {
-<span class="fc" id="L40">        return null;</span>
+<span class="fc" id="L63">        return null;</span>
     }
 
     public static LocalDate createSpecificLocalDate(int year, int month, int day) {
-<span class="fc" id="L44">        return null;</span>
+<span class="fc" id="L67">        return null;</span>
     }
 
     public static LocalDate addDays(LocalDate date, int days) {
-<span class="fc" id="L48">        return null;</span>
+<span class="fc" id="L71">        return null;</span>
     }
 
     public static boolean isBefore(LocalDate date1, LocalDate date2) {
-<span class="fc" id="L52">        return false;</span>
+<span class="fc" id="L75">        return false;</span>
     }
 
     public static Period calculatePeriodBetween(LocalDate start, LocalDate end) {
-<span class="fc" id="L56">        return null;</span>
+<span class="fc" id="L79">        return null;</span>
     }
 
     public static LocalTime getCurrentLocalTime() {
-<span class="fc" id="L60">        return null;    </span>
+<span class="fc" id="L83">        return null;    </span>
     }
 
     public static LocalTime addMinutes(LocalTime time, int minutes) {
-<span class="fc" id="L64">        return null;</span>
+<span class="fc" id="L87">        return null;</span>
     }
 
     public static boolean isTimeBefore(LocalTime time1, LocalTime time2) {
-<span class="fc" id="L68">        return false;</span>
+<span class="fc" id="L91">        return false;</span>
     }
 
     
     public static LocalDateTime getCurrentLocalDateTime() {
-<span class="fc" id="L73">        return null;</span>
+<span class="fc" id="L96">        return null;</span>
     }
 
     public static LocalDateTime addHours(LocalDateTime dateTime, int hours) {
-<span class="fc" id="L77">        return null;</span>
+<span class="fc" id="L100">        return null;</span>
     }
 
     public static LocalDateTime subtractMonths(LocalDateTime dateTime, int months) {
-<span class="fc" id="L81">        return null;</span>
+<span class="fc" id="L104">        return null;</span>
     }
 
     public static ZonedDateTime getZonedDateTime(String zoneId) {
-<span class="fc" id="L85">        return null;</span>
+<span class="fc" id="L108">        return null;</span>
     }
 
     public static ZonedDateTime convertZone(ZonedDateTime dateTime, String targetZoneId) {
-<span class="fc" id="L89">        return null;</span>
+<span class="fc" id="L112">        return null;</span>
     }
 
     public static LocalDate getFirstDayOfMonth(LocalDate date) {
-<span class="fc" id="L93">        return null;</span>
+<span class="fc" id="L116">        return null;</span>
     }
 
     public static LocalDate getLastDayOfMonth(LocalDate date) {
-<span class="fc" id="L97">        return null;</span>
+<span class="fc" id="L120">        return null;</span>
     }
 
     public static boolean isLeapYear(LocalDate date) {
-<span class="fc" id="L101">        return false;</span>
+<span class="fc" id="L124">        return false;</span>
     }
 
     public static Duration measureExecutionTime(Runnable task) {
-<span class="fc" id="L105">        return null;</span>
+<span class="fc" id="L128">        return null;</span>
     }
 
     public static LocalDate parseDate(String date, String format) throws DateTimeParseException {
-<span class="fc" id="L109">        return null;</span>
+<span class="fc" id="L132">        return null;</span>
     }
 
     public static void main(String[] args) {
-<span class="nc" id="L113">        System.out.println(&quot;Vamos a probar los algoritmos&quot;);</span>
-<span class="nc" id="L114">    }</span>
+<span class="nc" id="L136">        System.out.println(&quot;Vamos a probar los algoritmos&quot;);</span>
+<span class="nc" id="L137">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>
