@@ -1,0 +1,52 @@
+-------------------------------------------------------------------------------
+Test set: es.ies.puerto.Ejercicio8Test
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 0.023 s <<< FAILURE! -- in es.ies.puerto.Ejercicio8Test
+es.ies.puerto.Ejercicio8Test.testDiasDesdeInicioDelAnioBisiesto -- Time elapsed: 0.006 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: El 31 de diciembre de 2024 (año bisiesto) debe devolver 366 días desde el inicio del año ==> expected: <366> but was: <-1>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:166)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:660)
+	at es.ies.puerto.Ejercicio8Test.testDiasDesdeInicioDelAnioBisiesto(Ejercicio8Test.java:34)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+es.ies.puerto.Ejercicio8Test.testDiasDesdeInicioDelAnioFechaValidaFinDelAnio -- Time elapsed: 0.007 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: El 31 de diciembre de 2023 debe devolver 365 días desde el inicio del año ==> expected: <365> but was: <-1>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:166)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:660)
+	at es.ies.puerto.Ejercicio8Test.testDiasDesdeInicioDelAnioFechaValidaFinDelAnio(Ejercicio8Test.java:27)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+es.ies.puerto.Ejercicio8Test.testDiasDesdeInicioDelAnioFechaValidaInicioDelAnio -- Time elapsed: 0.002 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: El 1 de enero de 2023 debe devolver 1 día desde el inicio del año ==> expected: <1> but was: <-1>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:166)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:660)
+	at es.ies.puerto.Ejercicio8Test.testDiasDesdeInicioDelAnioFechaValidaInicioDelAnio(Ejercicio8Test.java:13)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+es.ies.puerto.Ejercicio8Test.testDiasDesdeInicioDelAnioFechaValidaMitadDelAnio -- Time elapsed: 0.002 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: El 15 de junio de 2023 debe devolver 166 días desde el inicio del año ==> expected: <166> but was: <-1>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:166)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:660)
+	at es.ies.puerto.Ejercicio8Test.testDiasDesdeInicioDelAnioFechaValidaMitadDelAnio(Ejercicio8Test.java:20)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
