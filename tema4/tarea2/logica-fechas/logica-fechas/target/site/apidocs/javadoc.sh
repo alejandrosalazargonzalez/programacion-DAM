@@ -1,1 +1,0 @@
-/home/bae2/.config/Code/User/globalStorage/pleiades.java-extension-pack-jdk/java/latest/bin/javadoc @options @packages

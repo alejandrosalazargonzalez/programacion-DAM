@@ -10,6 +10,12 @@ import java.time.Month;
  */
 public class Ejercicio2 {
 
+    /**
+     * Funcion que devulve los dias que tiene el mes
+     * @param anio de la fecha
+     * @param mes del anio a sacar dias
+     * @return int 
+     */
     public static int obtenerDiasDelMes(int anio, Month mes) {
         if(anio < 1 || mes == null)
         {
@@ -31,6 +37,6 @@ public class Ejercicio2 {
             default:
                 return -1;
         }
-                 */
+        */
     }
 }
