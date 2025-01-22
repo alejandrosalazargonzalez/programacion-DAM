@@ -1,0 +1,40 @@
+-------------------------------------------------------------------------------
+Test set: es.ies.puerto.Ejercicio10Test
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 0.075 s <<< FAILURE! -- in es.ies.puerto.Ejercicio10Test
+es.ies.puerto.Ejercicio10Test.testDiferenciaEnDiasPositiva -- Time elapsed: 0.055 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: La diferencia en días debe ser 9. ==> expected: <9> but was: <-1>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:166)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:660)
+	at es.ies.puerto.Ejercicio10Test.testDiferenciaEnDiasPositiva(Ejercicio10Test.java:16)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+es.ies.puerto.Ejercicio10Test.testDiferenciaEnDiasNegativa -- Time elapsed: 0.003 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: La diferencia en días debe ser -9. ==> expected: <-9> but was: <-1>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:166)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:660)
+	at es.ies.puerto.Ejercicio10Test.testDiferenciaEnDiasNegativa(Ejercicio10Test.java:26)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+es.ies.puerto.Ejercicio10Test.testDiferenciaEnDiasCero -- Time elapsed: 0.003 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: La diferencia en días debe ser 0. ==> expected: <0> but was: <-1>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:166)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:660)
+	at es.ies.puerto.Ejercicio10Test.testDiferenciaEnDiasCero(Ejercicio10Test.java:36)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
