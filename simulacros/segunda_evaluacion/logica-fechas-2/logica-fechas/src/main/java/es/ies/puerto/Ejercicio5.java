@@ -1,6 +1,7 @@
 
 package es.ies.puerto;
 
+import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.Year;
 
@@ -20,9 +21,13 @@ public class Ejercicio5 {
         if (fechaNacimiento == null) {
             return -1;
         }
-        LocalDateTime localDateTime = LocalDateTime.now();
-        return localDateTime.compareTo(fechaNacimiento);
-        
+        Duration diferencia = Duration.between(fechaNacimiento, LocalDateTime.now());
+        return diferencia.toMillis();
+
+    }
+
+    public static void main(String[] args) {
+        LocalDateTime fechaNacimiento = LocalDateTime.now();
 
     }
 }
