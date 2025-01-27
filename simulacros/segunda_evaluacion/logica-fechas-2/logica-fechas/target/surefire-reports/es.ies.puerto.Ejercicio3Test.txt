@@ -1,0 +1,32 @@
+-------------------------------------------------------------------------------
+Test set: es.ies.puerto.Ejercicio3Test
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 0, Errors: 4, Skipped: 0, Time elapsed: 0.105 s <<< FAILURE! -- in es.ies.puerto.Ejercicio3Test
+es.ies.puerto.Ejercicio3Test.testAnoBisiesto -- Time elapsed: 0.090 s <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "java.util.Map.get(Object)" because "conversiones" is null
+	at es.ies.puerto.Ejercicio3Test.testAnoBisiesto(Ejercicio3Test.java:99)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+es.ies.puerto.Ejercicio3Test.testNuevaYorkATokioLondresSidney -- Time elapsed: 0.006 s <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "java.util.Map.get(Object)" because "conversiones" is null
+	at es.ies.puerto.Ejercicio3Test.testNuevaYorkATokioLondresSidney(Ejercicio3Test.java:30)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+es.ies.puerto.Ejercicio3Test.testZonaOrigenEsUTC -- Time elapsed: 0.002 s <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "java.util.Map.get(Object)" because "conversiones" is null
+	at es.ies.puerto.Ejercicio3Test.testZonaOrigenEsUTC(Ejercicio3Test.java:53)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+es.ies.puerto.Ejercicio3Test.testFechaCercanaACambioHorarioDeVerano -- Time elapsed: 0.002 s <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "java.util.Map.get(Object)" because "conversiones" is null
+	at es.ies.puerto.Ejercicio3Test.testFechaCercanaACambioHorarioDeVerano(Ejercicio3Test.java:76)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+

@@ -1,0 +1,52 @@
+-------------------------------------------------------------------------------
+Test set: es.ies.puerto.Ejercicio5Test
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 0.130 s <<< FAILURE! -- in es.ies.puerto.Ejercicio5Test
+es.ies.puerto.Ejercicio5Test.testEdadMilisegundosReciente -- Time elapsed: 0.002 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Debe haber vivido más de 0 milisegundos ==> expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:210)
+	at es.ies.puerto.Ejercicio5Test.testEdadMilisegundosReciente(Ejercicio5Test.java:13)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+es.ies.puerto.Ejercicio5Test.testEdadMilisegundosPasadoLejano -- Time elapsed: 0.001 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Debe haber vivido más de 0 milisegundos ==> expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:210)
+	at es.ies.puerto.Ejercicio5Test.testEdadMilisegundosPasadoLejano(Ejercicio5Test.java:21)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+es.ies.puerto.Ejercicio5Test.testEdadMilisegundosBisiesto -- Time elapsed: 0.001 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Debe haber vivido más de 0 milisegundos ==> expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:210)
+	at es.ies.puerto.Ejercicio5Test.testEdadMilisegundosBisiesto(Ejercicio5Test.java:29)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+es.ies.puerto.Ejercicio5Test.testEdadMilisegundosNoBisiesto -- Time elapsed: 0.002 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Debe haber vivido más de 0 milisegundos ==> expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:210)
+	at es.ies.puerto.Ejercicio5Test.testEdadMilisegundosNoBisiesto(Ejercicio5Test.java:44)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+

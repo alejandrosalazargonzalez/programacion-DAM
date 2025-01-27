@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Ejercicio2.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">logica-fechas-2</a> &gt; <a href="index.source.html" class="el_package">es.ies.puerto</a> &gt; <span class="el_source">Ejercicio2.java</span></div><h1>Ejercicio2.java</h1><pre class="source lang-java linenums">
+package es.ies.puerto;
+
+import java.time.LocalDate;
+import java.time.Month;
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ *  @author: alejandrosalazargonzalez
+ *  @version: 1.0.0
+ */
+<span class="nc" id="L13">public class Ejercicio2 {</span>
+
+    /**
+     * 
+     * @param anio
+     * @return
+     */
+    public static List&lt;LocalDate&gt; obtenerUltimosViernes(int anio) {
+<span class="fc" id="L21">        List&lt;LocalDate&gt; ultimosViernes = new ArrayList&lt;&gt;();</span>
+<span class="fc bfc" id="L22" title="All 2 branches covered.">        if (anio &lt;=0) {</span>
+<span class="fc" id="L23">            return ultimosViernes;</span>
+        }
+        // Iteramos sobre cada mes del año
+<span class="fc bfc" id="L26" title="All 2 branches covered.">        for (Month mes : Month.values()) {</span>
+            // Obtener el último día del mes
+<span class="fc" id="L28">            LocalDate ultimoDiaDelMes = LocalDate.of(anio, mes, mes.length(LocalDate.of(anio, mes, 1).isLeapYear()));</span>
+
+            // Obtener el último viernes
+<span class="fc" id="L31">            LocalDate ultimoViernes = ultimoDiaDelMes;</span>
+
+            // Retroceder hasta el viernes más cercano
+<span class="fc bfc" id="L34" title="All 2 branches covered.">            while (ultimoViernes.getDayOfWeek().getValue() != 5) { // 5 representa el viernes</span>
+<span class="fc" id="L35">                ultimoViernes = ultimoViernes.minusDays(1);</span>
+            }
+
+            // Añadir el último viernes a la lista
+<span class="fc" id="L39">            ultimosViernes.add(ultimoViernes);</span>
+        }
+
+<span class="fc" id="L42">        return ultimosViernes;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

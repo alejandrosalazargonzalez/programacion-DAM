@@ -1,0 +1,7 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+logica-fechas-2,es.ies.puerto,Ejercicio2,3,53,0,6,1,10,1,4,1,1
+logica-fechas-2,es.ies.puerto,Ejercicio3,3,2,0,0,1,1,1,1,1,1
+logica-fechas-2,es.ies.puerto,Ejercicio1,3,12,2,4,1,3,3,2,1,1
+logica-fechas-2,es.ies.puerto,Ejercicio6,3,2,0,0,1,1,1,1,1,1
+logica-fechas-2,es.ies.puerto,Ejercicio4,3,2,0,0,1,1,1,1,1,1
+logica-fechas-2,es.ies.puerto,Ejercicio5,3,2,0,0,1,1,1,1,1,1
