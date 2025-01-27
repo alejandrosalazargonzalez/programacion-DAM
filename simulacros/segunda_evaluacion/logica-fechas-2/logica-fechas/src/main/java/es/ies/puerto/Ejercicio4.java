@@ -13,6 +13,11 @@ import java.util.List;
  */
 public class Ejercicio4 {
     
+    /**
+     * Obtiene el dia vidiesto en unos años al futuro
+     * @param aniosFuturos a revisar
+     * @return List<LocalDate>
+     */
     public static List<LocalDate> obtenerDiasBisiestos(int aniosFuturos) {
         if (aniosFuturos <= 0 ) {
             throw new IllegalArgumentException("El número de años futuros debe ser mayor a 0.");

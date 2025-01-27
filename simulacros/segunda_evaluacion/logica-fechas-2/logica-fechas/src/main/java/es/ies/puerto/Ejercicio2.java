@@ -13,9 +13,9 @@ import java.util.List;
 public class Ejercicio2 {
 
     /**
-     * 
-     * @param anio
-     * @return
+     * Optiene el ultimo viernes de cada mes del año
+     * @param anio del que se sacan los meses
+     * @return List<LocalDate>
      */
     public static List<LocalDate> obtenerUltimosViernes(int anio) {
         List<LocalDate> ultimosViernes = new ArrayList<>();

@@ -23,11 +23,5 @@ public class Ejercicio5 {
         }
         Duration diferencia = Duration.between(fechaNacimiento, LocalDateTime.now());
         return diferencia.toMillis();
-
-    }
-
-    public static void main(String[] args) {
-        LocalDateTime fechaNacimiento = LocalDateTime.now();
-
     }
 }

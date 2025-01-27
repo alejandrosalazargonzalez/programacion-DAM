@@ -73,7 +73,7 @@ class Ejercicio3Test {
 
         // Verificar las conversiones esperadas
         assertEquals(ZonedDateTime.of(2025, 3, 9, 6, 30, 0, 0, ZoneId.of("Europe/London")),
-                     conversiones.get("Europe/London"));
+                    conversiones.get("Europe/London"));
         assertEquals(ZonedDateTime.of(2025, 3, 9, 15, 30, 0, 0, ZoneId.of("Asia/Tokyo")),
                      conversiones.get("Asia/Tokyo"));
         assertEquals(ZonedDateTime.of(2025, 3, 9, 17, 30, 0, 0, ZoneId.of("Australia/Sydney")),
