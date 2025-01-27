@@ -12,7 +12,7 @@ import java.util.Map;
 
 class Ejercicio3Test {
 @Test
-    void testNuevaYorkATokioLondresSidney() {
+        void testNuevaYorkATokioLondresSidney() {
         // Fecha y hora de origen: 2025-03-15T14:30 en Nueva York
         LocalDateTime fechaHora = LocalDateTime.of(2025, 3, 15, 14, 30);
         ZoneId zonaOrigen = ZoneId.of("America/New_York");
@@ -27,11 +27,11 @@ class Ejercicio3Test {
 
         // Verificar las conversiones esperadas
         assertEquals(ZonedDateTime.of(2025, 3, 16, 3, 30, 0, 0, ZoneId.of("Asia/Tokyo")),
-                     conversiones.get("Asia/Tokyo"));
+                        conversiones.get("Asia/Tokyo"));
         assertEquals(ZonedDateTime.of(2025, 3, 15, 18, 30, 0, 0, ZoneId.of("Europe/London")),
-                     conversiones.get("Europe/London"));
+                        conversiones.get("Europe/London"));
         assertEquals(ZonedDateTime.of(2025, 3, 16, 5, 30, 0, 0, ZoneId.of("Australia/Sydney")),
-                     conversiones.get("Australia/Sydney"));
+                        conversiones.get("Australia/Sydney"));
     }
 
     @Test

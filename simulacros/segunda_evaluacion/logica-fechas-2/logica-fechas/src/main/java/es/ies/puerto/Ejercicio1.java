@@ -1,4 +1,3 @@
-
 package es.ies.puerto;
 
 import java.time.Duration;
@@ -18,11 +17,14 @@ public class Ejercicio1 {
      * @param fechaFin del calculo
      * @return LocalDateTime
      */
-    public static LocalDateTime calcularDiferenciaFechas(LocalDateTime fechaInicio, LocalDateTime fechaFin) {
-        if (fechaFin == null || fechaInicio == null || fechaFin.isAfter(fechaInicio)) {
+    public static LocalDateTime calcularDiferenciaFechas(LocalDateTime fechaInicio,
+                                LocalDateTime fechaFin) {
+        if (fechaFin == null || fechaInicio == null) {
             return null;
         }
-
-        return null;
+        if (fechaInicio.isAfter(fechaFin)) {
+            throw new IllegalArgumentException("La fecha de inicio no puede ser posterior a la fecha final.");
+        }
+        return fechaInicio.from(fechaFin);
     }
 }

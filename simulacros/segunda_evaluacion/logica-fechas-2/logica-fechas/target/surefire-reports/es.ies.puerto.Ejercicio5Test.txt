@@ -14,7 +14,7 @@ org.opentest4j.AssertionFailedError: Debe haber vivido más de 0 milisegundos ==
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
 
-es.ies.puerto.Ejercicio5Test.testEdadMilisegundosPasadoLejano -- Time elapsed: 0.001 s <<< FAILURE!
+es.ies.puerto.Ejercicio5Test.testEdadMilisegundosPasadoLejano -- Time elapsed: 0.002 s <<< FAILURE!
 org.opentest4j.AssertionFailedError: Debe haber vivido más de 0 milisegundos ==> expected: <true> but was: <false>
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)

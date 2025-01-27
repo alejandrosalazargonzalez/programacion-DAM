@@ -1,3 +1,4 @@
+
 package es.ies.puerto;
 
 import java.time.LocalDate;
@@ -9,11 +10,16 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ *  @author: alejandrosalazargonzalez
+ *  @version: 1.0.0
+ */
 public class Ejercicio3 {
     
-    public static Map<String, ZonedDateTime> convertirZonasHorarias(
-            LocalDateTime fechaHora, ZoneId zonaOrigen, List<ZoneId> zonasDestino) {
-        
+    public static Map<String, ZonedDateTime> 
+            convertirZonasHorarias(LocalDateTime fechaHora, ZoneId zonaOrigen, List<ZoneId> zonasDestino) {
+            
+            Map<String,ZonedDateTime> zonasHorarias = new HashMap<>();
         
         return null;
     }

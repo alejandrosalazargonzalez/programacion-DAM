@@ -2,14 +2,24 @@
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.Month;
+import java.time.Year;
 import java.time.temporal.TemporalAdjusters;
+import java.time.temporal.TemporalUnit;
 import java.time.DayOfWeek;
 import java.time.Duration;
 
-<span class="nc" id="L9">public class Ejercicio5 {</span>
+<span class="nc" id="L12">public class Ejercicio5 {</span>
     
     public static long calcularEdadEnMilisegundos(LocalDateTime fechaNacimiento) {
-<span class="fc" id="L12">        return -1;</span>
+<span class="pc bpc" id="L15" title="1 of 2 branches missed.">        if (fechaNacimiento == null) {</span>
+<span class="nc" id="L16">            return -1;</span>
+        }
+<span class="fc bfc" id="L18" title="All 2 branches covered.">        if (fechaNacimiento.getMinute() &lt;= 0) {</span>
+<span class="fc" id="L19">            return 0l;</span>
+        }
+<span class="fc" id="L21">        LocalDateTime localDateTime = LocalDateTime.now();</span>
+<span class="fc" id="L22">        return fechaNacimiento.compareTo(localDateTime);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>
