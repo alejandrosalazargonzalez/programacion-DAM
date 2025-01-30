@@ -6,6 +6,7 @@ import java.util.Set;
 import es.ies.puerto.Empleado;
 
 public interface OperationsInterface {
+    public boolean create(String data,File file);
     public boolean create(Empleado empleado);
     public boolean create(File file, Set<Empleado> empleados);
     public Set<Empleado> read(File file);

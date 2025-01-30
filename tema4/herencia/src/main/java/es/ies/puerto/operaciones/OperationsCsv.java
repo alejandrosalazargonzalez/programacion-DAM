@@ -37,4 +37,9 @@ public class OperationsCsv implements OperationsInterface{
     public boolean delete(String dataToDelete, File file) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'delete'");
+    }
+    @Override
+    public boolean create(String data, File file) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'create'");
     }}
