@@ -29,7 +29,7 @@ public class TrabajoFicheros {
             //read(nuevoFichero);
             //update("2,Juan,3000", "2,Juan,4000", archivo);
             delete("2,Juan,4000", archivo);
-            /*
+        /*
         * // Verifica si el archivo existe
         *if (archivo.exists()) {
         *    System.out.println("El archivo existe.");
