@@ -84,12 +84,13 @@ public class OperacionesFichero implements OperacionesInterface {
             if (personaBuscada.equals(persona)) {
                 personas.remove(personaBuscada);
                 personas.add(persona);
-                return true;
+                return updateFile(personas, fichero);
             }
         }
+
         System.out.println(personas);
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'delete'");
+        return true;
+
 }
 
     private boolean updateFile(Set<Persona> personas, File file){
@@ -108,8 +109,21 @@ public class OperacionesFichero implements OperacionesInterface {
 
     @Override
     public boolean delete(Persona persona) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'delete'");
+        if (persona == null || persona.getIdentificador().isEmpty() || persona.getIdentificador() == null) {
+            return false;
+        }
+        Set<Persona> personas = read(fichero);
+        if (!personas.contains(persona)) {
+            return false;
+        }
+        for (Persona personaBuscada : personas) {
+            if (personaBuscada.equals(persona)) {
+                personas.remove(personaBuscada);
+                return updateFile(personas, fichero);
+            }
+        }
+        System.out.println(personas);
+        return true;
     }
 
     @Override

@@ -23,6 +23,7 @@ public class EjemploFile {
         System.out.println("Persona encontrada: " + personaBuscar);
         Persona personaBuscar2 = new Persona("00000000H","Dios2",200000);
         operaciones.update(personaBuscar2);
+        
 
     }    
 }
