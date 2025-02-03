@@ -20,7 +20,7 @@ import java.util.Set;
 public class OperacionesFichero implements OperacionesInterface {
 
     File fichero;
-    String path = "/home/bae2/Descargas/java-ficheros/src/main/resources/archivo.txt";
+    String path = "/home/salazar/programacion-DAM/tema4/teoria/java-ficheros/src/main/resources/archivo.txt";
     public OperacionesFichero(){
         fichero = new File(path);
         if (!fichero.exists() || !fichero.isFile()) {
@@ -47,12 +47,6 @@ public class OperacionesFichero implements OperacionesInterface {
         } catch (IOException e) {
             return false;
         }
-    }
-    
-    @Override
-    public boolean read(Persona persona) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'read'");
     }
 
     private Set<Persona> read(File file) {
@@ -87,10 +81,8 @@ public class OperacionesFichero implements OperacionesInterface {
                 return updateFile(personas, fichero);
             }
         }
-
         System.out.println(personas);
         return true;
-
 }
 
     private boolean updateFile(Set<Persona> personas, File file){
@@ -101,7 +93,7 @@ public class OperacionesFichero implements OperacionesInterface {
         } catch (IOException e) {
             return false;
         }
-        for(Persona persona : personas){
+        for(Persona persona : personas) {
             create(persona);
         }
         return true;
@@ -117,13 +109,12 @@ public class OperacionesFichero implements OperacionesInterface {
             return false;
         }
         for (Persona personaBuscada : personas) {
-            if (personaBuscada.equals(persona)) {
+            if(personaBuscada.equals(persona)) {
                 personas.remove(personaBuscada);
                 return updateFile(personas, fichero);
             }
         }
-        System.out.println(personas);
-        return true;
+        return false;
     }
 
     @Override
@@ -132,11 +123,8 @@ public class OperacionesFichero implements OperacionesInterface {
             return persona;
         }
         Set<Persona> personas = read(fichero);
-        if (!personas.contains(persona)) {
-            return persona;
-        }
         for (Persona personaBuscar : personas) {
-            if (personaBuscar.equals(persona)) {
+            if(personaBuscar.equals(persona)) {
                 return personaBuscar;
             }
         }
@@ -151,6 +139,4 @@ public class OperacionesFichero implements OperacionesInterface {
         Persona persona = new Persona(identificador);
         return search(persona);
     }
-
-    
 }
