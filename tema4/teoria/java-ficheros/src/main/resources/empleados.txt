@@ -1,0 +1,2 @@
+0,Alvaro,20000,Gerente,12/04/2002
+1,Fran,10000,desarrollador,11/04/2002

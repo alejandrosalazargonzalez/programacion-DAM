@@ -1,8 +1,5 @@
 
-package es.ies.puerto.model.fichero;
-
-import es.ies.puerto.model.OperacionesInterface;
-import es.ies.puerto.model.Persona;
+package es.ies.puerto.primera_explicacion.model.fichero;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -12,6 +9,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
+
+import es.ies.puerto.primera_explicacion.model.OperacionesInterface;
+import es.ies.puerto.primera_explicacion.model.Persona;
 
 /**
  *  @author: alejandrosalazargonzalez

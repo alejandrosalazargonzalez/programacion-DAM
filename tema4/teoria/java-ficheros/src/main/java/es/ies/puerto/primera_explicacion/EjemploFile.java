@@ -1,8 +1,8 @@
-package es.ies.puerto;
+package es.ies.puerto.primera_explicacion;
 
 
-import es.ies.puerto.model.Persona;
-import es.ies.puerto.model.fichero.OperacionesFichero;
+import es.ies.puerto.primera_explicacion.model.Persona;
+import es.ies.puerto.primera_explicacion.model.fichero.OperacionesFichero;
 
 
 

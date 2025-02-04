@@ -1,4 +1,4 @@
-package es.ies.puerto.model;
+package es.ies.puerto.primera_explicacion.model;
 import java.util.Objects;
 
 public class Persona {

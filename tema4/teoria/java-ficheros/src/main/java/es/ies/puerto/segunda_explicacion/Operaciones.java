@@ -1,10 +1,8 @@
-package es.ies.puerto.model;
+package es.ies.puerto.segunda_explicacion;
 
-/**
- *  @author: alejandrosalazargonzalez
- *  @version: 1.0.0
- */
-public interface OperacionesInterface {
+import es.ies.puerto.segunda_explicacion.model.Persona;
+
+public interface Operaciones {
     public boolean create(Persona persona);
     public boolean update(Persona persona);
     public boolean delete(Persona persona);
