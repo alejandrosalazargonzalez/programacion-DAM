@@ -88,6 +88,7 @@ public class FileOperaciones implements Operaciones{
                 personas.add(empleado);
             }
         } catch (IOException e) {
+            e.printStackTrace();
         }
         return personas;
     }   
