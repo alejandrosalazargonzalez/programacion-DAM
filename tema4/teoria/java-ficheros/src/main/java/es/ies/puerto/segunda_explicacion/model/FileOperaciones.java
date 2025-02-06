@@ -24,11 +24,9 @@ public class FileOperaciones implements Operaciones{
     public FileOperaciones(){
         try {
             URL resource = getClass().getClassLoader().getResource(fichero);
-            if (resource == null) {
-            }
             file = new File(resource.toURI());
         } catch (Exception e) {
-            // TODO: handle exception
+            e.printStackTrace();
         }
     }
     @Override
@@ -52,13 +50,53 @@ public class FileOperaciones implements Operaciones{
     }
     @Override
     public boolean update(Persona persona) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'update'");
+        if (persona == null || persona.getIdentificador().isEmpty() || persona.getIdentificador() == null) {
+            return false;
+        }
+        Set<Persona> personas = read(file);
+        if (!personas.contains(persona)) {
+            return false;
+        }
+        for (Persona personaBuscada : personas) {
+            if (personaBuscada.equals(persona)) {
+                personas.remove(personaBuscada);
+                personas.add(persona);
+                return updateFile(personas, file);
+            }
+        }
+        System.out.println(personas);
+        return true;
     }
+
+    private boolean updateFile(Set<Persona> personas, File file){
+        try {
+            file.delete();
+            file.createNewFile();
+        } catch (IOException e) {
+            return false;
+        }
+        for(Persona persona : personas) {
+            create(persona);
+        }
+        return true;
+    }
+
     @Override
     public boolean delete(Persona persona) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'delete'");
+        if (persona == null || persona.getIdentificador().isEmpty() || persona.getIdentificador() == null) {
+            return false;
+        }
+        Set<Persona> personas = read(file);
+        if (!personas.contains(persona)) {
+            return false;
+        }
+        for (Persona personaBuscada : personas) {
+            if(personaBuscada.equals(persona)) {
+                personas.remove(personaBuscada);
+                return updateFile(personas, file);
+            }
+        }
+        return false;
     }
     @Override
     public Persona search(Persona persona) {
