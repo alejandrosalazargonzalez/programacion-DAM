@@ -39,6 +39,7 @@ public class OperacionesFichero implements OperacionesInterface {
         }
         return create(persona.toString(), fichero);
         }
+
     private boolean create(String data,File file) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(file, true))) {
             writer.write(data);

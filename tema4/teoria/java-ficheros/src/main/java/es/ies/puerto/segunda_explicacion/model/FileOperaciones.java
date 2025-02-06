@@ -29,6 +29,7 @@ public class FileOperaciones implements Operaciones{
             e.printStackTrace();
         }
     }
+    
     @Override
     public boolean create(Persona persona) {
         Set<Persona> personas = read(file);
@@ -48,6 +49,7 @@ public class FileOperaciones implements Operaciones{
             return false;
         }
     }
+
     @Override
     public boolean update(Persona persona) {
         if (persona == null || persona.getIdentificador().isEmpty() || persona.getIdentificador() == null) {
@@ -98,6 +100,7 @@ public class FileOperaciones implements Operaciones{
         }
         return false;
     }
+
     @Override
     public Persona search(Persona persona) {
         Set<Persona> personas = read(file);
@@ -110,6 +113,7 @@ public class FileOperaciones implements Operaciones{
         }
         return null;
     }
+
     @Override
     public Persona search(String identificador) {
         Persona persona = new Empleado(identificador);
