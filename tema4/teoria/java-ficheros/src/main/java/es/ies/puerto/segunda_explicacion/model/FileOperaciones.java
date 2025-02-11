@@ -42,7 +42,7 @@ public class FileOperaciones implements Operaciones{
     private boolean create(String data,File file) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(file, true))) {
             writer.write(data);
-            writer.newLine(); // Añadir una nueva línea después del registro
+            writer.newLine();   // Añadir una nueva línea después del registro
             System.out.println("Registro agregado.");
             return true;
         } catch (IOException e) {

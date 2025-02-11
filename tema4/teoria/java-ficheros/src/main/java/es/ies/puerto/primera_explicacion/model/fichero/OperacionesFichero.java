@@ -84,7 +84,7 @@ public class OperacionesFichero implements OperacionesInterface {
         }
         System.out.println(personas);
         return true;
-}
+    }
 
     private boolean updateFile(Set<Persona> personas, File file){
         String path = file.getAbsolutePath();
