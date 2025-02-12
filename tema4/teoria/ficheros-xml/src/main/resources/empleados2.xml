@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<empleados>
+    <empleado>
+        <id>1</id>
+        <nombre>Alejandro Salazar</nombre>
+        <fechaNacimiento>1993-05-12</fechaNacimiento>
+        <puesto>Desarrollador</puesto>
+    </empleado>
+</empleados>

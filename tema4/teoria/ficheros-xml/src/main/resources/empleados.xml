@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<empleados>
+    <empleado>
+        <id>1</id>
+        <nombre>Juan Pérez</nombre>
+        <fechaNacimiento>1993/05/12</fechaNacimiento>
+        <puesto>Desarrollador</puesto>
+    </empleado>
+    <empleado>
+        <id>2</id>
+        <nombre>María López</nombre>
+        <fechaNacimiento>1995/08/22</fechaNacimiento>
+        <puesto>Diseñador</puesto>
+    </empleado>
+</empleados>
