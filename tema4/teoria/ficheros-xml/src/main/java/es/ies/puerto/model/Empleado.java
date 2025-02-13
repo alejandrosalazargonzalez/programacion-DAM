@@ -9,6 +9,10 @@ public class Empleado {
 
     public Empleado() {
     }
+    
+    public Empleado(String id) {
+        this.id = id;
+    }
 
     public Empleado(String id, String nombre, String fecha, String puesto) {
         this.id = id;

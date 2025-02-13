@@ -7,12 +7,16 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
 import org.w3c.dom.*;
+import org.xml.sax.SAXException;
+
 import java.io.*;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class XmlToJava {
-    static List<Empleado> empleados = new ArrayList<>();
+    static Set<Empleado> empleados = new HashSet<>();
 
     /**
      * Metodo para leer el XML como un Csv
@@ -21,8 +25,7 @@ public class XmlToJava {
      * @throws Exception
      */
     public static void main(String[] args) throws Exception {
-        File archivo = new File(
-                "/home/bae2/programacion-DAM/tema4/teoria/ficheros-xml/src/main/resources/empleados.xml");
+        File archivo = new File("src/main/resources/empleados.xml");
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
         Document doc = builder.parse(archivo);
@@ -40,8 +43,9 @@ public class XmlToJava {
                 empleados.add(empleado);
             }
         }
-        System.out.println(empleados);
+        // System.out.println(empleados);
         // escribirXML();
+        System.out.println(buscarXML("1"));
     }
 
     /**
@@ -106,8 +110,58 @@ public class XmlToJava {
         TransformerFactory transformerFactory = TransformerFactory.newInstance();
         Transformer transformer = transformerFactory.newTransformer();
         DOMSource source = new DOMSource(doc);
-        StreamResult result = new StreamResult(
-                new File("/home/bae2/programacion-DAM/tema4/teoria/ficheros-xml/src/main/resources/empleados2.xml"));
+        StreamResult result = new StreamResult(new File("src/main/resources/empleados2.xml"));
         transformer.transform(source, result);
+    }
+
+    /**
+     * Busca a un empleado en el documento por su id
+     * 
+     * @param idBuscar del empleado buscado
+     * @return Empleado
+     * @throws Exception
+     */
+    public static Empleado buscarXML(String idBuscar) throws Exception {
+        if (idBuscar == null || idBuscar.isEmpty()) {
+            return null;
+        }
+        File archivo = new File("src/main/resources/empleados.xml");
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder builder = factory.newDocumentBuilder();
+        Document doc = builder.parse(archivo);
+
+        NodeList lista = doc.getElementsByTagName("empleado");
+        for (int i = 0; i < lista.getLength(); i++) {
+            Node nodo = lista.item(i);
+            Element elemento = (Element) nodo;
+            String id = elemento.getElementsByTagName("id").item(0).getTextContent();
+            if (id.equals(idBuscar)) {
+                String nombre = elemento.getElementsByTagName("nombre").item(0).getTextContent();
+                String fecha = elemento.getElementsByTagName("fechaNacimiento").item(0).getTextContent();
+                String puesto = elemento.getElementsByTagName("puesto").item(0).getTextContent();
+                return new Empleado(id, nombre, fecha, puesto);
+            }
+        }
+        return null;
+    }
+
+    /**
+     * Busca a un empleado en una lista por su id
+     * 
+     * @param idBuscar  id del empleado buscado
+     * @param empleados lista de empleados
+     * @return Empleado
+     */
+    public static Empleado buscar(String idBuscar, Set<Empleado> empleados) {
+        if (idBuscar == null || idBuscar.isEmpty() || empleados == null || empleados.isEmpty()) {
+            return null;
+        }
+        Empleado empleadoBuscar = new Empleado(idBuscar);
+        for (Empleado empleado : empleados) {
+            if (empleado.equals(empleadoBuscar)) {
+                return empleado;
+            }
+        }
+        return null;
     }
 }
