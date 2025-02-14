@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Set;
 
 public class XmlToJava {
-    static Set<Empleado> empleados = new HashSet<>();
+    static List<Empleado> empleados = new ArrayList();
 
     /**
      * Metodo para leer el XML como un Csv
@@ -45,7 +45,10 @@ public class XmlToJava {
         }
         // System.out.println(empleados);
         // escribirXML();
-        System.out.println(buscarXML("1"));
+        //System.out.println(buscarXML("1"));
+        //volcarFichero(empleados);
+        Empleado empleado = new Empleado("1", "Pepe", "0/0/0000", "Dios");
+        modificar(empleado, empleados);
     }
 
     /**
@@ -163,5 +166,85 @@ public class XmlToJava {
             }
         }
         return null;
+    }
+
+    /**
+     * Actualiza la informacion del fichero
+     * @param empleados del fichero
+     * @throws Exception
+     */
+    public static void volcarFichero(List<Empleado> empleados) throws Exception {
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder builder = factory.newDocumentBuilder();
+        Document doc = builder.newDocument();
+
+        Element root = doc.createElement("empleados");
+        doc.appendChild(root);
+        for (Empleado empleado : empleados) {
+            Element empleadoXml = doc.createElement("empleado");
+            root.appendChild(empleadoXml);
+            
+            Element idXml = doc.createElement("id");
+            idXml.appendChild(doc.createTextNode(empleado.getId()));
+            empleadoXml.appendChild(idXml);
+
+            Element nombreXml = doc.createElement("nombre");
+            nombreXml.appendChild(doc.createTextNode(empleado.getNombre()));
+            empleadoXml.appendChild(nombreXml);
+
+            Element fechaNacimientoXml = doc.createElement("fechaNacimiento");
+            fechaNacimientoXml.appendChild(doc.createTextNode(empleado.getFecha()));
+            empleadoXml.appendChild(fechaNacimientoXml);
+
+            Element puestoXml = doc.createElement("puesto");
+            puestoXml.appendChild(doc.createTextNode(empleado.getPuesto()));
+            empleadoXml.appendChild(puestoXml);
+            
+        }
+
+        TransformerFactory transformerFactory = TransformerFactory.newInstance();
+        Transformer transformer = transformerFactory.newTransformer();
+        DOMSource source = new DOMSource(doc);
+        StreamResult result = new StreamResult(new File("src/main/resources/empleados2.xml"));
+        transformer.transform(source, result);
+    }
+
+    /**
+     * Modifica a un empleado del archivo
+     * @param empleado modificados
+     * @param empleados en el fichero
+     * @return true/false
+     * @throws Exception
+     */
+    public static boolean modificar(Empleado empleado, List<Empleado> empleados) throws Exception{
+        if (empleado == null) {
+            return false;
+        }
+        int posicion = empleados.indexOf(empleado);
+        if (posicion < 0) {
+            return false;
+        }
+        empleados.set(posicion, empleado);
+        volcarFichero(empleados);
+        return true;
+    }
+
+    /**
+     * Elimina un empleado del archivo
+     * @param empleado a eliminar
+     * @param empleados en el archivo
+     * @return true/false
+     * @throws Exception
+     */
+    public static boolean eliminar(Empleado empleado, List<Empleado> empleados) throws Exception{
+        if (empleado == null || empleados.isEmpty() || empleados == null) {
+            return false;
+        }
+        boolean eliminado = empleados.remove(empleado);
+        if (eliminado) {
+            
+            volcarFichero(empleados);
+        }
+        return eliminado;
     }
 }
