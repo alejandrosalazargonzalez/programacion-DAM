@@ -1,4 +1,5 @@
-<criaturas>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Criaturas>
     <criatura>
         <id>DG001</id>
         <nombre>Dragón de Fuego</nombre>
@@ -29,4 +30,4 @@
         <descripcion>Un fénix que renace de sus cenizas con un resplandor dorado.</descripcion>
         <categoria>Otras Criaturas</categoria>
     </criatura>
-</criaturas>
+</Criaturas>

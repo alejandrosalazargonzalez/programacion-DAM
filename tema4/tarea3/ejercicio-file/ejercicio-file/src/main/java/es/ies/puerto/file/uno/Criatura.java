@@ -1,6 +1,7 @@
 
 package es.ies.puerto.file.uno;
 
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -31,13 +32,13 @@ public class Criatura {
      * Constructor completo
      * @param id de la criatura
      * @param nombre de la criatura
-     * @param descripcion de la criatura
+     * @param descripcion2 de la criatura
      * @param categoria de la criatura
      */
-    public Criatura(String id, String nombre, String descripcion, String categoria) {
+    public Criatura(String id, String nombre, String descripcion2, String categoria) {
         this.id = id;
         this.nombre = nombre;
-        this.descripcion = descripcion;
+        this.descripcion = descripcion2;
         this.categoria = categoria;
     }
 

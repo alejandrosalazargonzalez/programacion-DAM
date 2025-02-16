@@ -19,7 +19,7 @@ class FilePokedexXmlTest {
     List<Pokemon> pokemons;
 
     @BeforeEach
-    void beforeEach() {
+    void beforeEach() throws Exception {
         persistencia = new FilePokedexXml();
         pokemons = persistencia.obtenerPokemons();
     }
@@ -33,22 +33,22 @@ class FilePokedexXmlTest {
     }
 
     @Test
-    void obtenerPokemonTest() {
-        String idBuscar = "ID_ACTUALIZAR";
+    void obtenerPokemonTest() throws Exception {
+        String idBuscar = "001";
         Pokemon PokemonBuscar = new Pokemon(idBuscar);
         PokemonBuscar = persistencia.obtenerPokemon(PokemonBuscar);
-        Assertions.assertEquals(PokemonBuscar.getId(),"ID_BUSCAR",
+        Assertions.assertEquals(PokemonBuscar.getId(),"001",
                 MESSAGE_ERROR);
         Assertions.assertNotNull(PokemonBuscar.getNombre(),
                 MESSAGE_ERROR);
-        Assertions.assertTrue (PokemonBuscar.getNombre().equals("VALOR_COMPARAR"),
+        Assertions.assertTrue (PokemonBuscar.getNombre().equals("Bulbasaur"),
                 MESSAGE_ERROR);
-        Assertions.assertNotNull(PokemonBuscar.getDescripcion().equals("VALOR_COMPARAR"),
+        Assertions.assertNotNull(PokemonBuscar.getDescripcion().equals("Bulbasaur"),
                 MESSAGE_ERROR);
     }
 
     @Test
-    void addDeletePokemonTest() {
+    void addDeletePokemonTest() throws Exception {
 
         int numPokemonsInicial = pokemons.size();
         Pokemon PokemonInsertar = new Pokemon();
@@ -69,7 +69,7 @@ class FilePokedexXmlTest {
     }
 
     @Test
-    void actualizarPokemon() {
+    void actualizarPokemon() throws Exception {
         String idActualizar = "ID_ACTUALIZAR";
         Pokemon PokemonBuscar = new Pokemon(idActualizar);
         Pokemon PokemonActualizar = persistencia.obtenerPokemon(PokemonBuscar);
