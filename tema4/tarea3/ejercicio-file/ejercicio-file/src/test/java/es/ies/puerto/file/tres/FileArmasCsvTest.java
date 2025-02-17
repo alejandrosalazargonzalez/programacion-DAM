@@ -31,16 +31,16 @@ class FileArmasCsvTest {
 
     @Test
     void obtenerArmaTest() {
-        String idBuscar = "ID_ACTUALIZAR";
+        String idBuscar = "MM004";
         Arma ArmaBuscar = new Arma(idBuscar);
         ArmaBuscar = persistencia.obtenerArma(ArmaBuscar);
-        Assertions.assertEquals(ArmaBuscar.getId(),"ID_BUSCAR",
+        Assertions.assertEquals(ArmaBuscar.getId(),"MM004",
                 MESSAGE_ERROR);
         Assertions.assertNotNull(ArmaBuscar.getNombre(),
                 MESSAGE_ERROR);
-        Assertions.assertTrue (ArmaBuscar.getOrigen().equals("VALOR_COMPARAR"),
+        Assertions.assertTrue (ArmaBuscar.getOrigen().equals("La legendaria espada japonesa, forjada por el herrero Muramasa."),
                 MESSAGE_ERROR);
-        Assertions.assertNotNull(ArmaBuscar.getOrigen().equals("VALOR_COMPARAR"),
+        Assertions.assertNotNull(ArmaBuscar.getOrigen().equals("La legendaria espada japonesa, forjada por el herrero Muramasa."),
                 MESSAGE_ERROR);
     }
 
@@ -67,12 +67,12 @@ class FileArmasCsvTest {
 
     @Test
     void actualizarArma() {
-        String idActualizar = "ID_ACTUALIZAR";
+        String idActualizar = "MM004";
         Arma ArmaBuscar = new Arma(idActualizar);
         Arma ArmaActualizar = persistencia.obtenerArma(ArmaBuscar);
         Arma ArmaBackup = persistencia.obtenerArma(ArmaBuscar);
-        ArmaActualizar.setNombre("nombreActualizar");
-        ArmaActualizar.setDescripcion("descripcionActualizar");
+        ArmaActualizar.setNombre("Masamune");
+        ArmaActualizar.setDescripcion("La legendaria espada japonesa, forjada por el herrero Muramasa.");
         persistencia.updateArma(ArmaActualizar);
 
         ArmaBuscar = persistencia.obtenerArma(ArmaBuscar);

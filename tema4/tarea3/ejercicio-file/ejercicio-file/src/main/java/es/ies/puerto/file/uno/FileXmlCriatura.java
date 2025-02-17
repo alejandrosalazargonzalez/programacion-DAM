@@ -89,7 +89,7 @@ public class FileXmlCriatura {
     /**
      * elimina una criatura de la lista
      * 
-     * @param criaturaElimiar
+     * @param criaturaElimiar del fichero
      * @throws Exception
      */
     public void deleteCriatura(Criatura criaturaElimiar) throws Exception {
