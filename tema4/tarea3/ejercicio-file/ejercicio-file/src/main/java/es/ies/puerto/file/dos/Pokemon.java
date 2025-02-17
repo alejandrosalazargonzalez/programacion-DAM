@@ -1,8 +1,13 @@
+
 package es.ies.puerto.file.dos;
 
 import java.util.List;
 import java.util.Objects;
 
+/**
+ *   @author: alejandrosalazargonzalez
+ *   @version: 1.0.0
+ */
 public class Pokemon {
 
     private String id;
