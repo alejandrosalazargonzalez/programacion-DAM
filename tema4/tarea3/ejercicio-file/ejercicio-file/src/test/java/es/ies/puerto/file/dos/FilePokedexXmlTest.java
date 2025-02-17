@@ -70,12 +70,12 @@ class FilePokedexXmlTest {
 
     @Test
     void actualizarPokemon() throws Exception {
-        String idActualizar = "ID_ACTUALIZAR";
+        String idActualizar = "001";
         Pokemon PokemonBuscar = new Pokemon(idActualizar);
         Pokemon PokemonActualizar = persistencia.obtenerPokemon(PokemonBuscar);
         Pokemon PokemonBackup = persistencia.obtenerPokemon(PokemonBuscar);
-        PokemonActualizar.setNombre("nombreActualizar");
-        PokemonActualizar.setDescripcion("descripcionActualizar");
+        PokemonActualizar.setNombre("Bulbasaur");
+        PokemonActualizar.setDescripcion("Bulbasaur");
         persistencia.updatePokemon(PokemonActualizar);
 
         PokemonBuscar = persistencia.obtenerPokemon(PokemonBuscar);

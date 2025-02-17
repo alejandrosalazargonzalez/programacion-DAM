@@ -56,8 +56,9 @@ public class Pokemon {
         this.nombre = nombre;
     }
 
-    public List<String> getTipos() {
-        return tipos;
+    public String getTipos() {
+
+        return tipos.toString();
     }
 
     public void setTipos(List<String> tipos) {

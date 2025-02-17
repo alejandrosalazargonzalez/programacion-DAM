@@ -7,10 +7,12 @@ import java.util.List;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 
 import org.w3c.dom.*;
-
-import es.ies.puerto.file.uno.Criatura;
 
 public class FilePokedexXml {
 
@@ -73,16 +75,85 @@ public class FilePokedexXml {
         return null;
     }
 
-    public void addPokemon(Pokemon pokemon) {
-
+    /**
+     * Aniade un pokemon al documento
+     * 
+     * @param pokemon
+     * @throws Exception
+     */
+    public void addPokemon(Pokemon pokemon) throws Exception {
+        List<Pokemon> listaPokemon = obtenerPokemons();
+        if (pokemon != null) {
+            listaPokemon.add(pokemon);
+        }
     }
 
-    public void deletePokemon(Pokemon pokemon) {
-
+    /**
+     * Elimina un pokemon de la lista
+     * 
+     * @param pokemon
+     * @throws Exception
+     */
+    public void deletePokemon(Pokemon pokemon) throws Exception {
+        List<Pokemon> listaPokemon = obtenerPokemons();
+        if (pokemon != null) {
+            listaPokemon.remove(pokemon);
+        }
     }
 
-    public void updatePokemon(Pokemon pokemon) {
+    /**
+     * actualiza la informacion del fichero
+     * 
+     * @param criaturas
+     * @throws Exception
+     */
+    public static void volcarFichero(List<Pokemon> criaturas) throws Exception {
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder builder = factory.newDocumentBuilder();
+        Document doc = builder.newDocument();
 
+        Element root = doc.createElement("pokemons");
+        doc.appendChild(root);
+        for (Pokemon pokemon : criaturas) {
+            Element criaturaXml = doc.createElement("pokemon");
+            root.appendChild(criaturaXml);
+
+            Element idXml = doc.createElement("id");
+            idXml.appendChild(doc.createTextNode(pokemon.getId()));
+            criaturaXml.appendChild(idXml);
+
+            Element nombreXml = doc.createElement("nombre");
+            nombreXml.appendChild(doc.createTextNode(pokemon.getNombre()));
+            criaturaXml.appendChild(nombreXml);
+
+            Element tiposXml = doc.createElement("tipos");
+            tiposXml.appendChild(doc.createTextNode(pokemon.getTipos()));
+            criaturaXml.appendChild(tiposXml);
+
+            Element descripcionXml = doc.createElement("descripcion");
+            descripcionXml.appendChild(doc.createTextNode(pokemon.getDescripcion()));
+            descripcionXml.appendChild(descripcionXml);
+        }
+
+        TransformerFactory transformerFactory = TransformerFactory.newInstance();
+        Transformer transformer = transformerFactory.newTransformer();
+        DOMSource source = new DOMSource(doc);
+        StreamResult result = new StreamResult(new File("src\\main\\resources\\dos.xml"));
+        transformer.transform(source, result);
+    }
+
+    /**
+     * Actualiza la informacion de un poquemon
+     * 
+     * @param pokemon
+     * @throws Exception
+     */
+    public void updatePokemon(Pokemon pokemon) throws Exception {
+        List<Pokemon> listaPokemon = obtenerPokemons();
+        int posicion = listaPokemon.indexOf(pokemon);
+        if (pokemon != null || posicion >= 0) {
+            listaPokemon.set(posicion, pokemon);
+        }
     }
 
 }
