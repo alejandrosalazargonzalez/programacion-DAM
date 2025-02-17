@@ -3,8 +3,12 @@ package es.ies.puerto.file.uno;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.xml.sax.SAXException;
 
+import java.io.IOException;
 import java.util.List;
+
+import javax.xml.parsers.ParserConfigurationException;
 
 import static utilidades.UtilClassTest.MESSAGE_ERROR;
 
@@ -15,7 +19,7 @@ class FileXmlCriaturaTest {
     List<Criatura> criaturas;
 
     @BeforeEach
-void beforeEach() {
+void beforeEach() throws ParserConfigurationException, SAXException, IOException {
         persistencia = new FileXmlCriatura();
         criaturas = persistencia.obtenerCriaturas();
         criatura = new Criatura();
@@ -30,32 +34,32 @@ void obtenerCriaturasTest() {
     }
 
     @Test
-void obtenerCriaturaTest() {
-        String idBuscar = "ID_ACTUALIZAR";
+void obtenerCriaturaTest() throws SAXException, IOException, ParserConfigurationException {
+        String idBuscar = "GF003";
         Criatura critaturaBuscar = new Criatura(idBuscar);
         critaturaBuscar = persistencia.obtener(critaturaBuscar);
-        Assertions.assertEquals(critaturaBuscar.getId(),"ID_BUSCAR",
+        Assertions.assertEquals(critaturaBuscar.getId(),idBuscar,
                 MESSAGE_ERROR);
         Assertions.assertNotNull(critaturaBuscar.getNombre(),
                 MESSAGE_ERROR);
-        Assertions.assertTrue (critaturaBuscar.getCategoria().equals("VALOR_COMPARAR"),
+        Assertions.assertTrue (critaturaBuscar.getCategoria().equals("Grifos"),
                 MESSAGE_ERROR);
-        Assertions.assertNotNull(critaturaBuscar.getDescripcion().equals("VALOR_COMPARAR"),
+        Assertions.assertNotNull(critaturaBuscar.getDescripcion().equals("Un poderoso grifo con cuerpo de león y alas de águila."),
                 MESSAGE_ERROR);
     }
 
     @Test
-void addDeleteCriaturaTest() {
+void addDeleteCriaturaTest() throws Exception {
 
         int numCriaturasInicial = criaturas.size();
-        Criatura criaturaInsertar = new Criatura();
+        Criatura criaturaInsertar = new Criatura("123","Hidra","Dragon de 7 cabezas que crea otras 2 cuando se le corta una","dragon");
 
         persistencia.addCriatura(criaturaInsertar);
         criaturas = persistencia.obtenerCriaturas();
         int numCriaturasInsertar = criaturas.size();
         Assertions.assertTrue(criaturas.contains(criaturaInsertar),
                 MESSAGE_ERROR);
-        Assertions.assertEquals(numCriaturasInicial +1 ,
+        Assertions.assertEquals(numCriaturasInicial+1 ,
                 numCriaturasInsertar, MESSAGE_ERROR);
         persistencia.deleteCriatura(criaturaInsertar);
         criaturas = persistencia.obtenerCriaturas();
@@ -66,20 +70,20 @@ void addDeleteCriaturaTest() {
     }
 
     @Test
-void actualizarCriatura() {
-        String idActualizar = "ID_ACTUALIZAR";
-        Criatura CriaturaBuscar = new Criatura(idActualizar);
-        Criatura CriaturaActualizar = persistencia.obtener(CriaturaBuscar);
-        Criatura CriaturaBackup = persistencia.obtener(CriaturaBuscar);
-        CriaturaActualizar.setNombre("nombreActualizar");
-        CriaturaActualizar.setDescripcion("edadActualizar");
-        CriaturaActualizar.setCategoria("emailActualizar");
-        persistencia.updateCriatura(CriaturaActualizar);
+void actualizarCriatura() throws SAXException, IOException, ParserConfigurationException {
+        String idActualizar = "FN005";
+        Criatura criaturaBuscar = new Criatura(idActualizar);
+        Criatura criaturaActualizar = persistencia.obtener(criaturaBuscar);
+        Criatura criaturaBackup = persistencia.obtener(criaturaBuscar);
+        criaturaActualizar.setNombre("Fénix Resplandeciente");
+        criaturaActualizar.setDescripcion("Un fénix que renace de sus cenizas con un resplandor dorado.");
+        criaturaActualizar.setCategoria("Otras Criaturas");
+        persistencia.updateCriatura(criaturaActualizar);
 
-        CriaturaBuscar = persistencia.obtener(CriaturaBuscar);
-        Assertions.assertEquals(CriaturaBuscar.toString(), CriaturaActualizar.toString(),
+        criaturaBuscar = persistencia.obtener(criaturaBuscar);
+        Assertions.assertEquals(criaturaBuscar.toString(), criaturaActualizar.toString(),
                 MESSAGE_ERROR);
-        persistencia.updateCriatura(CriaturaBackup);
+        persistencia.updateCriatura(criaturaBackup);
 
     }
 

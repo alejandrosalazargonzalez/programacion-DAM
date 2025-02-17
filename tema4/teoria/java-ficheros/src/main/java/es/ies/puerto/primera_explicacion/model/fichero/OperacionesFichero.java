@@ -21,6 +21,9 @@ public class OperacionesFichero implements OperacionesInterface {
 
     File fichero;
     String path = "/home/salazar/programacion-DAM/tema4/teoria/java-ficheros/src/main/resources/archivo.txt";
+    /**
+     * Constructor
+     */
     public OperacionesFichero(){
         fichero = new File(path);
         if (!fichero.exists() || !fichero.isFile()) {
@@ -29,6 +32,9 @@ public class OperacionesFichero implements OperacionesInterface {
     }
 
     @Override
+    /**
+     * 
+     */
     public boolean create(Persona persona) {
         if (persona == null || persona.getIdentificador().isEmpty() || persona.getIdentificador() == null) {
             return false;

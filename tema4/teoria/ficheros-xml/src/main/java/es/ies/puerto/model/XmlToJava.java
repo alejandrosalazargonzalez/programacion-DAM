@@ -7,7 +7,6 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
 import org.w3c.dom.*;
-import org.xml.sax.SAXException;
 
 import java.io.*;
 import java.util.ArrayList;
