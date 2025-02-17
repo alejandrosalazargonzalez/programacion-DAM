@@ -1,0 +1,32 @@
+<criaturas>
+    <criatura>
+        <id>DG001</id>
+        <nombre>Dragón de Fuego</nombre>
+        <descripcion>Un imponente dragón que escupe fuego.</descripcion>
+        <categoria>Dragones</categoria>
+    </criatura>
+    <criatura>
+        <id>UN002</id>
+        <nombre>Unicornio Brillante</nombre>
+        <descripcion>Un hermoso unicornio con un cuerno brillante.</descripcion>
+        <categoria>Unicornios</categoria>
+    </criatura>
+    <criatura>
+        <id>GF003</id>
+        <nombre>Grifo Majestuoso</nombre>
+        <descripcion>Un poderoso grifo con cuerpo de león y alas de águila.</descripcion>
+        <categoria>Grifos</categoria>
+    </criatura>
+    <criatura>
+        <id>EL004</id>
+        <nombre>Elfa Nocturna</nombre>
+        <descripcion>Una misteriosa elfa que vive en la oscuridad.</descripcion>
+        <categoria>Elfos</categoria>
+    </criatura>
+    <criatura>
+        <id>FN005</id>
+        <nombre>Fénix Resplandeciente</nombre>
+        <descripcion>Un fénix que renace de sus cenizas con un resplandor dorado.</descripcion>
+        <categoria>Otras Criaturas</categoria>
+    </criatura>
+</criaturas>
