@@ -30,7 +30,7 @@ public class FileXmlCriatura {
      * @throws SAXException
      */
     public List<Criatura> obtenerCriaturas() throws ParserConfigurationException, SAXException, IOException {
-        File archivo = new File("src\\main\\resources\\uno.xml");
+        File archivo = new File("src/main/resources/uno.xml");
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
         Document doc = builder.parse(archivo);
@@ -138,7 +138,7 @@ public class FileXmlCriatura {
         TransformerFactory transformerFactory = TransformerFactory.newInstance();
         Transformer transformer = transformerFactory.newTransformer();
         DOMSource source = new DOMSource(doc);
-        StreamResult result = new StreamResult(new File("src\\main\\resources\\uno.xml"));
+        StreamResult result = new StreamResult(new File("src/main/resources/uno.xml"));
         transformer.transform(source, result);
     }
 
@@ -152,7 +152,7 @@ public class FileXmlCriatura {
     public void updateCriatura(Criatura criaturaActualizada) throws ParserConfigurationException, SAXException, IOException {
         List<Criatura> criaturas = obtenerCriaturas();
         int posicion = criaturas.indexOf(criaturas);
-        if (posicion > 0) {
+        if (posicion >= 0) {
             criaturas.add(posicion, criaturaActualizada);
         }
     }

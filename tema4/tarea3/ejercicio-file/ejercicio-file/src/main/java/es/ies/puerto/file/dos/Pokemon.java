@@ -63,7 +63,11 @@ public class Pokemon {
 
     public String getTipos() {
 
-        return tipos.toString();
+        return this.tipos.toString();
+    }
+
+    public List<String> getTiposList(){
+        return this.tipos;
     }
 
     public void setTipos(List<String> tipos) {

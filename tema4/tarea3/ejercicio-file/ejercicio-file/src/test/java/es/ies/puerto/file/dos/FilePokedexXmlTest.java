@@ -7,6 +7,8 @@ import org.junit.jupiter.api.Test;
 import es.ies.puerto.file.dos.FilePokedexXml;
 import es.ies.puerto.file.dos.Pokemon;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static utilidades.UtilClassTest.MESSAGE_ERROR;
@@ -51,7 +53,8 @@ class FilePokedexXmlTest {
     void addDeletePokemonTest() throws Exception {
 
         int numPokemonsInicial = pokemons.size();
-        Pokemon PokemonInsertar = new Pokemon();
+        List<String> tiposAniadir = new ArrayList<>(Arrays.asList("nigger", "nigger"));
+        Pokemon PokemonInsertar = new Pokemon("007","nigger",tiposAniadir,"nigger");
 
         persistencia.addPokemon(PokemonInsertar);
         pokemons = persistencia.obtenerPokemons();
@@ -75,7 +78,7 @@ class FilePokedexXmlTest {
         Pokemon PokemonActualizar = persistencia.obtenerPokemon(PokemonBuscar);
         Pokemon PokemonBackup = persistencia.obtenerPokemon(PokemonBuscar);
         PokemonActualizar.setNombre("Bulbasaur");
-        PokemonActualizar.setDescripcion("Bulbasaur");
+        PokemonActualizar.setDescripcion("Un pequeño Pokémon con una semilla en su espalda que crece a medida que el Pokémon se desarrolla.");
         persistencia.updatePokemon(PokemonActualizar);
 
         PokemonBuscar = persistencia.obtenerPokemon(PokemonBuscar);

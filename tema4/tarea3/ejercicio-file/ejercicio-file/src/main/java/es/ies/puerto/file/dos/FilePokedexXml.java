@@ -26,7 +26,7 @@ public class FilePokedexXml {
      * @throws ParserConfigurationException
      */
     public List<Pokemon> obtenerPokemons() throws Exception {
-        File archivo = new File("src\\main\\resources\\dos.xml");
+        File archivo = new File("src/main/resources/dos.xml");
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
         Document doc = builder.parse(archivo);
@@ -107,17 +107,17 @@ public class FilePokedexXml {
     /**
      * actualiza la informacion del fichero
      * 
-     * @param criaturas
+     * @param pokemons
      * @throws Exception
      */
-    public static void volcarFichero(List<Pokemon> criaturas) throws Exception {
+    public static void volcarFichero(List<Pokemon> pokemons) throws Exception {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
         Document doc = builder.newDocument();
 
         Element root = doc.createElement("pokemons");
         doc.appendChild(root);
-        for (Pokemon pokemon : criaturas) {
+        for (Pokemon pokemon : pokemons) {
             Element criaturaXml = doc.createElement("pokemon");
             root.appendChild(criaturaXml);
 
@@ -130,18 +130,22 @@ public class FilePokedexXml {
             criaturaXml.appendChild(nombreXml);
 
             Element tiposXml = doc.createElement("tipos");
-            tiposXml.appendChild(doc.createTextNode(pokemon.getTipos()));
             criaturaXml.appendChild(tiposXml);
+            for (String tipo : pokemon.getTiposList()) {
+                Element tipoXml = doc.createElement("tipo");
+                tipoXml.appendChild(doc.createTextNode(tipo));
+                tiposXml.appendChild(tipoXml);
+            }
 
             Element descripcionXml = doc.createElement("descripcion");
             descripcionXml.appendChild(doc.createTextNode(pokemon.getDescripcion()));
-            descripcionXml.appendChild(descripcionXml);
+            criaturaXml.appendChild(descripcionXml);
         }
 
         TransformerFactory transformerFactory = TransformerFactory.newInstance();
         Transformer transformer = transformerFactory.newTransformer();
         DOMSource source = new DOMSource(doc);
-        StreamResult result = new StreamResult(new File("src\\main\\resources\\dos.xml"));
+        StreamResult result = new StreamResult(new File("src/main/resources/dos.xml"));
         transformer.transform(source, result);
     }
 

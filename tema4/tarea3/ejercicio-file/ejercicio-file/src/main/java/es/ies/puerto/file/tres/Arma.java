@@ -105,13 +105,10 @@ public class Arma {
 
     @Override
     public String toString() {
-        return "{" +
-            " id='" + getId() + "'" +
-            ", nombre='" + getNombre() + "'" +
-            ", descripcion='" + getDescripcion() + "'" +
-            ", origen='" + getOrigen() + "'" +
-            ", fuerza='" + getFuerza() + "'" +
-            "}";
+        return getId() + "," + getNombre() + ",\""
+            + getDescripcion() + "\"," 
+            + getOrigen() + "," 
+            +getFuerza();
     }
 
 

@@ -32,15 +32,15 @@ class FileArmasCsvTest {
     @Test
     void obtenerArmaTest() {
         String idBuscar = "MM004";
-        Arma ArmaBuscar = new Arma(idBuscar);
-        ArmaBuscar = persistencia.obtenerArma(ArmaBuscar);
-        Assertions.assertEquals(ArmaBuscar.getId(),"MM004",
+        Arma armaBuscar = new Arma(idBuscar);
+        armaBuscar = persistencia.obtenerArma(armaBuscar);
+        Assertions.assertEquals(armaBuscar.getId(),"MM004",
                 MESSAGE_ERROR);
-        Assertions.assertNotNull(ArmaBuscar.getNombre(),
+        Assertions.assertNotNull(armaBuscar.getNombre(),
                 MESSAGE_ERROR);
-        Assertions.assertTrue (ArmaBuscar.getOrigen().equals("La legendaria espada japonesa, forjada por el herrero Muramasa."),
+        Assertions.assertTrue (armaBuscar.getOrigen().equals("Japón"),
                 MESSAGE_ERROR);
-        Assertions.assertNotNull(ArmaBuscar.getOrigen().equals("La legendaria espada japonesa, forjada por el herrero Muramasa."),
+        Assertions.assertNotNull(armaBuscar.getOrigen().equals("La legendaria espada japonesa, forjada por el herrero Muramasa."),
                 MESSAGE_ERROR);
     }
 
@@ -68,15 +68,15 @@ class FileArmasCsvTest {
     @Test
     void actualizarArma() {
         String idActualizar = "MM004";
-        Arma ArmaBuscar = new Arma(idActualizar);
-        Arma ArmaActualizar = persistencia.obtenerArma(ArmaBuscar);
-        Arma ArmaBackup = persistencia.obtenerArma(ArmaBuscar);
+        Arma armaBuscar = new Arma(idActualizar);
+        Arma ArmaActualizar = persistencia.obtenerArma(armaBuscar);
+        Arma ArmaBackup = persistencia.obtenerArma(armaBuscar);
         ArmaActualizar.setNombre("Masamune");
         ArmaActualizar.setDescripcion("La legendaria espada japonesa, forjada por el herrero Muramasa.");
         persistencia.updateArma(ArmaActualizar);
 
-        ArmaBuscar = persistencia.obtenerArma(ArmaBuscar);
-        Assertions.assertEquals(ArmaBuscar.toString(), ArmaActualizar.toString(),
+        armaBuscar = persistencia.obtenerArma(armaBuscar);
+        Assertions.assertEquals(armaBuscar.toString(), ArmaActualizar.toString(),
                 MESSAGE_ERROR);
         persistencia.updateArma(ArmaBackup);
 
