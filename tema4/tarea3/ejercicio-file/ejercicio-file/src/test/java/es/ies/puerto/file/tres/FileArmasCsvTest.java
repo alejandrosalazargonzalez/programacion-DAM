@@ -48,7 +48,7 @@ class FileArmasCsvTest {
     void addDeleteArmaTest() {
 
         int numArmasInicial = armas.size();
-        Arma ArmaInsertar = new Arma();
+        Arma ArmaInsertar = new Arma("AD005","Andúril","La espada de Aragorn, heredero de Isildur.","Tierra Media",130);
 
         persistencia.addArma(ArmaInsertar);
         armas = persistencia.obtenerArmas();

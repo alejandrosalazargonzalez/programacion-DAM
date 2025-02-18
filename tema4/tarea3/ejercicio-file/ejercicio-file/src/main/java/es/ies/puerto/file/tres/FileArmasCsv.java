@@ -13,12 +13,11 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 public class FileArmasCsv {
 
-    File file = new File("src/main/resources/tres.csv");
-    
+    File file = new File("src\\main\\resources\\tres.csv");
+
     /**
      * Lee las armas del fichero
      * 
@@ -31,10 +30,9 @@ public class FileArmasCsv {
             while ((line = reader.readLine()) != null) {
                 String[] arrayLine = line.split(",");
                 int longitud = arrayLine.length;
-                String[] descripcionArchivo = line.split("\"");
-                String descripcion = "\"" + descripcionArchivo[1] + "\"";
-                Arma arma = new Arma(arrayLine[0], arrayLine[1], descripcion, arrayLine[longitud-2],
-                        Integer.parseInt(arrayLine[longitud-1]));
+                String descripcionArchivo = line.substring(line.indexOf("\"") + 1, line.lastIndexOf("\""));
+                Arma arma = new Arma(arrayLine[0], arrayLine[1], descripcionArchivo, arrayLine[longitud - 2],
+                        Integer.parseInt(arrayLine[longitud - 1]));
                 armas.add(arma);
             }
         } catch (IOException e) {
@@ -68,8 +66,6 @@ public class FileArmasCsv {
      * @return true/false
      */
     public boolean actualizarFichero(String data) {
-
-        List<Arma> armas = obtenerArmas();
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(file, true))) {
             writer.write(data);
             writer.newLine();
@@ -79,38 +75,6 @@ public class FileArmasCsv {
         }
     }
 
-    // @Override
-    // public boolean update(Persona persona) {
-    //     if (persona == null || persona.getIdentificador().isEmpty() || persona.getIdentificador() == null) {
-    //         return false;
-    //     }
-    //     Set<Persona> personas = read(file);
-    //     if (!personas.contains(persona)) {
-    //         return false;
-    //     }
-    //     for (Persona personaBuscada : personas) {
-    //         if (personaBuscada.equals(persona)) {
-    //             personas.remove(personaBuscada);
-    //             personas.add(persona);
-    //             return updateFile(personas, file);
-    //         }
-    //     }
-    //     System.out.println(personas);
-    //     return true;
-    // }
-
-    // private boolean updateFile(Set<Persona> personas, File file){
-    //     try {
-    //         file.delete();
-    //         file.createNewFile();
-    //     } catch (IOException e) {
-    //         return false;
-    //     }
-    //     for(Persona persona : personas) {
-    //         create(persona);
-    //     }
-    //     return true;
-    // }
     /**
      * Aniade un arma al archivo
      * 
@@ -120,17 +84,9 @@ public class FileArmasCsv {
         List<Arma> armas = obtenerArmas();
         if (arma != null) {
             armas.add(arma);
-            try {
-                file.delete();
-                file.createNewFile();
-            } catch (IOException e) {
-                e.getMessage();
-            }
-            for (Arma arma2 : armas) {
-                actualizarFichero(arma2.toString());
+            actualizarFichero(arma.toString());
             }
         }
-    }
 
     /**
      * elimina un arma del archivo
@@ -140,18 +96,14 @@ public class FileArmasCsv {
     public void deleteArma(Arma arma) {
         List<Arma> armas = obtenerArmas();
         if (arma != null) {
-            int posicion = armas.indexOf(arma);
-            if (posicion > 0) {
-                armas.remove(arma);
-                try {
-                    file.delete();
-                    file.createNewFile();
-                } catch (IOException e) {
-                    e.getMessage();
-                }
+            armas.remove(arma);
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
                 for (Arma arma2 : armas) {
-                    actualizarFichero(arma2.toString());
+                    writer.write(arma2.toString());
+                    writer.newLine();
                 }
+            } catch (IOException e) {
+                e.printStackTrace();
             }
         }
     }
@@ -163,20 +115,18 @@ public class FileArmasCsv {
      */
     public void updateArma(Arma arma) {
         List<Arma> armas = obtenerArmas();
-        if (arma != null) {
-            int posicion = armas.indexOf(arma);
-            if (posicion > 0) {
-                armas.add(posicion, arma);
-                try {
-                    file.delete();
-                    file.createNewFile();
-                } catch (IOException e) {
-                    e.getMessage();
-                }
+        int posicion = armas.indexOf(arma);
+        if (arma != null && posicion >= 0) {
+            armas.set(posicion, arma);
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
                 for (Arma arma2 : armas) {
-                    actualizarFichero(arma2.toString());
+                    writer.write(arma2.toString());
+                    writer.newLine();
                 }
+            } catch (IOException e) {
+                e.printStackTrace();
             }
         }
     }
 }
+

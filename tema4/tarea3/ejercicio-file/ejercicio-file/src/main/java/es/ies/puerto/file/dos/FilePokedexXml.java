@@ -41,12 +41,8 @@ public class FilePokedexXml {
                 List<String> tipos = new ArrayList<>();
                 NodeList listaTipos = doc.getElementsByTagName("tipos");
                 for (int f = 0; f < listaTipos.getLength(); f++) {
-                    Node nodoTipos = listaTipos.item(i);
-                    if (nodoTipos.getNodeType() == Node.ELEMENT_NODE) {
-                        Element elementoTipo = (Element) nodoTipos;
-                        String tipo = elementoTipo.getElementsByTagName("tipo").item(0).getTextContent();
-                        tipos.add(tipo);
-                    }
+                    tipos.add(listaTipos.item(f).getTextContent());
+
                 }
                 String descripcion = elemento.getElementsByTagName("descripcion").item(0).getTextContent();
                 listaPokemons.add(new Pokemon(id, nombre, tipos, descripcion));
@@ -88,6 +84,7 @@ public class FilePokedexXml {
         List<Pokemon> listaPokemon = obtenerPokemons();
         if (pokemon != null) {
             listaPokemon.add(pokemon);
+            volcarFichero(listaPokemon);
         }
     }
 
@@ -101,6 +98,7 @@ public class FilePokedexXml {
         List<Pokemon> listaPokemon = obtenerPokemons();
         if (pokemon != null) {
             listaPokemon.remove(pokemon);
+            volcarFichero(listaPokemon);
         }
     }
 
@@ -160,6 +158,8 @@ public class FilePokedexXml {
         int posicion = listaPokemon.indexOf(pokemon);
         if (pokemon != null || posicion >= 0) {
             listaPokemon.set(posicion, pokemon);
+            volcarFichero(listaPokemon);
+
         }
     }
 
