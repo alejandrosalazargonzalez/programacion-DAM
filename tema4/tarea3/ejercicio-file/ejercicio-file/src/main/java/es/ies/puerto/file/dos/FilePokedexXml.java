@@ -1,4 +1,3 @@
-
 package es.ies.puerto.file.dos;
 
 import java.io.*;
@@ -20,7 +19,7 @@ import org.w3c.dom.*;
 public class FilePokedexXml {
 
     /**
-     * Saca todos los pockemons
+     * Saca todos los pokemons
      * 
      * @return List<Pokemon>
      * @throws ParserConfigurationException
@@ -39,10 +38,9 @@ public class FilePokedexXml {
                 String id = elemento.getElementsByTagName("id").item(0).getTextContent();
                 String nombre = elemento.getElementsByTagName("nombre").item(0).getTextContent();
                 List<String> tipos = new ArrayList<>();
-                NodeList listaTipos = doc.getElementsByTagName("tipos");
+                NodeList listaTipos = elemento.getElementsByTagName("tipo");
                 for (int f = 0; f < listaTipos.getLength(); f++) {
                     tipos.add(listaTipos.item(f).getTextContent());
-
                 }
                 String descripcion = elemento.getElementsByTagName("descripcion").item(0).getTextContent();
                 listaPokemons.add(new Pokemon(id, nombre, tipos, descripcion));
@@ -75,7 +73,7 @@ public class FilePokedexXml {
     }
 
     /**
-     * Aniade un pokemon al documento
+     * Añade un pokemon al documento
      * 
      * @param pokemon
      * @throws Exception
@@ -103,7 +101,7 @@ public class FilePokedexXml {
     }
 
     /**
-     * actualiza la informacion del fichero
+     * Actualiza la información del fichero
      * 
      * @param pokemons
      * @throws Exception
@@ -148,7 +146,7 @@ public class FilePokedexXml {
     }
 
     /**
-     * Actualiza la informacion de un poquemon
+     * Actualiza la información de un pokemon
      * 
      * @param pokemon
      * @throws Exception
@@ -156,10 +154,9 @@ public class FilePokedexXml {
     public void updatePokemon(Pokemon pokemon) throws Exception {
         List<Pokemon> listaPokemon = obtenerPokemons();
         int posicion = listaPokemon.indexOf(pokemon);
-        if (pokemon != null || posicion >= 0) {
+        if (pokemon != null && posicion >= 0) {
             listaPokemon.set(posicion, pokemon);
             volcarFichero(listaPokemon);
-
         }
     }
 
