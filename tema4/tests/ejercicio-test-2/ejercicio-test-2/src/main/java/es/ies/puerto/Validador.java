@@ -1,10 +1,16 @@
 package es.ies.puerto;
 
 public class Validador {
-    public int procesarNumero(int numero) throws IllegalArgumentException, ArithmeticException, NullPointerException {
+    
+    public void validarNegativo(int numero){
         if (numero < 0) {
             throw new IllegalArgumentException("El número no puede ser negativo");
         }
+    }
+
+    public int procesarNumero(int numero) throws IllegalArgumentException, ArithmeticException, NullPointerException {
+        validarNegativo(numero);
+
         if (numero == 0) {
             throw new ArithmeticException("El número no puede ser cero para esta operación");
         }
@@ -14,10 +20,11 @@ public class Validador {
 
         int resultado = numero * 2;
         
+        if (resultado % 5 == 0) {
+            System.out.println("El resultado es múltiplo de 5");
+        } 
         if (resultado % 10 == 0) {
             System.out.println("El resultado es múltiplo de 10");
-        } else if (resultado % 5 == 0) {
-            System.out.println("El resultado es múltiplo de 5");
         } else {
             System.out.println("El resultado es un número normal");
         }
