@@ -11,12 +11,20 @@ public class Tributo {
     private boolean voluntario;
     private String fechaSeleccion;
 
+    /**
+     * Constructor del tributo
+     * @param id del tributo
+     * @param nombre del tributo
+     * @param distrito del tributo
+     * @param voluntario del tributo
+     * @param fechaSeleccion del tributo
+     */
     @JsonCreator
     public Tributo(@JsonProperty("id") int id,
-                   @JsonProperty("nombre") String nombre,
-                   @JsonProperty("distrito") int distrito,
-                   @JsonProperty("voluntario") boolean voluntario,
-                   @JsonProperty("fechaSeleccion") String fechaSeleccion) {
+                    @JsonProperty("nombre") String nombre,
+                    @JsonProperty("distrito") int distrito,
+                    @JsonProperty("voluntario") boolean voluntario,
+                    @JsonProperty("fechaSeleccion") String fechaSeleccion) {
         this.id = id;
         this.nombre = nombre;
         this.distrito = distrito;
@@ -24,10 +32,15 @@ public class Tributo {
         this.fechaSeleccion = fechaSeleccion;
     }
 
+    /**
+     *  Constructor del tributo con id
+     * @param id del tributo
+     */
     public Tributo(@JsonProperty("id") int id) {
         this.id = id;
     }
 
+    //Getters y setters
     public int getId() {
         return this.id;
     }

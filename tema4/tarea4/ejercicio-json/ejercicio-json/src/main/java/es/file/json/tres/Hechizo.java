@@ -12,12 +12,20 @@ public class Hechizo {
     private boolean esOscuro;
     private String fechaCreacion;
 
+    /**
+     * Constructor de hechizo completo
+     * @param id del hechizo
+     * @param nombre del hechizo
+     * @param tipo del hechizo
+     * @param esOscuro del hechizo
+     * @param fechaCreacion del hechizo
+     */
     @JsonCreator
     public Hechizo(@JsonProperty("id") int id,
-                   @JsonProperty("nombre") String nombre,
-                   @JsonProperty("tipo") String tipo,
-                   @JsonProperty("esOscuro") boolean esOscuro,
-                   @JsonProperty("fechaCreacion") String fechaCreacion) {
+                    @JsonProperty("nombre") String nombre,
+                    @JsonProperty("tipo") String tipo,
+                    @JsonProperty("esOscuro") boolean esOscuro,
+                    @JsonProperty("fechaCreacion") String fechaCreacion) {
         this.id = id;
         this.nombre = nombre;
         this.tipo = tipo;
@@ -25,11 +33,15 @@ public class Hechizo {
         this.fechaCreacion = fechaCreacion;
     }
 
+    /**
+     * Constructor con id del hechizo
+     * @param id del hechizo
+     */
     public Hechizo(@JsonProperty("id") int id) {
         this.id = id;
     }
     
-
+    //Getters setters
     public int getId() {
         return this.id;
     }

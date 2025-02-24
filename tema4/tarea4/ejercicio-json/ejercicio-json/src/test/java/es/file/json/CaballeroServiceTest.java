@@ -11,7 +11,7 @@ import es.file.json.dos.Tributo;
 import es.file.json.uno.*;
 
 class CaballeroServiceTest {
-   
+
     CaballeroService caballeroService;
     Caballero caballero;
 
