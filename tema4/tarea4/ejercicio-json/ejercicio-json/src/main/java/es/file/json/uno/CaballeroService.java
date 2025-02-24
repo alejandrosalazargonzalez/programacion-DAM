@@ -2,6 +2,7 @@ package es.file.json.uno;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -32,7 +33,15 @@ public class CaballeroService {
      * @return Caballero
      */
     public Caballero findById(int id) {
-        return null;
+        if (id < 0) {
+            return null;
+        }
+        Caballero caballeroBuscado = new Caballero(id);
+        int posicion = listCaballero.indexOf(caballeroBuscado);
+        if (posicion < 0) {
+            return null;
+        }
+        return listCaballero.get(posicion);
     }
 
     /**
@@ -42,7 +51,19 @@ public class CaballeroService {
      * @return List<Caballero>
      */
     public List<Caballero> findByDateRange(String startDate, String endDate) {
-        return null;
+        if (startDate == null || startDate.isEmpty() || endDate == null ||  endDate.isEmpty()) {
+            return null;
+        }
+        List<Caballero> caballeroList = new ArrayList<>();
+        LocalDate inico = LocalDate.parse(startDate);
+        LocalDate fin = LocalDate.parse(endDate);
+        for (Caballero caballero : listCaballero) {
+            LocalDate fechaCaballero = LocalDate.parse(caballero.getFechaIngreso());
+            if(fechaCaballero.isBefore(fin) && fechaCaballero.isAfter(inico)){
+                caballeroList.add(caballero);
+            }
+        }
+        return new ArrayList<>(caballeroList);
     }
 
     public List<Caballero> getList() {
