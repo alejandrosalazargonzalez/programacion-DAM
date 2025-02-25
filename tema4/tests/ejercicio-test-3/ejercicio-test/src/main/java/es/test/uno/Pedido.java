@@ -36,7 +36,7 @@ public class Pedido {
             return false;
         }
         Pedido pedido = (Pedido) o;
-        return id == pedido.id ;
+        return Objects.equals(id, pedido.id);
     }
 
     @Override
