@@ -62,6 +62,7 @@ public class Caballero {
         return this.fechaIngreso;
     }
 
+
     @Override
     public boolean equals(Object o) {
         if (o == this)
@@ -70,6 +71,12 @@ public class Caballero {
             return false;
         }
         Caballero caballero = (Caballero) o;
-        return Objects.equals(id, caballero.id);
+        return id == caballero.id ;
     }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+    
 }
