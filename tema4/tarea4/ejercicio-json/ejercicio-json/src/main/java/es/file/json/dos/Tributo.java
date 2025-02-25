@@ -75,4 +75,5 @@ public class Tributo {
         Tributo tributo = (Tributo) o;
         return Objects.equals(id, tributo.id);
     }
+
 }

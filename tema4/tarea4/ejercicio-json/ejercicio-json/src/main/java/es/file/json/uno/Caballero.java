@@ -73,10 +73,4 @@ public class Caballero {
         Caballero caballero = (Caballero) o;
         return id == caballero.id ;
     }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
-    
 }

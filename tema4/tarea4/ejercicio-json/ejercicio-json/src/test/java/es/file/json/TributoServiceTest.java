@@ -1,5 +1,7 @@
 package es.file.json;
 
+import static org.mockito.ArgumentMatchers.*;
+
 import java.util.List;
 
 import org.junit.jupiter.api.AfterEach;
@@ -81,6 +83,34 @@ class TributoServiceTest {
     void searchListTributosRangeExistTest() {
         List<Tributo> tributos = tributoService.findByDateRange("1970-04-15", "2000-04-15");
         Assertions.assertEquals(2, tributos.size());
+    }
 
+    @Test
+    void searchListTributosRangeNullTest() {
+        List<Tributo> tributos = tributoService.findByDateRange(null, "2000-04-15");
+        Assertions.assertNull(tributos);
+    }
+
+    @Test
+    void searchListTributosRangeNull2Test() {
+        List<Tributo> tributos = tributoService.findByDateRange("1970-04-15", null);
+        Assertions.assertNull(tributos);
+    }
+
+    @Test
+    void searchListTributosRangeEmptyTest() {
+        List<Tributo> tributos = tributoService.findByDateRange("", "2000-04-15");
+        Assertions.assertNull(tributos);
+    }
+
+    @Test
+    void searchListTributosRangeEmpty2Test() {
+        List<Tributo> tributos = tributoService.findByDateRange("1970-04-15", "");
+        Assertions.assertNull(tributos);
+    }
+
+    @Test
+    void getListaTributos(){
+        Assertions.assertEquals(5,tributoService.getList().size());
     }
 }

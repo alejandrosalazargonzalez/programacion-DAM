@@ -25,6 +25,13 @@ public class CaballeroService {
     public CaballeroService() {
         objectMapper = new ObjectMapper();
         file = new File(path);
+        if (!file.exists()) {
+            try {
+                file.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
         listCaballero = loadAll();
     }
 
@@ -52,7 +59,8 @@ public class CaballeroService {
      * @return List<Caballero>
      */
     public List<Caballero> findByDateRange(String startDate, String endDate) {
-        if (startDate == null || startDate.isEmpty() || endDate == null ||  endDate.isEmpty()) {
+        if (startDate == null || startDate.isEmpty() || endDate == null ||  
+            endDate.isEmpty()) {
             return null;
         }
         List<Caballero> caballeroList = new ArrayList<>();
@@ -60,7 +68,8 @@ public class CaballeroService {
         LocalDate fin = LocalDate.parse(endDate);
         for (Caballero caballero : listCaballero) {
             LocalDate fechaCaballero = LocalDate.parse(caballero.getFechaIngreso());
-            if((fechaCaballero.isBefore(fin) || fechaCaballero.equals(fin)) && (fechaCaballero.isAfter(inico) || fechaCaballero.equals(inico))){
+            if((fechaCaballero.isBefore(fin) || fechaCaballero.equals(fin))
+            && (fechaCaballero.isAfter(inico) || fechaCaballero.equals(inico))){
                 caballeroList.add(caballero);
             }
         }
@@ -72,7 +81,7 @@ public class CaballeroService {
      * @return List<Caballero> 
      */
     public List<Caballero> getList() {
-        return listCaballero;
+        return new ArrayList<>(listCaballero);
     }
     
     /**
@@ -82,11 +91,12 @@ public class CaballeroService {
     public List<Caballero> loadAll() {
         List<Caballero> caballeroList = new ArrayList<>();
         try {
-            caballeroList = objectMapper.readValue(file, new TypeReference<List<Caballero>>() {});
+            caballeroList = objectMapper.readValue(file,
+                new TypeReference<List<Caballero>>() {});
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return caballeroList;
+        return new ArrayList<>(caballeroList);
     }
     
     /**
