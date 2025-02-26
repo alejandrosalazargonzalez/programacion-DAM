@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "nombre": "Seiya",
+        "constelacion": "Pegaso",
+        "nivel": 5,
+        "fechaIngreso": "1986-10-11"
+    },
+    {
+        "id": 2,
+        "nombre": "Shiryu",
+        "constelacion": "Dragón",
+        "nivel": 6,
+        "fechaIngreso": "1986-10-12"
+    },
+    {
+        "id": 3,
+        "nombre": "Hyoga",
+        "constelacion": "Cisne",
+        "nivel": 5,
+        "fechaIngreso": "1986-10-13"
+    },
+    {
+        "id": 4,
+        "nombre": "Shun",
+        "constelacion": "Andrómeda",
+        "nivel": 5,
+        "fechaIngreso": "1986-10-14"
+    }
+]
