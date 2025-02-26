@@ -21,6 +21,9 @@ public class FileOperaciones implements Operaciones{
     private File file;
     private String fichero = "empleados.txt";
 
+    /**
+     * inicializa el fichero
+     */
     public FileOperaciones(){
         try {
             URL resource = getClass().getClassLoader().getResource(fichero);
@@ -31,6 +34,11 @@ public class FileOperaciones implements Operaciones{
     }
     
     @Override
+    /**
+     * convierte a la persona en toString y llama al otro create
+     * @param persona a aniadir
+     * @return true/false
+     */
     public boolean create(Persona persona) {
         Set<Persona> personas = read(file);
         if (personas.contains(persona)) {
@@ -39,6 +47,12 @@ public class FileOperaciones implements Operaciones{
         return create(persona.toString(), file);
     }
 
+    /**
+     * aniade datos al fichero csv
+     * @param data a aniadir
+     * @param file donde aniadir la data
+     * @return true/false
+     */
     private boolean create(String data,File file) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(file, true))) {
             writer.write(data);
@@ -51,6 +65,11 @@ public class FileOperaciones implements Operaciones{
     }
 
     @Override
+    /**
+     * Actualiza la informacion de una persona
+     * @param persona con la informacion actualizada
+     * @return true/false
+     */
     public boolean update(Persona persona) {
         if (persona == null || persona.getIdentificador().isEmpty() || persona.getIdentificador() == null) {
             return false;
@@ -70,6 +89,15 @@ public class FileOperaciones implements Operaciones{
         return true;
     }
 
+    /**
+     * Actualiza toda la informacion del fichero
+     * lo borra
+     * lo crea de nuevo
+     * y llama a create para aniadir la informacion
+     * @param personas a aniadir
+     * @param file que actualizar
+     * @return true/false
+     */
     private boolean updateFile(Set<Persona> personas, File file){
         try {
             file.delete();
@@ -84,6 +112,11 @@ public class FileOperaciones implements Operaciones{
     }
 
     @Override
+    /**
+     * elimina a una persona del fichero
+     * @param persona a eliminar
+     * @return true/false
+     */
     public boolean delete(Persona persona) {
         if (persona == null || persona.getIdentificador().isEmpty() || persona.getIdentificador() == null) {
             return false;
@@ -102,6 +135,11 @@ public class FileOperaciones implements Operaciones{
     }
 
     @Override
+    /**
+     * Busca a una persona en el fichero
+     * @param persona a buscar
+     * @return Persona
+     */
     public Persona search(Persona persona) {
         Set<Persona> personas = read(file);
         if (personas.contains(persona)) {
@@ -115,11 +153,22 @@ public class FileOperaciones implements Operaciones{
     }
 
     @Override
+    /**
+     * Crea a una persona con un id y la busca
+     * @param identificador
+     * @return Persona
+     */
     public Persona search(String identificador) {
         Persona persona = new Empleado(identificador);
         return search(persona);
 
     }
+
+    /**
+     * Lee el fichero Csv y lo guarda en un Ser
+     * @param file a leer
+     * @return Ser<Persona>
+     */
     public Set<Persona> read(File file) {
         Set<Persona> personas = new HashSet<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
