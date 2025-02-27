@@ -27,4 +27,9 @@ public class Inventario {
     public boolean eliminarProducto(int id) {
         return productos.removeIf(producto -> producto.getId() == id);
     }
+
+
+    public List<Producto> loadLista(){
+        return new ArrayList<>(productos);
+    }
 }
