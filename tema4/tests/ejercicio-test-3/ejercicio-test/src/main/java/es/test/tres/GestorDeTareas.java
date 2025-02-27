@@ -36,4 +36,8 @@ public class GestorDeTareas {
         }
         return pendientes;
     }
+
+    public List<Tarea> obtenerTodasTareas(){
+        return new ArrayList<>(tareas);
+    }
 }
