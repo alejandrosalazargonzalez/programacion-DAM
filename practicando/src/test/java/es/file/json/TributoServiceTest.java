@@ -9,7 +9,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import es.file.json.dos.*;
+import es.file.json.tributos.Tributo;
+import es.file.json.tributos.TributoService;
 
 class TributoServiceTest {
    

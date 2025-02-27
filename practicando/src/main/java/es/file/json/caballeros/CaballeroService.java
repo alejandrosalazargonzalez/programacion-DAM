@@ -1,11 +1,18 @@
-package es.file.json.uno;
+package es.file.json.caballeros;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -32,7 +39,7 @@ public class CaballeroService {
                 e.printStackTrace();
             }
         }
-        listCaballero = loadAll();
+        listCaballero = loadJson();
     }
 
     /**
@@ -88,7 +95,7 @@ public class CaballeroService {
      * Lee el archivo json y crea una lista con sus caballeros
      * @return List<Caballero>
      */
-    public List<Caballero> loadAll() {
+    public List<Caballero> loadJson() {
         List<Caballero> caballeroList = new ArrayList<>();
         try {
             caballeroList = objectMapper.readValue(file,
@@ -99,6 +106,107 @@ public class CaballeroService {
         return new ArrayList<>(caballeroList);
     }
     
+    /**
+     * Escribe informacion en el fichero json
+     * @param caballeros 
+     */
+    public void saveFileJson(List<Caballero> caballeros) {
+        try {
+            objectMapper.writeValue(file, caballeros);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Escribe informacion en el fichero csv
+     * @param caballero
+     */
+    public void saveFileCsv(Caballero caballero) {
+        List<Caballero> caballeros = loadJson();
+        if (!caballeros.contains(caballero)) {
+            saveFileCsv(caballero.toString());
+        }
+    }
+
+    /**
+     * Escribe informacion en el fichero csv
+     * @param caballeros 
+     */
+    public void saveFileCsv(String caballero) {
+        File fileCsv = new File("src\\main\\resources\\caballeros.json");
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileCsv, true))) {
+            writer.write(caballero);
+            writer.newLine();
+            System.out.println("Registro agregado.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Actualiza la informacion de un caballero en el fichero
+     * @param caballero
+     * @return
+     */
+    public boolean update(Caballero caballero) {
+        if (caballero == null || caballero.getId() < 0 ) {
+            return false;
+        }
+        List<Caballero> caballeros = loadCsv(file);
+        if (!caballeros.contains(caballero)) {
+            return false;
+        }
+        for (Caballero caballeroBuscada : caballeros) {
+            if (caballeroBuscada.equals(caballero)) {
+                caballeros.remove(caballeroBuscada);
+                caballeros.add(caballero);
+                return updateFile(caballeros, file);
+            }
+        }
+        System.out.println(caballeros);
+        return true;
+    }
+
+    /**
+     * Actualiza el fichero indicado con la informacion de la lista
+     * @param caballeros
+     * @param file
+     * @return
+     */
+    private boolean updateFile(List<Caballero> caballeros, File file){
+        try {
+            file.delete();
+            file.createNewFile();
+        } catch (IOException e) {
+            return false;
+        }
+        for(Caballero caballero : caballeros) {
+            saveFileCsv(caballero);
+        }
+        return true;
+    }
+
+    /**
+     * Carga el fichero csv en una lista
+     * @param file
+     * @return
+     */
+    public List<Caballero> loadCsv(File file) {
+        List<Caballero> caballeros = new ArrayList();
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] arrayLine = line.split(",");
+                Caballero caballero = new Caballero(Integer.valueOf(arrayLine[0]),arrayLine[1],arrayLine[2],Integer.valueOf(arrayLine[3]),arrayLine[4]);
+                caballeros.add(caballero);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return caballeros;
+    }
+
     /**
      * Aniade un caballero al archivo
      * @param obj caballero a aniadir
@@ -113,22 +221,11 @@ public class CaballeroService {
         }
         boolean insertar = listCaballero.add(obj);
         if (insertar) {
-            saveFile(listCaballero);
+            saveFileJson(listCaballero);
         }
         return insertar;
     }
 
-    /**
-     * Escribe informacion en el fichero json
-     * @param caballeros 
-     */
-    public void saveFile(List<Caballero> caballeros) {
-        try {
-            objectMapper.writeValue(file, caballeros);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
     /**
      * Elimina un caballero del archivo json
@@ -144,7 +241,7 @@ public class CaballeroService {
         }
         boolean borrar = listCaballero.remove(obj);
         if (borrar) {
-            saveFile(listCaballero);
+            saveFileJson(listCaballero);
         }
         return borrar;
     }

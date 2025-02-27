@@ -1,4 +1,4 @@
-package es.file.json.dos;
+package es.file.json.tributos;
 
 import com.fasterxml.jackson.annotation.*;
 import java.time.LocalDate;

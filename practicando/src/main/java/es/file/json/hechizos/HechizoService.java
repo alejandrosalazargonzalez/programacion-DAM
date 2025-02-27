@@ -1,4 +1,4 @@
-package es.file.json.tres;
+package es.file.json.hechizos;
 
 import java.io.File;
 import java.io.IOException;
