@@ -89,4 +89,36 @@ class ProductoServiceTest {
     
             Assertions.assertFalse(productoService.eliminarProducto(-1));
     }
+
+    @Test
+    void setTest(){
+        Producto producto = new Producto();
+
+        producto.setId(100);
+        producto.setNombre("raton");
+        producto.setPrecio(100.20);
+        Assertions.assertEquals(100, producto.getId());
+        Assertions.assertEquals("raton", producto.getNombre());
+        Assertions.assertEquals(100.20,producto.getPrecio());
+    }
+
+    @Test
+    void equalsTest(){
+        Producto producto1 = new Producto(1, "Laptop", 1200.50);    
+        Producto producto = new Producto(1);
+        Assertions.assertEquals(producto1, producto);
+    }
+
+    @Test
+    void equalsFalseTest(){
+        Producto producto1 = new Producto(1, "Laptop", 1200.50);    
+        Producto producto = new Producto(2);
+        Assertions.assertFalse(producto.equals(producto1));
+    }
+
+    @Test
+    void equalsNoEqualsTest(){
+        Producto producto1 = new Producto(1, "Laptop", 1200.50);    
+        Assertions.assertFalse(producto1.equals("producto1"));
+    }
 }

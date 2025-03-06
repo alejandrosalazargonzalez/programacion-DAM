@@ -7,6 +7,26 @@ public class Producto {
     private String nombre;
     private double precio;
 
+    /**
+     * constructor vacio
+     */
+    public Producto(){
+    }
+
+    /**
+     * constructor de busqueda
+     * @param id del producto
+     */
+    public Producto(int id){
+        this.id = id;
+    }
+
+    /**
+     * constructor completo
+     * @param id del producto
+     * @param nombre del producto
+     * @param precio del producto
+     */
     public Producto(int id, String nombre, double precio) {
         this.id = id;
         this.nombre = nombre;
@@ -47,12 +67,12 @@ public class Producto {
             return false;
         }
         Producto producto = (Producto) o;
-        return id == producto.id && Objects.equals(nombre, producto.nombre) && precio == producto.precio;
+        return id == producto.id;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, nombre, precio);
+        return Objects.hash(id);
     }
 
 }
