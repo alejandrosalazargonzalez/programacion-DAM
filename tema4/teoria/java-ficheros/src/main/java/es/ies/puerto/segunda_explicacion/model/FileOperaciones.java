@@ -35,7 +35,7 @@ public class FileOperaciones implements Operaciones{
     
     @Override
     /**
-     * convierte a la persona en toString y llama al otro create
+     * convierte a la persona en toString y llama al otro escribirCsv
      * @param persona a aniadir
      * @return true/false
      */
@@ -44,7 +44,7 @@ public class FileOperaciones implements Operaciones{
         if (personas.contains(persona)) {
             return false;
         }
-        return create(persona.toString(), file);
+        return escribirCsv(persona.toString(), file);
     }
 
     /**
@@ -53,7 +53,7 @@ public class FileOperaciones implements Operaciones{
      * @param file donde aniadir la data
      * @return true/false
      */
-    private boolean create(String data,File file) {
+    private boolean escribirCsv(String data,File file) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(file, true))) {
             writer.write(data);
             writer.newLine();   // Añadir una nueva línea después del registro
@@ -93,7 +93,7 @@ public class FileOperaciones implements Operaciones{
      * Actualiza toda la informacion del fichero
      * lo borra
      * lo crea de nuevo
-     * y llama a create para aniadir la informacion
+     * y llama a escribirCsv para aniadir la informacion
      * @param personas a aniadir
      * @param file que actualizar
      * @return true/false

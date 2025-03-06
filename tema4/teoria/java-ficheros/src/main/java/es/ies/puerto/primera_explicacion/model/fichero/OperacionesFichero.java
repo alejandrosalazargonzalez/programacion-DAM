@@ -21,31 +21,38 @@ public class OperacionesFichero implements OperacionesInterface {
 
     File fichero;
     String path = "/home/salazar/programacion-DAM/tema4/teoria/java-ficheros/src/main/resources/archivo.txt";
+    Set<Persona> personas;
     /**
-     * Constructor
+     * Constructor inicializa el fichero
      */
     public OperacionesFichero(){
         fichero = new File(path);
         if (!fichero.exists() || !fichero.isFile()) {
             throw new IllegalArgumentException("El recurso no es de tipo fichero "+path);
         }
+        personas = read(fichero);
     }
 
     @Override
     /**
-     * 
+     * llama al create pasando la persona a string
      */
     public boolean create(Persona persona) {
         if (persona == null || persona.getIdentificador().isEmpty() || persona.getIdentificador() == null) {
             return false;
         }
-        Set<Persona> personas = read(fichero);
         if (personas.contains(persona)) {
             return false;
         }
         return create(persona.toString(), fichero);
         }
 
+    /**
+     * Es
+     * @param data
+     * @param file
+     * @return
+     */
     private boolean create(String data,File file) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(file, true))) {
             writer.write(data);
