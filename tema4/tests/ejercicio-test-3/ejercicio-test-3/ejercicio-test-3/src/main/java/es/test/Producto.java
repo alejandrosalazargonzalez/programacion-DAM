@@ -1,5 +1,7 @@
 package es.test;
 
+import java.util.Objects;
+
 public class Producto {
     private int id;
     private String nombre;
@@ -35,4 +37,22 @@ public class Producto {
     public void setPrecio(double precio) {
         this.precio = precio;
     }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == this)
+            return true;
+        if (!(o instanceof Producto)) {
+            return false;
+        }
+        Producto producto = (Producto) o;
+        return id == producto.id && Objects.equals(nombre, producto.nombre) && precio == producto.precio;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, nombre, precio);
+    }
+
 }
