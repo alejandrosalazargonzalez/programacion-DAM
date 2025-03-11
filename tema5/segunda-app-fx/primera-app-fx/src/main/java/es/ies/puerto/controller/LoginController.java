@@ -1,3 +1,4 @@
+
 package es.ies.puerto.controller;
 
 import es.ies.puerto.PrincipalApplication;
@@ -11,6 +12,10 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+/**
+ *   @author: alejandrosalazargonzalez
+ *   @version: 1.0.0
+ */
 public class LoginController {
     
     private final String usuario = "pokemon";
@@ -27,9 +32,10 @@ public class LoginController {
 
     @FXML Button openButtonRegistrar;
 
+    @FXML Button irRecuperarPasswordButton;
+
     @FXML
     protected void onLoginButtonClick() {
-
         if (textFieldUsuario== null || textFieldUsuario.getText().isEmpty() || 
             textFieldPassword == null || textFieldPassword.getText().isEmpty() ) {
                 textFieldMensaje.setText("Credenciales null o vacias");
@@ -58,4 +64,22 @@ public class LoginController {
         } catch (Exception e) {
         }
     }
+
+        
+    @FXML
+    protected void recuperarPasswordClick(){
+        try {
+            Stage stage = (Stage) irRecuperarPasswordButton.getScene().getWindow();
+            
+            FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("recuperarPassword.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 820, 640);
+            stage.setTitle("Pantalla recuperar password");
+            stage.setScene(scene);
+            stage.show();
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 }
