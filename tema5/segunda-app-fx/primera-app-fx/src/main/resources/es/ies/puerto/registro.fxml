@@ -29,5 +29,6 @@
         </PasswordField>
         <Text fx:id="textMensaje" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
         <Button fx:id="buttonRegistrar" mnemonicParsing="false" onAction="#onClicRegistrar" text="Registrar" />
+      <Button fx:id="registroToLoginButton" mnemonicParsing="false" onAction="#registroToLoginOnClick" text="Atras" />
     </children>
 </VBox>

@@ -32,9 +32,12 @@ public class LoginController {
 
     @FXML Button openButtonRegistrar;
 
-    @FXML Button irRecuperarPasswordButton;
+    @FXML Button recuperarPasswordButton;
 
     @FXML
+    /**
+     * loguea al usuario
+     */
     protected void onLoginButtonClick() {
         if (textFieldUsuario== null || textFieldUsuario.getText().isEmpty() || 
             textFieldPassword == null || textFieldPassword.getText().isEmpty() ) {
@@ -51,6 +54,9 @@ public class LoginController {
     }
 
     @FXML
+    /**
+     * cambia a la pantalla de registrar
+     */
     protected void openRegistrarClick(){
         try {
             Stage stage = (Stage) openButtonRegistrar.getScene().getWindow();
@@ -62,14 +68,18 @@ public class LoginController {
             stage.show();
             
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
         
     @FXML
+    /**
+     * cambia a la panatalla de recuperarPassword
+     */
     protected void recuperarPasswordClick(){
         try {
-            Stage stage = (Stage) irRecuperarPasswordButton.getScene().getWindow();
+            Stage stage = (Stage) recuperarPasswordButton.getScene().getWindow();
             
             FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("recuperarPassword.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 820, 640);
