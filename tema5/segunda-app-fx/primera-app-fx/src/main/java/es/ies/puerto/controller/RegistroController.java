@@ -1,7 +1,7 @@
-
 package es.ies.puerto.controller;
 
 import es.ies.puerto.PrincipalApplication;
+import es.ies.puerto.model.UsuarioService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -18,31 +18,63 @@ import javafx.stage.Stage;
 public class RegistroController {
     
     @FXML TextField textFieldUsuario;
+    @FXML TextField nombreRegistroTextField;
+    @FXML TextField emailRegistroTextField;
     @FXML Text textMensaje;
 
     @FXML Button buttonRegistrar;
     @FXML Button registroToLoginButton;
 
-    @FXML PasswordField password;
-    @FXML PasswordField repetirPassword;
+    @FXML PasswordField passwordRegistroTextField;
+    @FXML PasswordField repetirPasswordRegistroTextField;
+
+    UsuarioService usuarioService;
+
+    public RegistroController() {
+        System.out.println("first");
+    }
+
+    @FXML
+    public void initialize() {
+        usuarioService = new UsuarioService();
+    }
 
     @FXML
     /**
      * registra el usuario
      */
     protected void onClicRegistrar(){
-        if (password == null || password.getText().isEmpty() || repetirPassword == null || repetirPassword.getText().isEmpty()) {
+        if (passwordRegistroTextField == null || passwordRegistroTextField.getText().isEmpty() 
+            || repetirPasswordRegistroTextField == null || repetirPasswordRegistroTextField.getText().isEmpty()) {
             textMensaje.setText("¡El password no puede ser nulo ni estar vacio!");
             return;
         }
-        if (!password.getText().equals(repetirPassword.getText())) {
+        if (!passwordRegistroTextField.getText().equals(repetirPasswordRegistroTextField.getText())) {
             textMensaje.setText("¡Las password tienen que ser iguales !");
             return;
         }
+        if (textFieldUsuario == null || textFieldUsuario.getText().isEmpty()) {
+            textMensaje.setText("¡El usuario no puede ser nulo ni estar vacio!");
+            return;
+        }
+        if (nombreRegistroTextField == null || nombreRegistroTextField.getText().isEmpty()) {
+            textMensaje.setText("¡El nombre no puede ser nulo ni estar vacio!");
+            return;
+        }
+        if (emailRegistroTextField == null || emailRegistroTextField.getText().isEmpty()) {
+            textMensaje.setText("¡El email no puede ser nulo ni estar vacio!");
+            return;
+        }
+
         textMensaje.setText("USUARIO REGISTRADO");
+        usuarioService.aniadirUsuario(textFieldUsuario.getText(), passwordRegistroTextField.getText(),
+            nombreRegistroTextField.getText(), emailRegistroTextField.getText());
     }     
 
     @FXML
+    /**
+     * vuelve a la pagina de login
+     */
     protected void registroToLoginOnClick(){
         try {
             Stage stage = (Stage) registroToLoginButton.getScene().getWindow();
