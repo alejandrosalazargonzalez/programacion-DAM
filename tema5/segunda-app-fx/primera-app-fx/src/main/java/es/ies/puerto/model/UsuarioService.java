@@ -117,7 +117,7 @@ public class UsuarioService {
         if(usuario == null || password.isEmpty()){
             return null;
         }
-        Usuario usuarioBuscar = new Usuario(usuario);
+        Usuario usuarioBuscar = new Usuario(usuario,password);
         int posicion = listUsuarios.indexOf(usuarioBuscar);
         if (posicion < 0) {
             return null;

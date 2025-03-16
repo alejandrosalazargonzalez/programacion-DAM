@@ -25,6 +25,15 @@ public class RecuperarPasswordController {
 
     UsuarioService usuarioService;
 
+    public RecuperarPasswordController() {
+        System.out.println("first");
+    }
+
+    @FXML
+    public void initialize() {
+        usuarioService = new UsuarioService();
+    }
+
     @FXML
     /**
      * comprueba que el campo del email no este vacio y cambia un texto
@@ -32,7 +41,6 @@ public class RecuperarPasswordController {
      * dependiendo del resultado
      */
     protected void enviarPasswordOnClick (){
-        usuarioService = new UsuarioService();
         if (introducirEmailField == null || introducirEmailField.getText().isEmpty()) {
             envioText.setText("Error al enviar, ¡El email no puede ser nulo ni estar vacio!");
             return;

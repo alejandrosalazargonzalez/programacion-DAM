@@ -1,6 +1,7 @@
 package es.ies.puerto.controller;
 
 import es.ies.puerto.PrincipalApplication;
+import es.ies.puerto.model.UsuarioService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -33,6 +34,17 @@ public class LoginController {
 
     @FXML Button recuperarPasswordButton;
 
+    UsuarioService usuarioService;
+
+    public LoginController() {
+        System.out.println("first");
+    }
+
+    @FXML
+    public void initialize() {
+        usuarioService = new UsuarioService();
+    }
+
     @FXML
     /**
      * loguea al usuario
@@ -43,12 +55,10 @@ public class LoginController {
                 textFieldMensaje.setText("Credenciales null o vacias");
                 return;
         }
-
-        if (!textFieldUsuario.getText().equals(usuario) || !textFieldPassword.getText().equals(password)) {
+        if (usuarioService.buscarUsuarioUsuarioPassword(textFieldUsuario.getText(), textFieldPassword.getText()) == null) {
             textFieldMensaje.setText("Credenciales invalidas");
             return;
         }
-
         textFieldMensaje.setText("Usuario validado correctamente");
     }
 
@@ -59,19 +69,19 @@ public class LoginController {
     protected void openRegistrarClick(){
         try {
             Stage stage = (Stage) openButtonRegistrar.getScene().getWindow();
-            
+
             FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("registro.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 820, 640);
             stage.setTitle("Pantalla registro");
             stage.setScene(scene);
             stage.show();
-            
+
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-        
+
     @FXML
     /**
      * cambia a la panatalla de recuperarPassword

@@ -65,11 +65,11 @@ public class Usuario {
     public String getPassword() {
         return this.password;
     }
-    
+
     public String getNombre() {
         return this.nombre;
     }
-    
+
     public String getEmail() {
         return this.email;
     }
@@ -99,12 +99,12 @@ public class Usuario {
             return false;
         }
         Usuario usuario = (Usuario) o;
-        return Objects.equals(email, usuario.email);
+        return Objects.equals(email, usuario.email) || Objects.equals(nombreUsuario, usuario.nombreUsuario);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(email);
+        return Objects.hash(email,nombreUsuario);
     }
 
 
