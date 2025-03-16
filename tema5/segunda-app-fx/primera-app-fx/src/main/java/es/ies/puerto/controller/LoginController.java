@@ -16,13 +16,13 @@ import javafx.stage.Stage;
  *   @version: 1.0.0
  */
 public class LoginController {
-    
+
     private final String usuario = "pokemon";
     private final String password = "pokemon";
 
     @FXML
     private TextField textFieldUsuario;
-    
+
     @FXML
     private PasswordField textFieldPassword;
 
@@ -38,7 +38,7 @@ public class LoginController {
      * loguea al usuario
      */
     protected void onLoginButtonClick() {
-        if (textFieldUsuario== null || textFieldUsuario.getText().isEmpty() || 
+        if (textFieldUsuario== null || textFieldUsuario.getText().isEmpty() ||
             textFieldPassword == null || textFieldPassword.getText().isEmpty() ) {
                 textFieldMensaje.setText("Credenciales null o vacias");
                 return;
@@ -47,7 +47,7 @@ public class LoginController {
         if (!textFieldUsuario.getText().equals(usuario) || !textFieldPassword.getText().equals(password)) {
             textFieldMensaje.setText("Credenciales invalidas");
             return;
-        } 
+        }
 
         textFieldMensaje.setText("Usuario validado correctamente");
     }

@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  *   @version: 1.0.0
  */
 public class Usuario {
-    
+
     @JsonProperty("nombreUsuario")
     private String nombreUsuario;
     @JsonProperty("password")
@@ -25,8 +25,22 @@ public class Usuario {
     public Usuario() {
     }
 
+    /**
+     * Constructor de busqueda con email
+     * @param email
+     */
     public Usuario(String email){
         this.email = email;
+    }
+
+    /**
+     * Constructoc con ususario y password
+     * @param nombreUsuario del usuario
+     * @param password del usuario
+     */
+    public Usuario(String nombreUsuario, String password){
+        this.nombreUsuario = nombreUsuario;
+        this.password = password;
     }
 
     /**
@@ -93,6 +107,7 @@ public class Usuario {
         return Objects.hash(email);
     }
 
+
     @Override
     public String toString() {
         return "Usuario: " + getNombreUsuario() + ", " +
@@ -100,5 +115,5 @@ public class Usuario {
             "nombre: " + getNombre() + ", " +
             "email: " + getEmail();
     }
-    
+
 }

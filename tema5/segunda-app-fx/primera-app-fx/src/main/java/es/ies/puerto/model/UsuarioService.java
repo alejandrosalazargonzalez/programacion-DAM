@@ -14,7 +14,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  *   @version: 1.0.0
  */
 public class UsuarioService {
-    
+
     private ObjectMapper objectMapper;
     private String path = "src/main/resources/Usuarios.json";
     private File file;
@@ -50,7 +50,7 @@ public class UsuarioService {
 
     /**
      * Escribe informacion en el fichero json
-     * @param usuarios 
+     * @param usuarios
      */
     public void escribirUsuarios(List<Usuario> usuarios) {
         try {
@@ -94,5 +94,34 @@ public class UsuarioService {
         }
         Usuario usuarioAniadir = new Usuario(usuario, password, nombre, email);
         return add(usuarioAniadir);
+    }
+
+    /**
+     * busca a un usuario por si email
+     * @param email del usuario
+     * @return Usuario/null
+     */
+    public Usuario buscarUsuarioEmail(String email){
+        if(email == null || email.isEmpty()){
+            return null;
+        }
+        Usuario usuarioBuscar = new Usuario(email);
+        int posicion = listUsuarios.indexOf(usuarioBuscar);
+        if (posicion < 0) {
+            return null;
+        }
+        return listUsuarios.get(posicion);
+    }
+
+    public Usuario buscarUsuarioUsuarioPassword(String usuario,String password){
+        if(usuario == null || password.isEmpty()){
+            return null;
+        }
+        Usuario usuarioBuscar = new Usuario(usuario);
+        int posicion = listUsuarios.indexOf(usuarioBuscar);
+        if (posicion < 0) {
+            return null;
+        }
+        return listUsuarios.get(posicion);
     }
 }
