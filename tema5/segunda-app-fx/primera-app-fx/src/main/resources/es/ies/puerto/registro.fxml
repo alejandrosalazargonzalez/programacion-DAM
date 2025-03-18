@@ -9,7 +9,7 @@
 
 <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="546.0" prefWidth="372.0" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.ies.puerto.controller.RegistroController">
     <children>
-        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Usuario" />
+        <Text fx:id="textUsuario" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuario" />
         <TextField fx:id="textFieldUsuario" prefHeight="0.0" prefWidth="263.0" promptText="Introduzca un usuario" VBox.vgrow="ALWAYS">
             <VBox.margin>
                 <Insets left="15.0" right="15.0" />
@@ -27,13 +27,13 @@
             <Insets left="15.0" right="15.0" />
          </VBox.margin>
       </TextField>
-        <Text fx:id="passwordRegistroText1" layoutX="182.0" layoutY="327.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
+        <Text fx:id="textContrasenia" layoutX="182.0" layoutY="327.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contraseña" />
         <PasswordField fx:id="passwordRegistroTextField" promptText="Introducir contraseña">
             <VBox.margin>
                 <Insets left="15.0" right="15.0" />
             </VBox.margin>
         </PasswordField>
-        <Text fx:id="passwordRegistroText2" layoutX="165.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Repetir Password" />
+        <Text fx:id="textContrasenia2" layoutX="165.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Repetir Contraseña" />
         <PasswordField fx:id="repetirPasswordRegistroTextField" layoutX="25.0" layoutY="271.0" promptText="Repetir contraseña" VBox.vgrow="ALWAYS">
             <VBox.margin>
                 <Insets left="15.0" right="15.0" />

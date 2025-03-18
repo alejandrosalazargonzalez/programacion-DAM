@@ -97,6 +97,17 @@ public class UsuarioService {
     }
 
     /**
+     * aniade un usuario
+     * @param usuario
+     * @return true/false
+     */
+    public boolean aniadirUsuario(Usuario usuario){
+        if (usuario == null) {
+            return false;
+        }
+        return add(usuario);
+    }
+    /**
      * busca a un usuario por si email
      * @param email del usuario
      * @return Usuario/null

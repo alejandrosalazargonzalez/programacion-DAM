@@ -1,6 +1,12 @@
 package es.ies.puerto.controller;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import es.ies.puerto.PrincipalApplication;
+import es.ies.puerto.controller.abstractas.AbstractController;
+import es.ies.puerto.model.Usuario;
 import es.ies.puerto.model.UsuarioService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,7 +21,7 @@ import javafx.stage.Stage;
  *   @author: alejandrosalazargonzalez
  *   @version: 1.0.0
  */
-public class RegistroController {
+public class RegistroController extends AbstractController {
     
     @FXML TextField textFieldUsuario;
     @FXML TextField nombreRegistroTextField;
@@ -37,6 +43,7 @@ public class RegistroController {
     @FXML
     public void initialize() {
         usuarioService = new UsuarioService();
+        
     }
 
     @FXML
