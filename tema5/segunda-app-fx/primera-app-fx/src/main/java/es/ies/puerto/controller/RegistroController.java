@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import es.ies.puerto.PrincipalApplication;
+import es.ies.puerto.config.ConfigManager;
 import es.ies.puerto.controller.abstractas.AbstractController;
 import es.ies.puerto.model.Usuario;
 import es.ies.puerto.model.UsuarioService;
@@ -28,6 +29,11 @@ public class RegistroController extends AbstractController {
     @FXML TextField emailRegistroTextField;
     @FXML Text textMensaje;
 
+    @FXML Text textUsuario;
+    @FXML Text nombreRegistroUsuario;
+    @FXML Text emailRegistrarText;
+    @FXML Text textContrasenia;
+
     @FXML Button buttonRegistrar;
     @FXML Button registroToLoginButton;
 
@@ -44,6 +50,14 @@ public class RegistroController extends AbstractController {
     public void initialize() {
         usuarioService = new UsuarioService();
         
+        textUsuario.setText(ConfigManager.ConfigProperties.getProperty("textUsuario"));
+        textContrasenia.setText(ConfigManager.ConfigProperties.getProperty("textContrasenia"));
+    }
+
+    @FXML
+    public void postConstructor(){
+        textUsuario.setText(getPropertiesIdioma().getProperty("textUsuario"));
+        textContrasenia.setText(getPropertiesIdioma().getProperty("textContrasenia"));
     }
 
     @FXML

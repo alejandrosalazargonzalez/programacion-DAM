@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import es.ies.puerto.PrincipalApplication;
+import es.ies.puerto.config.ConfigManager;
 import es.ies.puerto.controller.abstractas.AbstractController;
 import es.ies.puerto.model.UsuarioService;
 import javafx.fxml.FXML;
@@ -61,11 +62,7 @@ public class LoginController extends AbstractController{
         usuarioService = new UsuarioService();
         List<String> idiomas = new ArrayList<>(Arrays.asList("es","en","fr"));
         comboIdioma.getItems().addAll(idiomas);
-        /**
-         *comboIdioma.getItems().add("es");
-         *comboIdioma.getItems().add("en");
-         *comboIdioma.getItems().add("fr");
-         */
+
     }
 
     @FXML
@@ -73,9 +70,11 @@ public class LoginController extends AbstractController{
      * cambia el idioma del fichero
      */
     protected void cambiarIdioma(){
-        setPropertiesIdioma(loadIdioma("idioma", comboIdioma.getValue().toString()));
-        textUsuario.setText(getPropertiesIdioma().getProperty("textUsuario"));
-        textContrasenia.setText(getPropertiesIdioma().getProperty("textContrasenia"));
+        String path = "src/main/resources/idioma-"+comboIdioma.getValue().toString();
+
+        ConfigManager.ConfigProperties.setPath(path);
+        textUsuario.setText(ConfigManager.ConfigProperties.getProperty("textUsuario"));
+        textContrasenia.setText(ConfigManager.ConfigProperties.getProperty("textContrasenia"));
     }
 
     @FXML
@@ -106,6 +105,8 @@ public class LoginController extends AbstractController{
             
             RegistroController registroController = fxmlLoader.getController();
             registroController.setPropertiesIdioma(this.getPropertiesIdioma());
+
+            registroController.postConstructor();
             
             Stage stage = (Stage) openButtonRegistrar.getScene().getWindow();
             stage.setTitle("Pantalla registro");
