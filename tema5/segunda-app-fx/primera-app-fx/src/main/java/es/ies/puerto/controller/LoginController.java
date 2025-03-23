@@ -27,6 +27,9 @@ public class LoginController extends AbstractController{
     private final String usuario = "pokemon";
     private final String password = "pokemon";
 
+    private final String pathFichero="src/main/resources/";
+    private final String ficheroStr="idioma-";
+
     @FXML
     private TextField textFieldUsuario;
 
@@ -62,19 +65,13 @@ public class LoginController extends AbstractController{
         usuarioService = new UsuarioService();
         List<String> idiomas = new ArrayList<>(Arrays.asList("es","en","fr"));
         comboIdioma.getItems().addAll(idiomas);
-
+        cargarIdioma("es");
+        cambiarIdioma();
     }
 
-    @FXML
-    /**
-     * cambia el idioma del fichero
-     */
-    protected void cambiarIdioma(){
-        String path = "src/main/resources/idioma-"+comboIdioma.getValue().toString();
-
+    private void cargarIdioma(String idioma){
+        String path = pathFichero+ficheroStr+idioma+".properties";
         ConfigManager.ConfigProperties.setPath(path);
-        textUsuario.setText(ConfigManager.ConfigProperties.getProperty("textUsuario"));
-        textContrasenia.setText(ConfigManager.ConfigProperties.getProperty("textContrasenia"));
     }
 
     @FXML
@@ -100,15 +97,9 @@ public class LoginController extends AbstractController{
      */
     protected void openRegistrarClick(){
         try {
+            Stage stage = (Stage) openButtonRegistrar.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("registro.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 820, 640);
-            
-            RegistroController registroController = fxmlLoader.getController();
-            registroController.setPropertiesIdioma(this.getPropertiesIdioma());
-
-            registroController.postConstructor();
-            
-            Stage stage = (Stage) openButtonRegistrar.getScene().getWindow();
             stage.setTitle("Pantalla registro");
             stage.setScene(scene);
             stage.show();
@@ -126,16 +117,21 @@ public class LoginController extends AbstractController{
     protected void recuperarPasswordClick(){
         try {
             Stage stage = (Stage) recuperarPasswordButton.getScene().getWindow();
-            
             FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("recuperarPassword.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 820, 640);
             stage.setTitle("Pantalla recuperar password");
             stage.setScene(scene);
             stage.show();
-            
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    protected void seleccionarIdiomaClick(){
+        String idioma = comboIdioma.getValue().toString();
+        cargarIdioma(idioma);
+        cambiarIdioma();
     }
 
 }

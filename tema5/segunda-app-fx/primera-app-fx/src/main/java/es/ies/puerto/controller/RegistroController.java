@@ -23,7 +23,7 @@ import javafx.stage.Stage;
  *   @version: 1.0.0
  */
 public class RegistroController extends AbstractController {
-    
+
     @FXML TextField textFieldUsuario;
     @FXML TextField nombreRegistroTextField;
     @FXML TextField emailRegistroTextField;
@@ -49,15 +49,8 @@ public class RegistroController extends AbstractController {
     @FXML
     public void initialize() {
         usuarioService = new UsuarioService();
-        
-        textUsuario.setText(ConfigManager.ConfigProperties.getProperty("textUsuario"));
-        textContrasenia.setText(ConfigManager.ConfigProperties.getProperty("textContrasenia"));
-    }
 
-    @FXML
-    public void postConstructor(){
-        textUsuario.setText(getPropertiesIdioma().getProperty("textUsuario"));
-        textContrasenia.setText(getPropertiesIdioma().getProperty("textContrasenia"));
+        cambiarIdioma();
     }
 
     @FXML
@@ -65,7 +58,7 @@ public class RegistroController extends AbstractController {
      * registra el usuario
      */
     protected void onClicRegistrar(){
-        if (passwordRegistroTextField == null || passwordRegistroTextField.getText().isEmpty() 
+        if (passwordRegistroTextField == null || passwordRegistroTextField.getText().isEmpty()
             || repetirPasswordRegistroTextField == null || repetirPasswordRegistroTextField.getText().isEmpty()) {
             textMensaje.setText("¡El password no puede ser nulo ni estar vacio!");
             return;
@@ -90,7 +83,7 @@ public class RegistroController extends AbstractController {
         textMensaje.setText("USUARIO REGISTRADO");
         usuarioService.aniadirUsuario(textFieldUsuario.getText(), passwordRegistroTextField.getText(),
             nombreRegistroTextField.getText(), emailRegistroTextField.getText());
-    }     
+    }
 
     @FXML
     /**
@@ -99,13 +92,11 @@ public class RegistroController extends AbstractController {
     protected void registroToLoginOnClick(){
         try {
             Stage stage = (Stage) registroToLoginButton.getScene().getWindow();
-            
             FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("login.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 820, 640);
             stage.setTitle("Pantalla inicio");
             stage.setScene(scene);
             stage.show();
-            
             } catch (Exception e) {
                 e.printStackTrace();
             }

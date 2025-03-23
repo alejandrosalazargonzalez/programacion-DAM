@@ -12,13 +12,13 @@
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
-    <ComboBox fx:id="comboIdioma" onAction="#cambiarIdioma" prefWidth="150.0" promptText="Idiomas" />
+    <ComboBox fx:id="comboIdioma" onAction="#seleccionarIdiomaClick" prefWidth="150.0" promptText="Idiomas" />
     <Text fx:id="textUsuario" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuario:" />
     <TextField fx:id="textFieldUsuario" prefHeight="24.0" prefWidth="197.0" promptText="Agregue su usuario" />
     <Text fx:id="textContrasenia" strokeType="OUTSIDE" strokeWidth="0.0" text="Contraseña" />
     <PasswordField fx:id="textFieldPassword" promptText="Agregue su password" />
     <Text fx:id="textFieldMensaje" strokeType="OUTSIDE" strokeWidth="0.0" text="Soy el texto inical" />
-    <Button alignment="TOP_CENTER" onAction="#onLoginButtonClick" prefHeight="26.0" prefWidth="163.0" text="Aceptar" textAlignment="CENTER" />
+    <Button fx:id="aceptarLoginButton" alignment="TOP_CENTER" onAction="#onLoginButtonClick" prefHeight="26.0" prefWidth="163.0" text="Aceptar" textAlignment="CENTER" />
     <Button fx:id="openButtonRegistrar" mnemonicParsing="false" onAction="#openRegistrarClick" text="Open Registrar" />
     <Button fx:id="recuperarPasswordButton" mnemonicParsing="false" onAction="#recuperarPasswordClick" text="Recuperar Password" />
 </VBox>
