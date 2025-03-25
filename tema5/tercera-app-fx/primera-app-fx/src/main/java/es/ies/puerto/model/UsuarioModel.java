@@ -1,0 +1,75 @@
+
+package es.ies.puerto.model;
+
+import java.util.Objects;
+
+/**
+ *   @author: alejandrosalazargonzalez
+ *   @version: 1.0.0
+ */
+public class UsuarioModel {
+
+    String email;
+    String nombre;
+    String contrasenia;
+
+    public UsuarioModel() {
+    }
+
+    public UsuarioModel(String email, String nombre, String contrasenia) {
+        this.email = email;
+        this.nombre = nombre;
+        this.contrasenia = contrasenia;
+    }
+
+    public String getEmail() {
+        return this.email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getNombre() {
+        return this.nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getContrasenia() {
+        return this.contrasenia;
+    }
+
+    public void setContrasenia(String contrasenia) {
+        this.contrasenia = contrasenia;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == this)
+            return true;
+        if (!(o instanceof UsuarioModel)) {
+            return false;
+        }
+        UsuarioModel usuarioModel = (UsuarioModel) o;
+        return Objects.equals(email, usuarioModel.email) && Objects.equals(nombre, usuarioModel.nombre)
+                && Objects.equals(contrasenia, usuarioModel.contrasenia);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(email, nombre, contrasenia);
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+                " email='" + getEmail() + "'" +
+                ", nombre='" + getNombre() + "'" +
+                ", contrasenia='" + getContrasenia() + "'" +
+                "}";
+    }
+
+}

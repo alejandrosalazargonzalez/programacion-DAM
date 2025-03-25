@@ -11,7 +11,7 @@ DROP TABLE IF EXISTS rol;
 CREATE TABLE usuario (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     nombre TEXT NOT NULL,
-    contraseña TEXT NOT NULL,
+    contrasenia TEXT NOT NULL,
     email TEXT UNIQUE NOT NULL
 );
 
@@ -37,7 +37,7 @@ INSERT INTO rol (nombre) VALUES
     ('Usuario');
 
 -- Insertar usuarios de ejemplo
-INSERT INTO usuario (nombre, contraseña, email) VALUES
+INSERT INTO usuario (nombre, contrasenia, email) VALUES
     ('Juan Pérez', 'pass123', 'juan@example.com'),
     ('Ana López', 'securePass', 'ana@example.com'),
     ('Carlos Gómez', 'claveSegura', 'carlos@example.com');

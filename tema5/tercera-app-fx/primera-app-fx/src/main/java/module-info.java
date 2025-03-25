@@ -4,6 +4,7 @@ module es.ies.puerto {
 
     requires org.controlsfx.controls;
     requires javafx.graphics;
+    requires java.sql;
 
     opens es.ies.puerto to javafx.fxml;
     exports es.ies.puerto;
