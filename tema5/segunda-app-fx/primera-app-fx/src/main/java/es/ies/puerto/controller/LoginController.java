@@ -66,7 +66,7 @@ public class LoginController extends AbstractController{
         List<String> idiomas = new ArrayList<>(Arrays.asList("es","en","fr"));
         comboIdioma.getItems().addAll(idiomas);
         cargarIdioma("es");
-        cambiarIdioma();
+        cambiarIdiomaLogIn();
     }
 
     private void cargarIdioma(String idioma){
@@ -131,7 +131,7 @@ public class LoginController extends AbstractController{
     protected void seleccionarIdiomaClick(){
         String idioma = comboIdioma.getValue().toString();
         cargarIdioma(idioma);
-        cambiarIdioma();
+        cambiarIdiomaLogIn();
     }
 
 }

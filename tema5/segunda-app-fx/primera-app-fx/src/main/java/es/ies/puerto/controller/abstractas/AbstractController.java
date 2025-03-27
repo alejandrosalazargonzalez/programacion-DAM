@@ -22,8 +22,6 @@ import javafx.scene.text.Text;
  *   @version: 1.0.0
  */
 public class AbstractController {
-    private final String pathFichero="src/main/resources/";
-    private final String ficheroStr="idioma-";
 
     @FXML
     public Text textUsuario;
@@ -44,8 +42,10 @@ public class AbstractController {
     @FXML public Button recuperarToLoginButton;
 
 
-
-    public void cambiarIdioma(){
+    /**
+     * cambia el idioma de los textos en la pantalla log in
+     */
+    public void cambiarIdiomaLogIn(){
         textUsuario.setText(ConfigManager.ConfigProperties.getProperty("textUsuario"));
         textContrasenia.setText(ConfigManager.ConfigProperties.getProperty("textContrasenia"));
         comboIdioma.setPromptText(ConfigManager.ConfigProperties.getProperty("comboIdioma"));
@@ -54,10 +54,22 @@ public class AbstractController {
         textFieldMensaje.setText(ConfigManager.ConfigProperties.getProperty("textFieldMensaje"));
         openButtonRegistrar.setText(ConfigManager.ConfigProperties.getProperty("openButtonRegistrar"));
         recuperarPasswordButton.setText(ConfigManager.ConfigProperties.getProperty("recuperarPasswordButton"));
+    }
 
+    /**
+     * Cambia el idioma de los textos en la pantalla registrar
+     */
+    public void cambiarIdiomaRegistrar(){
         emailText.setText(ConfigManager.ConfigProperties.getProperty("emailText"));
         introducirEmailField.setPromptText(ConfigManager.ConfigProperties.getProperty("introducirEmailField"));
         enviarPassword.setText(ConfigManager.ConfigProperties.getProperty("enviarPassword"));
         recuperarToLoginButton.setText(ConfigManager.ConfigProperties.getProperty("recuperarToLoginButton"));
+    }
+
+    /**
+     * Cambia el idioma de los textos en la pantalla recuperar password
+     */
+    public void cambiarIdiomaRecuperarPassword(){
+
     }
 }

@@ -5,7 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.text.Text;
 
 public class AbstractController {
-
+    static final String pathDb="src/main/resources/usuarios.db";
     @FXML
     public Text textUsuario;
 

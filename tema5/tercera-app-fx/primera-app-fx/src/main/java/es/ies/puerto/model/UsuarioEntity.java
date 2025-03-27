@@ -7,16 +7,16 @@ import java.util.Objects;
  *   @author: alejandrosalazargonzalez
  *   @version: 1.0.0
  */
-public class UsuarioModel {
+public class UsuarioEntity {
 
     String email;
     String nombre;
     String contrasenia;
 
-    public UsuarioModel() {
+    public UsuarioEntity() {
     }
 
-    public UsuarioModel(String email, String nombre, String contrasenia) {
+    public UsuarioEntity(String email, String nombre, String contrasenia) {
         this.email = email;
         this.nombre = nombre;
         this.contrasenia = contrasenia;
@@ -50,10 +50,10 @@ public class UsuarioModel {
     public boolean equals(Object o) {
         if (o == this)
             return true;
-        if (!(o instanceof UsuarioModel)) {
+        if (!(o instanceof UsuarioEntity)) {
             return false;
         }
-        UsuarioModel usuarioModel = (UsuarioModel) o;
+        UsuarioEntity usuarioModel = (UsuarioEntity) o;
         return Objects.equals(email, usuarioModel.email) && Objects.equals(nombre, usuarioModel.nombre)
                 && Objects.equals(contrasenia, usuarioModel.contrasenia);
     }

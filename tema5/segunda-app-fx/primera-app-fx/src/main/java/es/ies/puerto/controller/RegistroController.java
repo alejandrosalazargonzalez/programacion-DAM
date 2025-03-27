@@ -50,7 +50,7 @@ public class RegistroController extends AbstractController {
     public void initialize() {
         usuarioService = new UsuarioService();
 
-        cambiarIdioma();
+        cambiarIdiomaRegistrar();
     }
 
     @FXML

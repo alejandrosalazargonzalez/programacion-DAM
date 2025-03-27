@@ -10,12 +10,12 @@ import java.util.ArrayList;
  * @author: alejandrosalazargonzalez
  * @version: 1.0.0
  */
-public class UsuarioDto extends ConexionModel {
+public class UsuarioServiceModel extends ConexionModel {
 
-    public UsuarioDto() {
+    public UsuarioServiceModel() {
     }
 
-    public UsuarioDto(String unaRutaArchivoBD) throws SQLException {
+    public UsuarioServiceModel(String unaRutaArchivoBD) throws SQLException {
         super(unaRutaArchivoBD);
     }
 
@@ -44,8 +44,8 @@ public class UsuarioDto extends ConexionModel {
      * }
      */
 
-    public ArrayList<UsuarioModel> obtenerUsuario(String sql) throws SQLException {
-        ArrayList<UsuarioModel> usuarios = new ArrayList<UsuarioModel>();
+    public ArrayList<UsuarioEntity> obtenerUsuario(String sql) throws SQLException {
+        ArrayList<UsuarioEntity> usuarios = new ArrayList<>();
         try {
             PreparedStatement sentencia = getConnection().prepareStatement(sql);
             ResultSet resultado = sentencia.executeQuery();
@@ -54,7 +54,7 @@ public class UsuarioDto extends ConexionModel {
                 String nombreStr = resultado.getString("nombre");
                 String contraseniaStr = resultado.getString("contrasenia");
                 String emailStr = resultado.getString("email");
-                UsuarioModel usuarioModel = new UsuarioModel(emailStr, nombreStr, contraseniaStr);
+                UsuarioEntity usuarioModel = new UsuarioEntity(emailStr, nombreStr, contraseniaStr);
                 usuarios.add(usuarioModel);
             }
         } catch (Exception e) {
@@ -65,16 +65,16 @@ public class UsuarioDto extends ConexionModel {
         return usuarios;
     }
 
-    public UsuarioModel obtenerUsuarioPorEmail(String email) throws SQLException {
+    public UsuarioEntity obtenerUsuarioPorEmail(String email) throws SQLException {
         String sql = "SELECT * FROM Usuario " + "where email='" + email + "';";
-        ArrayList<UsuarioModel> usuarios = obtenerUsuario(sql);
+        ArrayList<UsuarioEntity> usuarios = obtenerUsuario(sql);
         if (usuarios.isEmpty()) {
             return null;
         }
         return usuarios.get(0);
     }
 
-    public ArrayList<UsuarioModel> obtenerUsuarios() throws SQLException {
+    public ArrayList<UsuarioEntity> obtenerUsuarios() throws SQLException {
         String sql = "SELECT * FROM Usuario";
         return obtenerUsuario(sql);
     }
