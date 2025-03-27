@@ -1,17 +1,14 @@
-
 package es.ies.puerto.model;
 
 import java.util.Objects;
 
-/**
- *   @author: alejandrosalazargonzalez
- *   @version: 1.0.0
- */
+
 public class UsuarioEntity {
 
     String email;
     String nombre;
     String contrasenia;
+
 
     public UsuarioEntity() {
     }
@@ -54,22 +51,23 @@ public class UsuarioEntity {
             return false;
         }
         UsuarioEntity usuarioModel = (UsuarioEntity) o;
-        return Objects.equals(email, usuarioModel.email) && Objects.equals(nombre, usuarioModel.nombre)
-                && Objects.equals(contrasenia, usuarioModel.contrasenia);
+        return Objects.equals(email, usuarioModel.email);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(email, nombre, contrasenia);
+        return Objects.hash(email);
     }
 
+  
     @Override
     public String toString() {
         return "{" +
-                " email='" + getEmail() + "'" +
-                ", nombre='" + getNombre() + "'" +
-                ", contrasenia='" + getContrasenia() + "'" +
-                "}";
+            " email='" + getEmail() + "'" +
+            ", nombre='" + getNombre() + "'" +
+            ", contrasenia='" + getContrasenia() + "'" +
+            "}";
     }
+
 
 }

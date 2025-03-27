@@ -6,7 +6,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-
 <VBox alignment="CENTER" prefHeight="498.0" prefWidth="434.0" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.ies.puerto.controller.RegistroController">
    <children>
       <Text fx:id="textUsuario" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuario" />

@@ -1,7 +1,7 @@
 package es.ies.puerto.controller;
 
-import es.ies.puerto.abstractas.AbstractController;
 import es.ies.puerto.config.ConfigManager;
+import es.ies.puerto.controller.abstractas.AbstractController;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
@@ -9,34 +9,42 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
 public class RegistroController extends AbstractController {
+    
+    @FXML TextField textFiledUsuario;
+
+    @FXML Text textMensaje;
+
+    @FXML Button buttonRegistrar;
+
+    @FXML PasswordField textFieldPassword;
+
+    @FXML PasswordField textFieldPasswordRepit;
 
 
     @FXML
-    TextField textFiledUsuario;
+    private Text textUsuario;
 
     @FXML
-    Text textMensaje;
-
-    @FXML
-    Button buttonRegistrar;
-
-    @FXML
-    PasswordField textFieldPassword;
-
-    @FXML
-    PasswordField textFieldPasswordRepit;
+    private Text textContrasenia;
 
     @FXML
     public void initialize() {
-        cambiarIdioma();
+        textUsuario.setText(ConfigManager.ConfigProperties.getProperty("textUsuario"));
+        textContrasenia.setText(ConfigManager.ConfigProperties.getProperty("textContrasenia"));
     }
 
+    /**
+    public void postConstructor() {
+        textUsuario.setText(getPropertiesIdioma().getProperty("textUsuario"));
+        textContrasenia.setText(getPropertiesIdioma().getProperty("textContrasenia"));
+    }
+    **/
 
     @FXML
-    protected void onClickRegistar() {
+    protected void onClickRegistar()  {
 
-        if (textFieldPassword == null || textFieldPassword.getText().isEmpty()
-                || textFieldPasswordRepit == null || textFieldPasswordRepit.getText().isEmpty()) {
+        if (textFieldPassword == null ||  textFieldPassword.getText().isEmpty() 
+            || textFieldPasswordRepit == null || textFieldPasswordRepit.getText().isEmpty()) {
             textMensaje.setText("¡El password no puede ser nulo o vacio!");
             return;
         }

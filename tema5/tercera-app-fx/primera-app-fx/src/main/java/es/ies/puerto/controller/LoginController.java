@@ -1,27 +1,24 @@
 package es.ies.puerto.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import es.ies.puerto.PrincipalApplication;
-import es.ies.puerto.abstractas.AbstractController;
 import es.ies.puerto.config.ConfigManager;
+import es.ies.puerto.controller.abstractas.AbstractController;
+import es.ies.puerto.model.UsuarioEntity;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class LoginController extends AbstractController{
+public class LoginController extends AbstractController {
     
-    private final String usuario = "pokemon";
-    private final String password = "pokemon";
-
-    private final String pathFichero="src/main/resources/";
-    private final String ficheroStr= "idioma-";
-
     @FXML
     private TextField textFieldUsuario;
     
@@ -35,32 +32,32 @@ public class LoginController extends AbstractController{
     private Button openRegistrarButton;
 
     @FXML
+    private Text textUsuario;
+
+    @FXML
+    private Text textContrasenia;
+
+    @FXML
     private ComboBox comboIdioma;
 
     @FXML
     public void initialize() {
-        comboIdioma.getItems().add("es");
-        comboIdioma.getItems().add("en");
-        comboIdioma.getItems().add("fr");
-        cargarIdioma("es");
-        cambiarIdioma();
+        List<String> idiomas = new ArrayList<>();
+        idiomas.add("es");
+        idiomas.add("en");
+        idiomas.add("fr");
+        comboIdioma.getItems().addAll(idiomas);
     }
 
     @FXML
-    protected void seleccionarIdiomaClick() {
-        String idioma = comboIdioma.getValue().toString();
-        cargarIdioma(idioma);
-        cambiarIdioma();
+    protected void cambiarIdioma() {
+        String path = "src/main/resources/idioma-"+comboIdioma.getValue().toString()+".properties";
 
-    }
-
-    private void cargarIdioma(String idioma) {
-
-        String path = pathFichero+ficheroStr+idioma+".properties";
         ConfigManager.ConfigProperties.setPath(path);
 
+        textUsuario.setText(ConfigManager.ConfigProperties.getProperty("textUsuario"));
+        textContrasenia.setText(ConfigManager.ConfigProperties.getProperty("textContrasenia"));
     }
-
 
     @FXML
     protected void onLoginButtonClick() {
@@ -71,7 +68,15 @@ public class LoginController extends AbstractController{
                 return;
         }
 
-        if (!textFieldUsuario.getText().equals(usuario) || !textFieldPassword.getText().equals(password)) {
+        UsuarioEntity usuarioEntity = getUsuarioServiceModel().obtenerUsuarioPorEmail(textFieldUsuario.getText());
+
+        if (usuarioEntity == null) {
+            textFieldMensaje.setText("El usuario no existe");
+            return;
+        }
+
+        if (!textFieldUsuario.getText().equals(usuarioEntity.getEmail())
+                || !textFieldPassword.getText().equals(usuarioEntity.getContrasenia())) {
             textFieldMensaje.setText("Credenciales invalidas");
             return;
         } 
@@ -83,9 +88,16 @@ public class LoginController extends AbstractController{
     protected void openRegistrarClick() {
 
         try {
-            Stage stage = (Stage) openRegistrarButton.getScene().getWindow();
+
             FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("registro.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 820, 640);
+            
+//            RegistroController registroController = fxmlLoader.getController();
+//            registroController.setpropertiesIdioma(this.getPropertiesIdioma());
+            
+//            registroController.postConstructor();
+
+            Stage stage = (Stage) openRegistrarButton.getScene().getWindow();
             stage.setTitle("Pantalla Registro");
             stage.setScene(scene);
             stage.show();
