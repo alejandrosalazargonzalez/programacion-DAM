@@ -1,12 +1,6 @@
 
 package es.ies.puerto.controller.abstractas;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStreamReader;
-import java.nio.charset.StandardCharsets;
-import java.util.Properties;
-
 import org.controlsfx.control.textfield.TextFields;
 
 import es.ies.puerto.config.ConfigManager;
@@ -29,7 +23,7 @@ public class AbstractController {
     @FXML
     public Text textContrasenia;
 
-    @FXML public ComboBox comboIdioma;
+    @FXML public ComboBox<String> comboIdioma;
     @FXML public TextField textFieldUsuario;
     @FXML public TextField textFieldPassword;
     @FXML public Text textFieldMensaje;
@@ -41,6 +35,15 @@ public class AbstractController {
     @FXML public Button enviarPassword;
     @FXML public Button recuperarToLoginButton;
 
+    @FXML public Text nombreRegistroText;
+    @FXML public TextField nombreRegistroTextField;
+    @FXML public Text emailRegistrarText;
+    @FXML public TextField emailRegistroTextField;
+    @FXML public Text textContrasenia2;
+    @FXML public TextField passwordRegistroTextField;
+    @FXML public Text textMensaje;
+    @FXML public Button buttonRegistrar;
+    @FXML public Button registroToLoginButton;
 
     /**
      * cambia el idioma de los textos en la pantalla log in
@@ -58,18 +61,28 @@ public class AbstractController {
 
     /**
      * Cambia el idioma de los textos en la pantalla registrar
-     */
+     */ /* 
     public void cambiarIdiomaRegistrar(){
+        textUsuario.setText(ConfigManager.ConfigProperties.getProperty("textUsuario"));
+        textFieldUsuario.setPromptText(ConfigManager.ConfigProperties.getProperty("textFieldUsuario"));
+        nombreRegistroText.setText(ConfigManager.ConfigProperties.getProperty("textUsuario"));
+        nombreRegistroTextField.setPromptText(ConfigManager.ConfigProperties.getProperty("textUsuario"));
+        emailRegistrarText.setText(ConfigManager.ConfigProperties.getProperty("textUsuario"));
+        emailRegistroTextField.setPromptText(ConfigManager.ConfigProperties.getProperty("textUsuario"));
+        passwordRegistroTextField.setPromptText(ConfigManager.ConfigProperties.getProperty("textUsuario"));
+        textContrasenia2.setText(ConfigManager.ConfigProperties.getProperty("textUsuario"));
+        textMensaje.setText(ConfigManager.ConfigProperties.getProperty("textUsuario"));
+        buttonRegistrar.setText(ConfigManager.ConfigProperties.getProperty("textUsuario"));
+        registroToLoginButton.setText(ConfigManager.ConfigProperties.getProperty("textUsuario"));
+    } */
+
+    /**
+     * Cambia el idioma de los textos en la pantalla recuperar password
+     */ /* 
+    public void cambiarIdiomaRecuperarPassword(){
         emailText.setText(ConfigManager.ConfigProperties.getProperty("emailText"));
         introducirEmailField.setPromptText(ConfigManager.ConfigProperties.getProperty("introducirEmailField"));
         enviarPassword.setText(ConfigManager.ConfigProperties.getProperty("enviarPassword"));
         recuperarToLoginButton.setText(ConfigManager.ConfigProperties.getProperty("recuperarToLoginButton"));
-    }
-
-    /**
-     * Cambia el idioma de los textos en la pantalla recuperar password
-     */
-    public void cambiarIdiomaRecuperarPassword(){
-
-    }
+    } */
 }

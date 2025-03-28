@@ -24,9 +24,6 @@ import javafx.stage.Stage;
  */
 public class LoginController extends AbstractController{
 
-    private final String usuario = "pokemon";
-    private final String password = "pokemon";
-
     private final String pathFichero="src/main/resources/";
     private final String ficheroStr="idioma-";
 
@@ -66,7 +63,7 @@ public class LoginController extends AbstractController{
         List<String> idiomas = new ArrayList<>(Arrays.asList("es","en","fr"));
         comboIdioma.getItems().addAll(idiomas);
         cargarIdioma("es");
-        cambiarIdiomaLogIn();
+        //cambiarIdiomaLogIn();
     }
 
     private void cargarIdioma(String idioma){
