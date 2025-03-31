@@ -8,17 +8,21 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="TOP_CENTER" prefHeight="358.0" prefWidth="436.0" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.ies.puerto.controller.LoginController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-    </padding>
-    <ComboBox fx:id="comboIdioma" onAction="#seleccionarIdiomaClick" prefWidth="150.0" promptText="Idiomas" />
-    <Text fx:id="textUsuario" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuario:" />
-    <TextField fx:id="textFieldUsuario" prefHeight="24.0" prefWidth="197.0" promptText="Agregue su usuario" />
-    <Text fx:id="textContrasenia" strokeType="OUTSIDE" strokeWidth="0.0" text="Contraseña" />
-    <PasswordField fx:id="textFieldPassword" promptText="Agregue su password" />
-    <Text fx:id="textFieldMensaje" strokeType="OUTSIDE" strokeWidth="0.0" text="Soy el texto inical" />
-    <Button fx:id="aceptarLoginButton" alignment="TOP_CENTER" onAction="#onLoginButtonClick" prefHeight="26.0" prefWidth="163.0" text="Aceptar" textAlignment="CENTER" />
-    <Button fx:id="openButtonRegistrar" mnemonicParsing="false" onAction="#openRegistrarClick" text="Open Registrar" />
-    <Button fx:id="recuperarPasswordButton" mnemonicParsing="false" onAction="#recuperarPasswordClick" text="Recuperar Password" />
+<VBox alignment="TOP_CENTER" prefHeight="358.0" prefWidth="436.0" spacing="10.0" stylesheets="@../../../css/estilos.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.ies.puerto.controller.LoginController">
+   <ComboBox fx:id="comboIdioma" onAction="#seleccionarIdiomaClick" prefWidth="150.0" promptText="idiomas" />
+   <Text fx:id="textUsuario" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuario" />
+   <TextField fx:id="textFieldUsuario" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="24.0" prefWidth="197.0" promptText="Insertar Usuario" />
+   <Text fx:id="textContrasenia" strokeType="OUTSIDE" strokeWidth="0.0" text="Contraseña" />
+   <PasswordField fx:id="textFieldPassword" maxHeight="-Infinity" maxWidth="-Infinity" promptText="Insertar contraseña" />
+    <Button fx:id="ButtonAceptar" alignment="TOP_CENTER" onAction="#onLoginButtonClick" prefHeight="26.0" prefWidth="163.0" text="Aceptar" textAlignment="CENTER" />
+   <Text fx:id="textFieldMensaje" strokeType="OUTSIDE" strokeWidth="0.0" />
+   <Button fx:id="RecoverPassWordButton" mnemonicParsing="false" onAction="#onRecoverButtonClick" text="Recuperar contraseña" />
+   <Button fx:id="buttonRegistrar" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#openRegistrarClick" text="Registrar">
+      <VBox.margin>
+         <Insets left="300.0" />
+      </VBox.margin>
+   </Button>
+   <padding>
+      <Insets top="20.0" />
+   </padding>
 </VBox>

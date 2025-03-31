@@ -11,13 +11,15 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>23</maven.compiler.source>
-        <maven.compiler.target>23</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
         <javafx.version>21</javafx.version>
         <junit.version>5.9.2</junit.version>
         <javafx-maven-plugin.version>0.0.8</javafx-maven-plugin.version>
         <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
         <controlsfx.version>11.2.0</controlsfx.version>
+        <jackson.version>2.15.0</jackson.version>
+        <sqlite-jdbc.version>3.45.2.0</sqlite-jdbc.version>
     </properties>
 
     <dependencies>
@@ -52,13 +54,20 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
-                <!-- Jackson Core para procesamiento JSON -->
+        <dependency>
+            <groupId>org.xerial</groupId>
+            <artifactId>sqlite-jdbc</artifactId>
+            <version>${sqlite-jdbc.version}</version>
+        </dependency>
+
+            <!-- Jackson para trabajar con JSON -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>2.15.0</version>
+            <version>${jackson.version}</version>
         </dependency>
     </dependencies>
+    
 
     <build>
         <plugins>
