@@ -79,7 +79,7 @@ public class LoginController extends AbstractController {
                 || !textFieldPassword.getText().equals(usuarioEntity.getContrasenia())) {
             textFieldMensaje.setText("Credenciales invalidas");
             return;
-        } 
+        }
 
         textFieldMensaje.setText("Usuario validado correctamente");
     }

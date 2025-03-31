@@ -6,13 +6,11 @@ import javafx.scene.text.Text;
 
 public class AbstractControler {
     
-    @FXML
-    public Text textUsuario;
+    //log in
+    @FXML public Text textUsuario;
+    @FXML public Text textContrasenia;
 
-    @FXML
-    public Text textContrasenia;
-
-    public void cambiarIdioma(){
+    public void cambiarIdiomaLogIn(){
         textUsuario.setText(ConfigManager.ConfigProperties.getProperty("textUsuario"));
         textContrasenia.setText(ConfigManager.ConfigProperties.getProperty("textContrasenia"));
     }

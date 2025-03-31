@@ -5,16 +5,20 @@ import java.util.Properties;
 import es.ies.puerto.config.ConfigManager;
 import es.ies.puerto.model.UsuarioServiceModel;
 import javafx.fxml.FXML;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
 public abstract class AbstractController {
     static final String PATH_DB="src/main/resources/usuario.db";
     
-    private UsuarioServiceModel usuarioServiceModel; 
+    private UsuarioServiceModel usuarioServiceModel;
 
     private Properties propertiesIdioma;
 
-
+    /**
+     * crea el usuario service model con una base de datos
+     */
     protected AbstractController(){
         try {
             usuarioServiceModel = new UsuarioServiceModel(PATH_DB);
@@ -23,11 +27,15 @@ public abstract class AbstractController {
         }
     }
 
-    @FXML
-    public Text textUsuario;
+    /**
+     * Log in
+     */
+    @FXML public ComboBox comboIdioma;
+    @FXML public Text textUsuario;
+    @FXML public TextField textFieldUsuario;
+    @FXML public Text textContrasenia;
+    @FXML public TextField textFieldContrasenia;
 
-    @FXML
-    public Text textContrasenia;
 
     public void cambiarIdioma() {
         textUsuario.setText(ConfigManager.ConfigProperties.getProperty("textUsuario"));
