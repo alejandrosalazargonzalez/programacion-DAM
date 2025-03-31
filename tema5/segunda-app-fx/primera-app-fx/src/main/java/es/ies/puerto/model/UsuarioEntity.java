@@ -3,22 +3,36 @@ package es.ies.puerto.model;
 import java.util.Objects;
 
 
+/**
+ *   @author: alejandrosalazargonzalez
+ *   @version: 1.0.0
+ */
+
 public class UsuarioEntity {
 
     String email;
     String nombre;
     String contrasenia;
 
-
+    /**
+     * Constructor vacio
+     */
     public UsuarioEntity() {
     }
 
+    /**
+     * constructor completo
+     * @param email del usuario
+     * @param nombre del usuario
+     * @param contrasenia del usuario
+     */
     public UsuarioEntity(String email, String nombre, String contrasenia) {
         this.email = email;
         this.nombre = nombre;
         this.contrasenia = contrasenia;
     }
 
+    /*getter y setters */
     public String getEmail() {
         return this.email;
     }
@@ -59,7 +73,6 @@ public class UsuarioEntity {
         return Objects.hash(email);
     }
 
-  
     @Override
     public String toString() {
         return "{" +

@@ -1,9 +1,14 @@
-package es.ies.puerto.model.abstractas;
+package es.ies.puerto.model.abtrastas;
 
 import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+
+/**
+ *   @author: alejandrosalazargonzalez
+ *   @version: 1.0.0
+ */
 
 public abstract class Conexion {
 
@@ -19,7 +24,7 @@ public abstract class Conexion {
      * @param unaRutaArchivoBD ruta de la bbdd
      * @throws SQLException error controlado
      */
-    public Conexion(String unaRutaArchivoBD) throws SQLException {
+    protected Conexion(String unaRutaArchivoBD) throws SQLException {
         if (unaRutaArchivoBD == null || unaRutaArchivoBD.isEmpty()) {
             throw new SQLException("El fichero es nullo o vacio");
         }

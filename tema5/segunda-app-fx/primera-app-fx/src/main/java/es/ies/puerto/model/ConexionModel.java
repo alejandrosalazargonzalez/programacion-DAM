@@ -23,7 +23,7 @@ public class ConexionModel {
 
     /**
      * constructor con el path del archivo bd
-     * 
+     *
      * @param unaRutaArchivoBD
      * @throws SQLException
      */
@@ -42,6 +42,10 @@ public class ConexionModel {
         return this.rutaArchivoBD;
     }
 
+    /**
+     * recoge la conexion
+     * @return Connection
+     */
     public Connection getConnection() {
         try {
             if (connection == null) {

@@ -1,153 +1,116 @@
 package es.ies.puerto.controller;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import es.ies.puerto.PrincipalApplication;
-import es.ies.puerto.abstractas.AbstractController;
 import es.ies.puerto.config.ConfigManager;
-import es.ies.puerto.model.OperacionesFile;
-import es.ies.puerto.model.UsuarioServiceModel;
-import es.ies.puerto.model.UsuarioServiceModel;
+import es.ies.puerto.controller.abstractas.AbstractController;
+import es.ies.puerto.model.UsuarioEntity;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
+
 /**
- * @author nexphernandez
- * @version 1.0.0
+ *   @author: alejandrosalazargonzalez
+ *   @version: 1.0.0
  */
-public class LoginController extends AbstractController{
+
+public class LoginController extends AbstractController {
     
-    private final String pathFichero="src/main/resources/";
-    private final String ficheroStr= "idioma-";
-
-    private OperacionesFile operacionesFile;
-
-    private UsuarioServiceModel user;
-
-    /**
-     * Funcion para setear el usuario
-     * @param usuario a setear
-     */
-    public void setUsuario(UsuarioServiceModel usuario){
-        this.user = usuario;
-    }
-
-    /**
-     * Metodo para obtener el usuario
-     * @return usuario buscado
-     */
-    public UsuarioServiceModel getUsuario(){
-        return user;
-    }
-
-
-    /**
-     * Funcion que se inicializa nada mas arrancar la app
-     */
     @FXML
-    void initialize(){
-        operacionesFile = new OperacionesFile();
-        List <String> listaIdiomas = new ArrayList<>(Arrays.asList("es","en","fr"));
-        comboIdioma.getItems().addAll(listaIdiomas);
-        cargarIdioma("es");
-        cambiarIdiomaLogin();
-        buttonIdiomaLogin();
-
-        
-    }
-
-    /**
-     * Funcion para seleccionar el idioma
-     */
+    private TextField textFieldUsuario;
+    
     @FXML
-    protected void seleccionarIdiomaClick() {
-        String idioma = comboIdioma.getValue().toString();
-        cargarIdioma(idioma);
-        cambiarIdiomaLogin();
-        buttonIdiomaLogin();
+    private PasswordField textFieldPassword;
+
+    @FXML
+    private Text textFieldMensaje;
+
+    @FXML
+    private Button openRegistrarButton;
+
+    @FXML
+    private Text textUsuario;
+
+    @FXML
+    private Text textContrasenia;
+
+    @FXML
+    private ComboBox<String> comboIdioma;
+
+    @FXML
+    public void initialize() {
+        List<String> idiomas = new ArrayList<>();
+        idiomas.add("es");
+        idiomas.add("en");
+        idiomas.add("fr");
+        comboIdioma.getItems().addAll(idiomas);
     }
 
-    /**
-     * Funcion para cargar el idioma
-     * @param idioma a cargar
-     */
-    private void cargarIdioma(String idioma) {
-        String path = pathFichero+ficheroStr+idioma+".properties";
+    @FXML
+    protected void cambiarIdioma() {
+        String path = "src/main/resources/idioma-"+comboIdioma.getValue().toString()+".properties";
+
         ConfigManager.ConfigProperties.setPath(path);
+
+        textUsuario.setText(ConfigManager.ConfigProperties.getProperty("textUsuario"));
+        textContrasenia.setText(ConfigManager.ConfigProperties.getProperty("textContrasenia"));
     }
 
-    /**
-     * Funcion para pasar a la pantalla donde se muestra la informacion del usuario
-     */
     @FXML
     protected void onLoginButtonClick() {
 
-        if (textFieldUsuario== null || textFieldUsuario.getText().isEmpty() || 
+        if (textFieldUsuario== null || textFieldUsuario.getText().isEmpty() ||
             textFieldPassword == null || textFieldPassword.getText().isEmpty() ) {
                 textFieldMensaje.setText("Credenciales null o vacias");
                 return;
         }
-        
-        user = operacionesFile.findUsuario(textFieldUsuario.getText(), textFieldPassword.getText());
 
-        if (user == null) {
+        UsuarioEntity usuarioEntity = getUsuarioServiceModel().obtenerUsuarioPorEmail(textFieldUsuario.getText());
+
+        if (usuarioEntity == null) {
+            textFieldMensaje.setText("El usuario no existe");
+            return;
+        }
+
+        if (!textFieldUsuario.getText().equals(usuarioEntity.getNombre())
+                || !textFieldPassword.getText().equals(usuarioEntity.getContrasenia())) {
             textFieldMensaje.setText("Credenciales invalidas");
             return;
-        } 
-
-        
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("perfil.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 820, 640);
-            
-            PerfilUsuarioController perfilController = fxmlLoader.getController();
-            perfilController.setUsuario(user);
-    
-            Stage stage = (Stage) ButtonAceptar.getScene().getWindow();
-            stage.setScene(scene);
-            stage.show();
-        } catch (Exception e) {
-            e.printStackTrace();
         }
+
+        textFieldMensaje.setText("Usuario validado correctamente");
     }
-  
-    /**
-     * Funcion para pasar a la pantalla donde puede registrar un usuario
-     */
+
     @FXML
     protected void openRegistrarClick() {
+
         try {
-            
+
             FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("registro.fxml"));
             Scene scene = new Scene(fxmlLoader.load(), 820, 640);
-            Stage stage = (Stage) buttonRegistrar.getScene().getWindow();
+            
+//            RegistroController registroController = fxmlLoader.getController();
+//            registroController.setpropertiesIdioma(this.getPropertiesIdioma());
+            
+//            registroController.postConstructor();
+
+            Stage stage = (Stage) openRegistrarButton.getScene().getWindow();
             stage.setTitle("Pantalla Registro");
             stage.setScene(scene);
             stage.show();
         } catch (Exception e) {
             e.printStackTrace();
         }
+        
+    
     }
-
-    /**
-     * Funcion para pasar a la pantalla un usuario puede recuperar la cuenta
-     */
-    @FXML
-    protected void onRecoverButtonClick() {
-        try {
-            Stage stage = (Stage) buttonRegistrar.getScene().getWindow();
-            FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("recuperarConstrasenia.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 820, 640);
-            stage.setTitle("Pantalla Recuperar Contraseña");
-            stage.setScene(scene);
-            stage.show();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-    }
-
+    
 }
