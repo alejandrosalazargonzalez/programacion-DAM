@@ -9,6 +9,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
+<<<<<<< HEAD
 public abstract class AbstractController {
     static final String PATH_DB="src/main/resources/usuario.db";
     
@@ -35,6 +36,12 @@ public abstract class AbstractController {
     @FXML public TextField textFieldUsuario;
     @FXML public Text textContrasenia;
     @FXML public TextField textFieldContrasenia;
+=======
+public class AbstractController {
+
+    @FXML
+    public Text textUsuario;
+>>>>>>> parent of df7c205 (avances 27/03)
 
 
     public void cambiarIdioma() {

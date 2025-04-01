@@ -23,38 +23,20 @@ import javafx.stage.Stage;
 public class RegistroController {
 
     @FXML
-    private TextField textFiledIngresarUsuario;
-    @FXML
-    private PasswordField passwordFieldIngresarContrasenia;
-    @FXML
-    private PasswordField paswordFieldRepetirContrasenia;
-    @FXML
-    private TextField textFiledIngresarNombre;
-    @FXML
-    private TextField textFiledIngresarEmail;
-    @FXML
-    private Text textText;
-    @FXML
-    private Button buttonEnviar;
-    @FXML
-    private Button buttonInicio;
+    public void initialize() {
+        usuarioService = new UsuarioService();
 
-    private UsuarioManager usuarioManager;
-
-    /**
-     * Constructor general.
-     */
-    public RegistroController() throws SQLException{
-        this.usuarioManager = new UsuarioManager();
+        cambiarIdiomaRegistrar();
     }
 
-    /**
-     * Registra un nuevo UsuarioModel.
-     */
     @FXML
-    protected void buttonEnviarClick() {
-        if (!validarCampos()) {
-            textText.setText("Credenciales null o vacias");
+    /**
+     * registra el usuario
+     */
+    protected void onClicRegistrar(){
+        if (passwordRegistroTextField == null || passwordRegistroTextField.getText().isEmpty()
+            || repetirPasswordRegistroTextField == null || repetirPasswordRegistroTextField.getText().isEmpty()) {
+            textMensaje.setText("¡El password no puede ser nulo ni estar vacio!");
             return;
         }
 

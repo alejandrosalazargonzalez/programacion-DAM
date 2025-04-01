@@ -2,18 +2,30 @@ package es.ies.puerto.model;
 
 import java.util.Objects;
 
+<<<<<<< HEAD:tema5/tercera-app-fx/primera-app-fx/src/main/java/es/ies/puerto/model/UsuarioEntity.java
 
 public class UsuarioEntity {
+=======
+/**
+ *   @author: alejandrosalazargonzalez
+ *   @version: 1.0.0
+ */
+public class UsuarioModel {
+>>>>>>> parent of df7c205 (avances 27/03):tema5/tercera-app-fx/primera-app-fx/src/main/java/es/ies/puerto/model/UsuarioModel.java
 
     String email;
     String nombre;
     String contrasenia;
 
+<<<<<<< HEAD:tema5/tercera-app-fx/primera-app-fx/src/main/java/es/ies/puerto/model/UsuarioEntity.java
 
     public UsuarioEntity() {
+=======
+    public UsuarioModel() {
+>>>>>>> parent of df7c205 (avances 27/03):tema5/tercera-app-fx/primera-app-fx/src/main/java/es/ies/puerto/model/UsuarioModel.java
     }
 
-    public UsuarioEntity(String email, String nombre, String contrasenia) {
+    public UsuarioModel(String email, String nombre, String contrasenia) {
         this.email = email;
         this.nombre = nombre;
         this.contrasenia = contrasenia;
@@ -47,11 +59,17 @@ public class UsuarioEntity {
     public boolean equals(Object o) {
         if (o == this)
             return true;
-        if (!(o instanceof UsuarioEntity)) {
+        if (!(o instanceof UsuarioModel)) {
             return false;
         }
+<<<<<<< HEAD:tema5/tercera-app-fx/primera-app-fx/src/main/java/es/ies/puerto/model/UsuarioEntity.java
         UsuarioEntity usuarioModel = (UsuarioEntity) o;
         return Objects.equals(email, usuarioModel.email);
+=======
+        UsuarioModel usuarioModel = (UsuarioModel) o;
+        return Objects.equals(email, usuarioModel.email) && Objects.equals(nombre, usuarioModel.nombre)
+                && Objects.equals(contrasenia, usuarioModel.contrasenia);
+>>>>>>> parent of df7c205 (avances 27/03):tema5/tercera-app-fx/primera-app-fx/src/main/java/es/ies/puerto/model/UsuarioModel.java
     }
 
     @Override
