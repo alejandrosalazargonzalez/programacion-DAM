@@ -1,8 +1,11 @@
+
 package es.ies.puerto.controller;
 
 import es.ies.puerto.PrincipalApplication;
 import es.ies.puerto.abstractas.AbstractController;
 import es.ies.puerto.config.ConfigManager;
+import es.ies.puerto.model.UsuarioEntity;
+import es.ies.puerto.model.UsuarioServiceModel;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -13,6 +16,10 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+/**
+ *   @author: alejandrosalazargonzalez
+ *   @version: 1.0.0
+ */
 public class LoginController  extends AbstractController{
     
     private final String usuario = "pokemon";
@@ -21,6 +28,25 @@ public class LoginController  extends AbstractController{
     private final String pathFile="src/main/resources/"; 
     private final String ficheroStr="idioma-";
 
+    private UsuarioServiceModel usuarioServiceModel;
+
+    private UsuarioEntity user;
+
+    /**
+     * Funcion para setear el usuario
+     * @param usuario a setear
+     */
+    public void setUsuario(UsuarioEntity usuario){
+        this.user = usuario;
+    }
+
+    /**
+     * Metodo para obtener el usuario
+     * @return usuario buscado
+     */
+    public UsuarioEntity getUsuario(){
+        return user;
+    }
     @FXML
     private TextField textFieldUsuario;
     
@@ -47,13 +73,32 @@ public class LoginController  extends AbstractController{
                 textFieldMensaje.setText("Credenciales null o vacias");
                 return;
         }
+        
+        user = usuarioServiceModel.obtenerUsuarioPorNombreUsuario(textFieldUsuario.getText(), textFieldPassword.getText());
+        
+        if (user == null) {
+            user = usuarioServiceModel.obtenerUsuarioPorEmail(textFieldUsuario.getText(), textFieldPassword.getText());
+        }
 
-        if (!textFieldUsuario.getText().equals(usuario) || !textFieldPassword.getText().equals(password)) {
+        if (user == null) {
             textFieldMensaje.setText("Credenciales invalidas");
             return;
         } 
-
-        textFieldMensaje.setText("Usuario validado correctamente");
+        
+        
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("perfil.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 820, 640);
+            
+            PerfilUsuarioController perfilController = fxmlLoader.getController();
+            perfilController.setUsuario(user);
+    
+            Stage stage = (Stage) buttonAceptar.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
@@ -76,8 +121,8 @@ public class LoginController  extends AbstractController{
     
             try {
                 System.out.println("Abriendo pantalla de recuperacion de contraseña");
-                Stage stage = (Stage) openRecuperarButton.getScene().getWindow();
                 FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("/es/ies/puerto/recuperar-pasword.fxml"));
+                Stage stage = (Stage) openRecuperarButton.getScene().getWindow();
                 Scene scene = new Scene(fxmlLoader.load(), 820, 640);
                 stage.setTitle("Recuperar contraseña");
                 stage.setScene(scene);
@@ -85,8 +130,6 @@ public class LoginController  extends AbstractController{
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        
-    
     }
 
     @FXML

@@ -1,3 +1,4 @@
+
 package es.ies.puerto.controller;
 
 import es.ies.puerto.PrincipalApplication;
@@ -11,6 +12,10 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+/**
+ *   @author: alejandrosalazargonzalez
+ *   @version: 1.0.0
+ */
 public class RegistroController extends AbstractController{
     
     @FXML TextField textFiledUsuario;
