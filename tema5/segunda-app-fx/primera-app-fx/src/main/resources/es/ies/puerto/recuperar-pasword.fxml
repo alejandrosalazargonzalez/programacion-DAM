@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox id="VBox" alignment="CENTER" prefHeight="277.0" prefWidth="434.0" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.ies.puerto.controller.RecuperarPasswordController">
+   <children>
+      <Text id="text" fx:id="textEmail" strokeType="OUTSIDE" strokeWidth="0.0" text="Email de recuperacion" textAlignment="CENTER" wrappingWidth="157.92800903320312" />
+      <TextField id="Casilla" fx:id="textFieldEmail">
+         <VBox.margin>
+            <Insets bottom="30.0" left="50.0" right="50.0" />
+         </VBox.margin>
+      </TextField>
+      <Text id="text" fx:id="textCorreo" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="157.92800903320312" />
+      <Button id="button" fx:id="buttonRecuperar" mnemonicParsing="false" onAction="#onButtonRecuperarClick" text="Recuperar Contraseña">
+         <VBox.margin>
+            <Insets bottom="10.0" />
+         </VBox.margin>
+      </Button>
+      <Button id="button" fx:id="buttonAtras" mnemonicParsing="false" onAction="#openAtrasClick" text="Atras">
+         <VBox.margin>
+            <Insets bottom="-5.0" right="345.0" top="16.0" />
+         </VBox.margin>
+      </Button>
+   </children>
+</VBox>
