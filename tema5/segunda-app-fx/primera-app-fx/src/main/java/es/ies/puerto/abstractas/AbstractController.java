@@ -3,21 +3,16 @@ package es.ies.puerto.abstractas;
 import java.util.Properties;
 
 import es.ies.puerto.config.ConfigManager;
-import es.ies.puerto.model.UsuarioServiceModel;
+import es.ies.puerto.model.UsuarioManager;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
-/**
- *   @author: alejandrosalazargonzalez
- *   @version: 1.0.0
- */
-
 public abstract class AbstractController {
     static final String PATH_DB="src/main/resources/usuario.db";
     
-    private UsuarioServiceModel usuarioServiceModel;
+    private UsuarioManager usuarioManager;
 
     private Properties propertiesIdioma;
 
@@ -26,7 +21,7 @@ public abstract class AbstractController {
      */
     protected AbstractController(){
         try {
-            usuarioServiceModel = new UsuarioServiceModel(PATH_DB);
+            usuarioManager = new UsuarioManager(PATH_DB);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -47,8 +42,8 @@ public abstract class AbstractController {
         textContrasenia.setText(ConfigManager.ConfigProperties.getProperty("textContrasenia"));
     }
 
-    public UsuarioServiceModel getUsuarioServiceModel(){
-        return this.usuarioServiceModel;
+    public UsuarioManager getUsuarioManager(){
+        return this.usuarioManager;
     }
 
     public Properties getPropertiesIdioma(){
