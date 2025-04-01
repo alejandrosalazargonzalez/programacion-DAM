@@ -92,8 +92,6 @@ public class LoginController  extends AbstractController{
     @FXML
     public void initialize(){
         comboIdioma.getItems().addAll("es", "en", "fr");
-        comboIdioma.setValue("es");
-        cargarIdioma("es");
         super.cambiarIdiomaLogin();
     }
 
