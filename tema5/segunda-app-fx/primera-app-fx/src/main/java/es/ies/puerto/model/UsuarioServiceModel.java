@@ -63,7 +63,7 @@ public class UsuarioServiceModel extends Conexion{
      * @return usuario buscado
      */
     public UsuarioEntity obtenerUsuarioPorNombreUsuario(String nombreUsuario, String contrasenia){
-        String sql = "Select * from usuario " + "where nombreUsuario ='" + nombreUsuario + 
+        String sql = "Select * from usuario " + "where nombreUsuario ='" + nombreUsuario +
                     "' and contrasenia = '" + contrasenia + "'";
         ArrayList<UsuarioEntity> usuarios = obtenerListaUsuarios(sql);
         if (usuarios.isEmpty()) {

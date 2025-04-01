@@ -11,7 +11,7 @@ import java.sql.SQLException;
 public abstract class Conexion {
 
     private Connection connection;
-    private final String pathBD ="src/main/resources/usuario.db";
+    private final String pathBD ="src/main/resources/usuarios.db";
 
     /**
      * Constructor vacio

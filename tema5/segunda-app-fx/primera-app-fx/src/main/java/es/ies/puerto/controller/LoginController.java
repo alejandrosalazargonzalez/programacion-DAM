@@ -28,10 +28,49 @@ public class LoginController  extends AbstractController{
     private final String pathFile="src/main/resources/"; 
     private final String ficheroStr="idioma-";
 
+    @FXML
+    private TextField textFieldUsuario;
+    
+    @FXML
+    private PasswordField textFieldPassword;
+
+    @FXML
+    private Text textFieldMensaje;
+
+    @FXML
+    private Button openRegistrarButton;
+    
+    @FXML
+    private Button openRecuperarButton;
+    
+    @FXML
+    private ComboBox<String> comboIdioma;
+
     private UsuarioServiceModel usuarioServiceModel;
 
     private UsuarioEntity user;
-
+    
+    @FXML
+    public void initialize(){
+        comboIdioma.getItems().addAll("es", "en", "fr");
+        super.cambiarIdiomaLogin();
+        usuarioServiceModel = new UsuarioServiceModel();
+    }
+    
+    @FXML
+    protected void seleccionarIdiomaClick(){
+        String idioma = comboIdioma.getValue();
+        if (idioma != null) {
+            cargarIdioma(idioma);
+            super.cambiarIdiomaLogin();
+        }
+    }
+    
+    private void cargarIdioma(String idioma){
+        String path = pathFile+ficheroStr+idioma+".properties";
+        ConfigManager.ConfigProperties.setPath(path);
+    }
+    
     /**
      * Funcion para setear el usuario
      * @param usuario a setear
@@ -47,58 +86,41 @@ public class LoginController  extends AbstractController{
     public UsuarioEntity getUsuario(){
         return user;
     }
-    @FXML
-    private TextField textFieldUsuario;
     
-    @FXML
-    private PasswordField textFieldPassword;
-
-    @FXML
-    private Text textFieldMensaje;
-
-    @FXML
-    private Button openRegistrarButton;
-    
-    @FXML
-    private Button openRecuperarButton;
-
-    @FXML
-    private ComboBox<String> comboIdioma;
-
     @FXML
     protected void onLoginButtonClick() {
-
+        
         if (textFieldUsuario== null || textFieldUsuario.getText().isEmpty() || 
-            textFieldPassword == null || textFieldPassword.getText().isEmpty() ) {
-                textFieldMensaje.setText("Credenciales null o vacias");
-                return;
-        }
-        
-        user = usuarioServiceModel.obtenerUsuarioPorNombreUsuario(textFieldUsuario.getText(), textFieldPassword.getText());
-        
-        if (user == null) {
-            user = usuarioServiceModel.obtenerUsuarioPorEmail(textFieldUsuario.getText(), textFieldPassword.getText());
-        }
-
-        if (user == null) {
-            textFieldMensaje.setText("Credenciales invalidas");
+        textFieldPassword == null || textFieldPassword.getText().isEmpty() ) {
+            textFieldMensaje.setText("Credenciales null o vacias");
             return;
-        } 
-        
-        
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("perfil.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 820, 640);
-            
-            PerfilUsuarioController perfilController = fxmlLoader.getController();
-            perfilController.setUsuario(user);
+    }
     
-            Stage stage = (Stage) buttonAceptar.getScene().getWindow();
-            stage.setScene(scene);
-            stage.show();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    user = usuarioServiceModel.obtenerUsuarioPorNombreUsuario(textFieldUsuario.getText(), textFieldPassword.getText());
+    
+    if (user == null) {
+        user = usuarioServiceModel.obtenerUsuarioPorEmail(textFieldUsuario.getText(), textFieldPassword.getText());
+    }
+
+    if (user == null) {
+        textFieldMensaje.setText("Credenciales invalidas");
+        return;
+    } 
+    
+    
+    try {
+        FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("perfil.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 820, 640);
+        
+        PerfilUsuarioController perfilController = fxmlLoader.getController();
+        perfilController.setUsuario(user);
+
+        Stage stage = (Stage) buttonAceptar.getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
     }
 
     @FXML
@@ -131,26 +153,4 @@ public class LoginController  extends AbstractController{
                 e.printStackTrace();
             }
     }
-
-    @FXML
-    public void initialize(){
-        comboIdioma.getItems().addAll("es", "en", "fr");
-        super.cambiarIdiomaLogin();
-    }
-
-    @FXML
-    protected void seleccionarIdiomaClick(){
-        String idioma = comboIdioma.getValue();
-        if (idioma != null) {
-            cargarIdioma(idioma);
-            super.cambiarIdiomaLogin();
-        }
-    }
-
-    private void cargarIdioma(String idioma){
-        //Programacion defensiva
-        String path = pathFile+ficheroStr+idioma+".properties";
-        ConfigManager.ConfigProperties.setPath(path);
-    }
-    
 }

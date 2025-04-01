@@ -37,6 +37,7 @@ public class PerfilUsuarioController extends AbstractController{
     @FXML
     public void initialize(){
         cambiarIdiomaPerfil();
+        usuarioModel = new UsuarioEntity();
     }
 
 
