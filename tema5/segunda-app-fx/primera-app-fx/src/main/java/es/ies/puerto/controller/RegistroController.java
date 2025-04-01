@@ -26,7 +26,7 @@ public class RegistroController {
     public void initialize() {
         usuarioService = new UsuarioService();
 
-        cambiarIdiomaRegistrar();
+        cambiarIdioma();
     }
 
     @FXML

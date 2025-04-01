@@ -38,6 +38,12 @@ public abstract class AbstractController {
     @FXML public TextField textFieldContrasenia;
 =======
 public class AbstractController {
+<<<<<<< HEAD
+=======
+
+    @FXML
+    public Text textUsuario;
+>>>>>>> parent of df7c205 (avances 27/03)
 
     @FXML
     public Text textUsuario;

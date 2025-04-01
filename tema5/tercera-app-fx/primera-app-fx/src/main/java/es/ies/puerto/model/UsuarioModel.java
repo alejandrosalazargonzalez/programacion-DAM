@@ -11,18 +11,25 @@ public class UsuarioEntity {
  *   @version: 1.0.0
  */
 public class UsuarioModel {
+<<<<<<< HEAD
 >>>>>>> parent of df7c205 (avances 27/03):tema5/tercera-app-fx/primera-app-fx/src/main/java/es/ies/puerto/model/UsuarioModel.java
+=======
+>>>>>>> parent of df7c205 (avances 27/03)
 
     String email;
     String nombre;
     String contrasenia;
 
+<<<<<<< HEAD
 <<<<<<< HEAD:tema5/tercera-app-fx/primera-app-fx/src/main/java/es/ies/puerto/model/UsuarioEntity.java
 
     public UsuarioEntity() {
 =======
     public UsuarioModel() {
 >>>>>>> parent of df7c205 (avances 27/03):tema5/tercera-app-fx/primera-app-fx/src/main/java/es/ies/puerto/model/UsuarioModel.java
+=======
+    public UsuarioModel() {
+>>>>>>> parent of df7c205 (avances 27/03)
     }
 
     public UsuarioModel(String email, String nombre, String contrasenia) {
@@ -62,10 +69,13 @@ public class UsuarioModel {
         if (!(o instanceof UsuarioModel)) {
             return false;
         }
+<<<<<<< HEAD
 <<<<<<< HEAD:tema5/tercera-app-fx/primera-app-fx/src/main/java/es/ies/puerto/model/UsuarioEntity.java
         UsuarioEntity usuarioModel = (UsuarioEntity) o;
         return Objects.equals(email, usuarioModel.email);
 =======
+=======
+>>>>>>> parent of df7c205 (avances 27/03)
         UsuarioModel usuarioModel = (UsuarioModel) o;
         return Objects.equals(email, usuarioModel.email) && Objects.equals(nombre, usuarioModel.nombre)
                 && Objects.equals(contrasenia, usuarioModel.contrasenia);
