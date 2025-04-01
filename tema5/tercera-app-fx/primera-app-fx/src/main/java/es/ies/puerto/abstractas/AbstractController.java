@@ -38,9 +38,7 @@ public abstract class AbstractController {
     @FXML public TextField textFieldContrasenia;
 =======
 public class AbstractController {
-<<<<<<< HEAD
-=======
-
+    static final String pathDb="src/main/resources/usuarios.db";
     @FXML
     public Text textUsuario;
 >>>>>>> parent of df7c205 (avances 27/03)

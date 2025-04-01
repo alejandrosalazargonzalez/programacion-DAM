@@ -1,4 +1,8 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> parent of df7c205 (avances 27/03)
 =======
 
 >>>>>>> parent of df7c205 (avances 27/03)
@@ -10,11 +14,14 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< HEAD:tema5/tercera-app-fx/primera-app-fx/src/main/java/es/ies/puerto/model/UsuarioServiceModel.java
 import es.ies.puerto.model.abtrastas.Conexion;
 
 public class UsuarioServiceModel extends Conexion {
 =======
+=======
+>>>>>>> parent of df7c205 (avances 27/03)
 =======
 >>>>>>> parent of df7c205 (avances 27/03)
 /**
@@ -23,7 +30,10 @@ public class UsuarioServiceModel extends Conexion {
  */
 public class UsuarioDto extends ConexionModel {
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of df7c205 (avances 27/03):tema5/tercera-app-fx/primera-app-fx/src/main/java/es/ies/puerto/model/UsuarioDto.java
+=======
+>>>>>>> parent of df7c205 (avances 27/03)
 =======
 >>>>>>> parent of df7c205 (avances 27/03)
 
@@ -34,6 +44,7 @@ public class UsuarioDto extends ConexionModel {
         super(unaRutaArchivoBD);
     }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     public UsuarioEntity obtenerUsuarioPorEmail(String email) {
         try {
@@ -64,6 +75,8 @@ public class UsuarioDto extends ConexionModel {
         ArrayList<UsuarioModel> usuarios = new ArrayList<UsuarioModel>();
 >>>>>>> parent of df7c205 (avances 27/03):tema5/tercera-app-fx/primera-app-fx/src/main/java/es/ies/puerto/model/UsuarioDto.java
 =======
+=======
+>>>>>>> parent of df7c205 (avances 27/03)
     /*
      * public ArrayList<UsuarioModel> obtenerUsuarios() throws SQLException {
      * ArrayList<UsuarioModel> usuarios = new ArrayList<UsuarioModel>();
@@ -91,6 +104,9 @@ public class UsuarioDto extends ConexionModel {
 
     public ArrayList<UsuarioModel> obtenerUsuario(String sql) throws SQLException {
         ArrayList<UsuarioModel> usuarios = new ArrayList<UsuarioModel>();
+<<<<<<< HEAD
+>>>>>>> parent of df7c205 (avances 27/03)
+=======
 >>>>>>> parent of df7c205 (avances 27/03)
         try {
             PreparedStatement sentencia = getConnection().prepareStatement(sql);
@@ -112,8 +128,11 @@ public class UsuarioDto extends ConexionModel {
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< HEAD:tema5/tercera-app-fx/primera-app-fx/src/main/java/es/ies/puerto/model/UsuarioServiceModel.java
 =======
+=======
+>>>>>>> parent of df7c205 (avances 27/03)
 =======
 >>>>>>> parent of df7c205 (avances 27/03)
     public UsuarioModel obtenerUsuarioPorEmail(String email) throws SQLException {
@@ -130,7 +149,10 @@ public class UsuarioDto extends ConexionModel {
         return obtenerUsuario(sql);
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of df7c205 (avances 27/03):tema5/tercera-app-fx/primera-app-fx/src/main/java/es/ies/puerto/model/UsuarioDto.java
+=======
+>>>>>>> parent of df7c205 (avances 27/03)
 =======
 >>>>>>> parent of df7c205 (avances 27/03)
 }

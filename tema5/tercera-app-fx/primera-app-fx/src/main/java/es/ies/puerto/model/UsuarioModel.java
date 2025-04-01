@@ -1,18 +1,28 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> parent of df7c205 (avances 27/03)
 package es.ies.puerto.model;
 
 import java.util.Objects;
 
+<<<<<<< HEAD
 <<<<<<< HEAD:tema5/tercera-app-fx/primera-app-fx/src/main/java/es/ies/puerto/model/UsuarioEntity.java
 
 public class UsuarioEntity {
 =======
+=======
+>>>>>>> parent of df7c205 (avances 27/03)
 /**
  *   @author: alejandrosalazargonzalez
  *   @version: 1.0.0
  */
 public class UsuarioModel {
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of df7c205 (avances 27/03):tema5/tercera-app-fx/primera-app-fx/src/main/java/es/ies/puerto/model/UsuarioModel.java
+=======
+>>>>>>> parent of df7c205 (avances 27/03)
 =======
 >>>>>>> parent of df7c205 (avances 27/03)
 
@@ -21,12 +31,16 @@ public class UsuarioModel {
     String contrasenia;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< HEAD:tema5/tercera-app-fx/primera-app-fx/src/main/java/es/ies/puerto/model/UsuarioEntity.java
 
     public UsuarioEntity() {
 =======
     public UsuarioModel() {
 >>>>>>> parent of df7c205 (avances 27/03):tema5/tercera-app-fx/primera-app-fx/src/main/java/es/ies/puerto/model/UsuarioModel.java
+=======
+    public UsuarioModel() {
+>>>>>>> parent of df7c205 (avances 27/03)
 =======
     public UsuarioModel() {
 >>>>>>> parent of df7c205 (avances 27/03)
@@ -70,6 +84,7 @@ public class UsuarioModel {
             return false;
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< HEAD:tema5/tercera-app-fx/primera-app-fx/src/main/java/es/ies/puerto/model/UsuarioEntity.java
         UsuarioEntity usuarioModel = (UsuarioEntity) o;
         return Objects.equals(email, usuarioModel.email);
@@ -80,10 +95,16 @@ public class UsuarioModel {
         return Objects.equals(email, usuarioModel.email) && Objects.equals(nombre, usuarioModel.nombre)
                 && Objects.equals(contrasenia, usuarioModel.contrasenia);
 >>>>>>> parent of df7c205 (avances 27/03):tema5/tercera-app-fx/primera-app-fx/src/main/java/es/ies/puerto/model/UsuarioModel.java
+=======
+        UsuarioModel usuarioModel = (UsuarioModel) o;
+        return Objects.equals(email, usuarioModel.email) && Objects.equals(nombre, usuarioModel.nombre)
+                && Objects.equals(contrasenia, usuarioModel.contrasenia);
+>>>>>>> parent of df7c205 (avances 27/03)
     }
 
     @Override
     public int hashCode() {
+<<<<<<< HEAD
         return Objects.hash(email);
     }
 
@@ -98,4 +119,18 @@ public class UsuarioModel {
     }
 
 
+=======
+        return Objects.hash(email, nombre, contrasenia);
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+                " email='" + getEmail() + "'" +
+                ", nombre='" + getNombre() + "'" +
+                ", contrasenia='" + getContrasenia() + "'" +
+                "}";
+    }
+
+>>>>>>> parent of df7c205 (avances 27/03)
 }
