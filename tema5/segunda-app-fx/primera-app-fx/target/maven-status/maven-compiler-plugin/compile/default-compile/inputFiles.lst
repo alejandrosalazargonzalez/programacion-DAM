@@ -1,0 +1,12 @@
+/home/salazar/programacion-DAM/tema5/segunda-app-fx/primera-app-fx/src/main/java/es/ies/puerto/controller/LoginController.java
+/home/salazar/programacion-DAM/tema5/segunda-app-fx/primera-app-fx/src/main/java/es/ies/puerto/config/ConfigManager.java
+/home/salazar/programacion-DAM/tema5/segunda-app-fx/primera-app-fx/src/main/java/module-info.java
+/home/salazar/programacion-DAM/tema5/segunda-app-fx/primera-app-fx/src/main/java/es/ies/puerto/PrincipalApplication.java
+/home/salazar/programacion-DAM/tema5/segunda-app-fx/primera-app-fx/src/main/java/es/ies/puerto/controller/RecuperarPasswordController.java
+/home/salazar/programacion-DAM/tema5/segunda-app-fx/primera-app-fx/src/main/java/es/ies/puerto/controller/RegistroController.java
+/home/salazar/programacion-DAM/tema5/segunda-app-fx/primera-app-fx/src/main/java/es/ies/puerto/model/abtrastas/Conexion.java
+/home/salazar/programacion-DAM/tema5/segunda-app-fx/primera-app-fx/src/main/java/es/ies/puerto/model/ConexionModel.java
+/home/salazar/programacion-DAM/tema5/segunda-app-fx/primera-app-fx/src/main/java/es/ies/puerto/model/UsuarioEntity.java
+/home/salazar/programacion-DAM/tema5/segunda-app-fx/primera-app-fx/src/main/java/es/ies/puerto/abstractas/AbstractController.java
+/home/salazar/programacion-DAM/tema5/segunda-app-fx/primera-app-fx/src/main/java/es/ies/puerto/controller/PerfilUsuarioController.java
+/home/salazar/programacion-DAM/tema5/segunda-app-fx/primera-app-fx/src/main/java/es/ies/puerto/model/UsuarioServiceModel.java

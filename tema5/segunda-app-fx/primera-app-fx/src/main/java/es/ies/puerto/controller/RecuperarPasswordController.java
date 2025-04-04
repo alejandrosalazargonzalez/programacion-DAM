@@ -10,6 +10,10 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+/**
+ *   @author: alejandrosalazargonzalez
+ *   @version: 1.0.0
+ */
 public class RecuperarPasswordController extends AbstractController{
 
     private final String email = "programador@gmail.com";
@@ -21,7 +25,10 @@ public class RecuperarPasswordController extends AbstractController{
     private Button buttonAtras;
     
     @FXML
-    private Text textEmail; 
+    private Text textEmail;
+
+    @FXML
+    private Button buttonRecuperar;
 
     @FXML
     protected void onButtonRecuperarClick() {
@@ -41,7 +48,6 @@ public class RecuperarPasswordController extends AbstractController{
 
     @FXML
     protected void openAtrasClick() {
-
         try {
             Stage stage = (Stage) buttonAtras.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader(PrincipalApplication.class.getResource("login.fxml"));

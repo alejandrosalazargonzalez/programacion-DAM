@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox id="VBox" alignment="CENTER" prefHeight="670.0" prefWidth="618.0" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.ies.puerto.controller.RegistroController">
+   <children>
+      <Text fx:id="textUsuario" id="text" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuario" />
+      <TextField id="Casilla" fx:id="textFiledUsuario" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="24.0" prefWidth="332.0" promptText="Nombre de Usuario"  />
+      <Text id="text" fx:id="textEmail" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
+      <TextField id="Casilla" fx:id="textFiledEmail" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="24.0" prefWidth="332.0" promptText="Email"  />
+      <Text id="text" fx:id="textMensaje111" strokeType="OUTSIDE" strokeWidth="0.0" text="Repetir Email" />
+      <TextField id="Casilla" fx:id="textFiledEmailRepetido" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="24.0" prefWidth="332.0" promptText="Repetir Email"  />
+      <Text id="text" fx:id="textMensajeEmail" strokeType="OUTSIDE" strokeWidth="0.0" text="Tu email aun no a sido definido" />
+      <Text id="text" fx:id="textContrasenia" layoutX="213.0" layoutY="304.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
+      <PasswordField id="Casilla" fx:id="textFieldPassword" maxHeight="-Infinity" maxWidth="-Infinity" promptText="Introducir password"  />
+      <Text id="text" fx:id="textContraseniaRepetir" strokeType="OUTSIDE" strokeWidth="0.0" text="Repetir Password" />
+      <PasswordField id="Casilla" fx:id="textFieldPasswordRepit" maxHeight="-Infinity" maxWidth="-Infinity" promptText="Repetir password"  />
+      <Text id="text" fx:id="textContraseniaCreada" strokeType="OUTSIDE" strokeWidth="0.0" text="Tu contraseña aun no a sido creada" />
+      <Button id="button" fx:id="buttonRegistrar" mnemonicParsing="false"  text="Registrar" />
+      <Button id="button" fx:id="buttonAtras" mnemonicParsing="false" onAction="#onButtonAtrasClick"  text="Atras" />
+   </children>
+</VBox>

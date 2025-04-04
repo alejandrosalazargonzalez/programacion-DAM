@@ -3,16 +3,22 @@ package es.ies.puerto.config;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.Properties;
 
+/**
+ *   @author: alejandrosalazargonzalez
+ *   @version: 1.0.0
+ */
+
 public class ConfigManager {
-      public static class ConfigProperties {
+    public static class ConfigProperties {
 
         static String path;
 
         private static final Properties properties = new Properties();
+
         static {
-            // Inicialización por defecto con el idioma español
             setPath("src/main/resources/idioma-es.properties");
         }
 
@@ -30,12 +36,11 @@ public class ConfigManager {
                 System.out.println("Error: Archivo de idioma no encontrado en: " + file.getAbsolutePath());
                 return;
             }
-            
             path = rutaPath;
             try {
                 properties.clear(); // Limpiamos las propiedades anteriores
                 FileInputStream input = new FileInputStream(path);
-                InputStreamReader isr = new InputStreamReader(input, "UTF-8");
+                InputStreamReader isr = new InputStreamReader(input, StandardCharsets.UTF_8);
                 properties.load(isr);
                 isr.close();
                 input.close();
