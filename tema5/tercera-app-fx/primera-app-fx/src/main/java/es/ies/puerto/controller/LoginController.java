@@ -2,6 +2,7 @@ package es.ies.puerto.controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
 import es.ies.puerto.PrincipalApplication;
 import es.ies.puerto.config.ConfigManager;
@@ -76,10 +77,10 @@ public class LoginController extends AbstractController {
         }
 
         if (!textFieldUsuario.getText().equals(usuarioEntity.getEmail())
-                || !textFieldPassword.getText().equals(usuarioEntity.getContrasenia())) {
+         || !textFieldPassword.getText().equals(usuarioEntity.getContrasenia())) {
             textFieldMensaje.setText("Credenciales invalidas");
             return;
-        }
+        } 
 
         textFieldMensaje.setText("Usuario validado correctamente");
     }

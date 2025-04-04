@@ -10,7 +10,7 @@ public abstract class Conexion {
     private String rutaArchivoBD;
     private Connection connection;
 
-    protected Conexion(){}
+    public Conexion(){}
 
 
     /**

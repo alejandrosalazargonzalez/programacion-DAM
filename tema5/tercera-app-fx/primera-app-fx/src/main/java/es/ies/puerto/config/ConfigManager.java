@@ -2,23 +2,22 @@ package es.ies.puerto.config;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.InputStreamReader;
-import java.nio.charset.StandardCharsets;
 import java.util.Properties;
 
 public class ConfigManager {
 
     public static class ConfigProperties {
 
-        /**
-         * Constructor vacio
-         */
-        public ConfigProperties(){
-
-        }
         static String path;
 
         private static final Properties properties = new Properties();
+
+        static {
+            
+           
+        }
 
         /**
          * Metodo estatico para obtener una propiedad
@@ -39,7 +38,7 @@ public class ConfigManager {
                 System.out.println("Dentro del ConfigProperties");
 
                 FileInputStream input = new FileInputStream(path);
-                InputStreamReader isr = new InputStreamReader(input, StandardCharsets.UTF_8);
+                InputStreamReader isr = new InputStreamReader(input, "UTF-8");
                 properties.load(isr);
             } catch (Exception e) {
                 e.printStackTrace();
