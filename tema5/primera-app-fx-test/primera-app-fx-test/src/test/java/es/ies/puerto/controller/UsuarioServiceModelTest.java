@@ -39,7 +39,7 @@ class UsuarioServiceModelTest {
 
     @Test
     void openUsuarioPorEmailTest(){
-        when(usuarioServiceModelMock.obtenerUsuarioPorEmail(""));
+        when(usuarioServiceModelMock.obtenerUsuarioPorEmail(anyString()));
     }
     
 }
